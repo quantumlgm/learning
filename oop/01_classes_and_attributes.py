@@ -24,7 +24,7 @@ class EnvironmentConfig:
     def __init__(self, defaults: dict, readonly_keys: tuple) -> None:
         for key, value in defaults.items():
             setattr(self, key, value)
-        self.__readonly_keys = readonly_keys
+        self._readonly_keys = readonly_keys
         print("Succesfully create")
 
     def get_config(self, key: str) -> None:
@@ -32,7 +32,7 @@ class EnvironmentConfig:
 
     def update_config(self, new_settings: dict) -> None:
         for key, value in new_settings.items():
-            if key not in self.__readonly_keys:
+            if key not in self._readonly_keys:
                 setattr(self, key, value)
                 print("Succesfully update")
             else:
@@ -40,7 +40,7 @@ class EnvironmentConfig:
 
     def del_config(self, key: str) -> None:
         if hasattr(self, key):
-            if key not in self.__readonly_keys:
+            if key not in self._readonly_keys:
                 delattr(self, key)
                 print("Successfully delete")
             else:
