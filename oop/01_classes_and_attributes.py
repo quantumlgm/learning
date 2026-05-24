@@ -49,7 +49,7 @@ class EnvironmentConfig:
 
 if __name__ == "__main__":
     Environment = EnvironmentConfig(
-        {"item1": 1, "item2": 2}, ("item1")
+        {"item1": 1, "item2": 2}, ("item1",)
     )  # Succesfully create
     print(Environment.__dict__)
 
