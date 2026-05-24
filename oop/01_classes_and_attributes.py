@@ -54,7 +54,7 @@ if __name__ == '__main__':
     Enviroment = EnviromentConfig({'set1': 1, 'set2': 2}, ('set1')) # Succesfully create
     Enviroment.get_config("set1") # 1
     Enviroment.set_config({'set3': 3, 'set4': '4'}) # Successfully add: set3: 3 and Successfully add: set4: 4
-    Enviroment.updateconfig({'set3', 30}) # Successfully update
+    Enviroment.update_config('set3', 30) # Successfully update
     Enviroment.update_config('set1', 10) # Item in the private list
     Enviroment.del_config('set3') # Successfully delete
     Enviroment.del_config('set1') # Item in the private list
