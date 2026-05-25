@@ -21,3 +21,25 @@
 # 4. Methods to implement:
 #    - `get_status(self) -> tuple`: Returns a tuple containing the instance's 
 #      `is_connected` status and the current class-level `active_connections` count.
+
+class ConnectionManager:
+    active_conections = 0
+
+    def __init__(self, ip_address: str, port: int) -> None:
+        self.ip_address= ip_address
+        self.port = port    
+        self.is_connected = True
+
+        type(self).active_conections += 1
+        print(f'Connection successful: {ip_address} {port}')
+
+    def __del__(self):
+        self.is_connected = False
+        type(self).active_conections -= 1
+        print(f'Disconnection successful: {self.ip_address} {self.port}')
+
+    
+if __name__ == '__main__':
+    Connection1 = ConnectionManager('https://github.com/quantumlgm', '8888')
+    print(Connection1.__dict__)
+    print(ConnectionManager.__dict__)
