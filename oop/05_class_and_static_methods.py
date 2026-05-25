@@ -38,3 +38,8 @@ class DataConverter:
             text = text.replace(letter, '')
         return text.strip()
     
+if __name__ == "__main__":
+    Converter = DataConverter('simple converter', 'v1')
+    print(Converter.clean_string("  @Hello# world^  ")) # Hello world
+    print(Converter.from_list(['Hello', 'world']).__class__) # <class '__main__.DataConverter'>
+    
