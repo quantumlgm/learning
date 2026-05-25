@@ -17,3 +17,24 @@
 #    - Name: `clean_string(text: str) -> str`
 #    - An isolated helper function that strips leading/trailing whitespaces and removes specific 
 #      special characters (e.g., "#", "$", "@") from the input string, returning the cleaned text.
+
+
+class DataConverter:
+    supported_versions = ["v1", "v2", "v3"]
+
+    def __init__(self, raw_data: str, version: str) -> None:
+        self.raw_data = raw_data
+        self.version = version
+
+    @classmethod
+    def from_list(cls, list: list[str]):
+        new_list = ', '.join(list)
+        ObjectList = cls(new_list, cls.supported_versions[0])
+        return ObjectList
+    
+    @staticmethod
+    def clean_string(text: str):
+        for letter in '@#$%^&':
+            text = text.replace(letter, '')
+        return text.strip()
+    
