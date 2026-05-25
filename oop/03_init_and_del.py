@@ -32,15 +32,24 @@ class ConnectionManager:
         self.is_connected = True
 
         type(self).active_conections += 1
-        print(f"Connection successful: {ip_address} {port}")
+        print(f"Connection successful: {ip_address}:{port}")
 
     def __del__(self):
         self.is_connected = False
         type(self).active_conections -= 1
-        print(f"Disconnection successful: {self.ip_address} {self.port}")
+        print(f"Disconnection successful: {self.ip_address}:{self.port}")
 
 
 if __name__ == "__main__":
-    Connection1 = ConnectionManager("https://github.com/quantumlgm", "8888")
-    print(Connection1.__dict__)
-    print(ConnectionManager.__dict__)
+    Connection1 = ConnectionManager("https://github.com/quantumlgm", "8888") # Connection successful: https://github.com/quantumlgm:8888
+    print(f'Connection1: {Connection1.__dict__}') # 'is_connected': True
+    print(ConnectionManager.__dict__) # ... 'active_conections': 1 ...
+
+    Connection2 = ConnectionManager("https://localhost", "8000") # Connection successful: https://github.com/quantumlgm:8888
+    print(f'Connection2: {Connection2.__dict__}') # 'is_connected': True
+    print(ConnectionManager.__dict__)  # ... 'active_conections': 2 ...
+
+    Connection1 = None    
+    print(ConnectionManager.__dict__) # 'active_conections': 1
+    # Disconnection successful: https://github.com/quantumlgm:8888
+    # Disconnection successful: https://localhost:8000
