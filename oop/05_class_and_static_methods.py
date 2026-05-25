@@ -27,8 +27,8 @@ class DataConverter:
         self.version = version
 
     @classmethod
-    def from_list(cls, list: list[str]):
-        new_list = ', '.join(list)
+    def from_list(cls, data_list: list[str]):
+        new_list = ', '.join(data_list)
         ObjectList = cls(new_list, cls.supported_versions[0])
         return ObjectList
     
@@ -42,4 +42,3 @@ if __name__ == "__main__":
     Converter = DataConverter('simple converter', 'v1')
     print(Converter.clean_string("  @Hello# world^  ")) # Hello world
     print(Converter.from_list(['Hello', 'world']).__class__) # <class '__main__.DataConverter'>
-    
