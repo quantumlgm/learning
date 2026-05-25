@@ -1,10 +1,10 @@
-# Design a class named `ConnectionManager` that simulates a network connection lifecycle. 
-# The class must automate connection tracking during initialization and ensure proper 
+# Design a class named `ConnectionManager` that simulates a network connection lifecycle.
+# The class must automate connection tracking during initialization and ensure proper
 # cleanup when the object is destroyed.
 
 # Requirements:
 # 1. Class Attributes:
-#    - `active_connections` (int): A counter tracking total alive connections, 
+#    - `active_connections` (int): A counter tracking total alive connections,
 #       initialized to 0.
 
 # 2. Instance Initialization (`__init__`):
@@ -19,27 +19,28 @@
 #    - Prints a termination message stating that the connection has been closed.
 
 # 4. Methods to implement:
-#    - `get_status(self) -> tuple`: Returns a tuple containing the instance's 
+#    - `get_status(self) -> tuple`: Returns a tuple containing the instance's
 #      `is_connected` status and the current class-level `active_connections` count.
+
 
 class ConnectionManager:
     active_conections = 0
 
     def __init__(self, ip_address: str, port: int) -> None:
-        self.ip_address= ip_address
-        self.port = port    
+        self.ip_address = ip_address
+        self.port = port
         self.is_connected = True
 
         type(self).active_conections += 1
-        print(f'Connection successful: {ip_address} {port}')
+        print(f"Connection successful: {ip_address} {port}")
 
     def __del__(self):
         self.is_connected = False
         type(self).active_conections -= 1
-        print(f'Disconnection successful: {self.ip_address} {self.port}')
+        print(f"Disconnection successful: {self.ip_address} {self.port}")
 
-    
-if __name__ == '__main__':
-    Connection1 = ConnectionManager('https://github.com/quantumlgm', '8888')
+
+if __name__ == "__main__":
+    Connection1 = ConnectionManager("https://github.com/quantumlgm", "8888")
     print(Connection1.__dict__)
     print(ConnectionManager.__dict__)
