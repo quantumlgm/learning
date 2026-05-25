@@ -24,27 +24,28 @@ class EnvironmentConfig:
     def __init__(self, defaults: dict, readonly_keys: tuple) -> None:
         for key, value in defaults.items():
             setattr(self, key, value)
-        self._readonly_keys = readonly_keys
-        print("Succesfully create")
 
-    def get_config(self, key: str) -> None:
-        print(getattr(self, key, "NOT_FOUND"))
+        self._readonly_keys = readonly_keys
+
+    def get_config(self, key: str) -> str:
+        if hasattr(self, key):
+            return getattr(self, key)
+        return "NOT_FOUND"
 
     def update_config(self, new_settings: dict) -> None:
         for key, value in new_settings.items():
-            if key not in self._readonly_keys:
-                setattr(self, key, value)
-                print("Succesfully update")
-            else:
-                print("Item in the private list")
+            if key in self._readonly_keys:
+                continue
+            setattr(self, key, value)
 
-    def del_config(self, key: str) -> None:
+    def del_config(self, key: str) -> dict:
         if hasattr(self, key):
             if key not in self._readonly_keys:
                 delattr(self, key)
-                print("Successfully delete")
+                return {"status_code": 200, "description": "Succesfully delete"}
             else:
-                print("Item in the private list")
+                return {"status_code": 403, "description": "Item in the private list"}
+        return {"status_code": 404, "description": "Item not found"}
 
 
 if __name__ == "__main__":
@@ -53,7 +54,7 @@ if __name__ == "__main__":
     )  # Succesfully create
     print(Environment.__dict__)
 
-    Environment.get_config("item1")  # 1
+    print(Environment.get_config("item1"))  # 1
     print(Environment.__dict__)
 
     Environment.update_config({"item2": 30})  # Successfully update
@@ -62,8 +63,8 @@ if __name__ == "__main__":
     Environment.update_config({"item1": 10})  # Item in the private list
     print(Environment.__dict__)
 
-    Environment.del_config("item2")  # Successfully delete
+    print(Environment.del_config("item2"))  # Successfully delete
     print(Environment.__dict__)
 
-    Environment.del_config("item1")  # Item in the private list
+    print(Environment.del_config("item1"))  # Item in the private list
     print(Environment.__dict__)
