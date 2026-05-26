@@ -20,7 +20,7 @@ class WindowSettings:
         "font_size": 14,
     }
 
-    def __init__(self, width, height):
+    def __init__(self, width: int, height: int) -> None:
         self.__dict__ = self.__attr
         self.__attr["width"] = width
         self.__attr["height"] = height
