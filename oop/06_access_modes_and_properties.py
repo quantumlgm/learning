@@ -33,7 +33,7 @@ class DigitalWallet:
     @private
     def set_balance(self, amnout: int | float) -> str:
         if isinstance(amnout, (int, float)) and amnout >= 0:
-            self.__balance += amnout
+            self.__balance = amnout
             return "The balance has been updated"
         return "You cannot top up your balance by this amount"
 
@@ -47,5 +47,5 @@ if __name__ == "__main__":
 
     # Wallet.set_balance(1000) -> InaccessibleDueToItsProtectionLevelException
 
-    Wallet.deposit(1000.5)  # The balance has been updated
-    print(Wallet.__dict__)  # {'_owner': 'Ruslan', '_DigitalWallet__balance': 2000}
+    Wallet.deposit(2000.5)  # The balance has been updated
+    print(Wallet.__dict__)  # {'_owner': 'Ruslan', '_DigitalWallet__balance': 2000.5}
