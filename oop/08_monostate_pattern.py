@@ -17,7 +17,7 @@
 class WindowSettings:
     __attr = {
         "theme": "dark",
-        "font-size": 14,
+        "font_size": 14,
     }
 
     def __init__(self, width, height):
@@ -28,7 +28,7 @@ class WindowSettings:
 
 if __name__ == "__main__":
     Window_1 =  WindowSettings(100, 200)
-    print(Window_1.__dict__) # {'theme': 'dark', 'font-size': 14, 'width': 100, 'height': 200}
+    print(Window_1.__dict__) # {'theme': 'dark', 'font_size': 14, 'width': 100, 'height': 200}
     Window_2 =  WindowSettings(200, 300)
-    print(Window_2.__dict__) # {'theme': 'dark', 'font-size': 14, 'width': 200, 'height': 300}    
+    print(Window_2.__dict__) # {'theme': 'dark', 'font_size': 14, 'width': 200, 'height': 300}    
 
