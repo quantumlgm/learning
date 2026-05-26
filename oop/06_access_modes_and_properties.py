@@ -19,3 +19,37 @@
 #       by the given `amount` using the internal `set_balance` logic.
 
 
+from accessify import private
+
+class DigitalWallet:
+    def __init__(self, owner: str, balance: int) -> None:
+        self._owner = owner
+        self.__balance = balance
+
+    def get_balance(self) -> int | float:
+        return self.__balance
+    
+    @private
+    def set_balance(self, amnout: int | float) -> str:
+        if isinstance(amnout, (int, float)) and amnout >= 0:
+            self.__balance += amnout
+            return 'The balance has been updated'        
+        return 'You cannot top up your balance by this amount'
+    
+    def deposit(self, amnout: int | float):
+        print(self.set_balance(amnout))
+
+    
+
+
+
+if __name__ == "__main__":
+    Wallet = DigitalWallet('Ruslan', 1000)
+    print(Wallet.__dict__) # {'_owner': 'Ruslan', '_DigitalWallet__balance': 1000}
+
+    # Wallet.set_balance(1000) -> InaccessibleDueToItsProtectionLevelException
+
+    Wallet.deposit(1000) # The balance has been updated
+    print(Wallet.__dict__) # {'_owner': 'Ruslan', '_DigitalWallet__balance': 2000}
+
+
