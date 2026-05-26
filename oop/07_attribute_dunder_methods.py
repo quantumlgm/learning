@@ -14,3 +14,34 @@
 # CRITICAL CAUTION (Self-Study Warning):
 # Be extremely careful with recursion! Remember how `__setattr__` and `__getattribute__` can 
 # accidentally call themselves indefinitely if you use standard dot notation inside them. Use `super()` to bypass the infinite loops.
+
+
+class SmartSafe:
+    def __init__(self, code: str, gold: int | float) -> None:
+        self.code = code
+        self.gold = gold
+
+    def __getattribute__(self, name: str) -> None:
+        print(f'[ACCESS] Attempt to read attribute: {name}')
+        return object.__getattribute__(self, name)
+
+    def __setattr__(self, name: str, value) -> None:
+        print(f'[CHANGE] Setting attribute {name} to {value}')
+        return object.__setattr__(self, name, value)
+    
+    def __getattr__(self, name: str) -> int:
+        print(f'[WARNING] Attribute {name} does not exist!')               
+
+    def __delattr__(self, name: str) -> None:
+        print(f'[SECURITY] Denied! Cannot delete {name}')        
+
+
+if __name__ == "__main__":
+    Safe = SmartSafe('Quantumlgm', 5000) # [CHANGE] Setting attribute code to Quantumlgm
+                                         # [CHANGE] Setting attribute gold to 5000
+    Safe.gold # [ACCESS] Attempt to read attribute: gold
+    Safe.diamond # [WARNING] Attribute diamond does not exist!
+    del Safe.gold # [SECURITY] Denied! Cannot delete gold
+    print(Safe.__dict__) # [ACCESS] Attempt to read attribute: __dict__
+                         # {'code': 'Quantumlgm', 'gold': 5000}
+    
