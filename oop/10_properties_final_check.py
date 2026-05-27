@@ -31,7 +31,9 @@ class CreatePerson:
 
     @fio.setter
     def fio(self, new_fio: str):
-        if len(new_fio.split()) < 3:
+        if not isinstance(new_fio, str):
+            raise ValueError("The full name has an incorrect data type")
+        if len(new_fio.split()) != 3:
             raise ValueError("Incorrect format for the full name")
         self._fio = [word.capitalize() for word in new_fio.split()]
 
@@ -50,10 +52,10 @@ class CreatePerson:
 
 if __name__ == "__main__":
     Person = CreatePerson("ruslan Quantum Lgm", 19)
-    print(Person.__dict__)  # {'_fio': ['Ruslan', 'Quantum', 'Lgm'], 'age': 18}
+    print(Person.__dict__)  # {'_fio': ['Ruslan', 'Quantum', 'Lgm'], '_age': 19}
     print(Person.fio)  # Ruslan Quantum Lgm
     Person.fio = "Ruslan quantum Github"
-    print(Person.__dict__)  # {'_fio': ['Ruslan', 'Quantum', 'Github'], 'age': 18}
+    print(Person.__dict__)  # {'_fio': ['Ruslan', 'Quantum', 'Github'], '_age': 19}
     print(Person.age)
     # Person.age = 66 # ValueError: Age is outside the permitted range
     Person.age = 20
