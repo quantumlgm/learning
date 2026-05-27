@@ -23,7 +23,7 @@ class UserProfile:
         self.username = username
         self.password = password
 
-    def check_instance(self, item):
+    def check_instance(self, item) -> bool:
         return isinstance(item, str) and len(item)            
 
     @property
