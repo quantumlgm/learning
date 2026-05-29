@@ -30,8 +30,8 @@ class PositiveNumber:
             raise ValueError("Invalid data type or value less than zero")
 
     def __get__(self, instance: Any, owner: type) -> int | float:
-        if instance == None:
-            return owner
+        if instance is None:
+            return self
         else:
             return instance.__dict__[self.name]
 
