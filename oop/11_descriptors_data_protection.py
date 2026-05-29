@@ -16,3 +16,20 @@
 #    - Initialization accepts `name` (str), `price` (int/float), and `quantity` (int/float).
 
 
+from typing import Any
+
+class PositiveNumber:
+    def __set_name__(self, owner: type, name: str) -> None:
+        self.name = '_' + name
+
+    def __set__(self, instance: Any, value: int | float) -> None:
+        if isinstance(value, (int, float)) and value >= 0:
+            instance.__dict__[self.name] = value
+        else:
+            raise ValueError('Invalid data type or value less than zero')
+        
+    def __get__(self, instance: Any, owner: type) -> int | float:
+        if instance == None:
+            return owner
+        else:
+            return instance.__dict__[self.name]                
