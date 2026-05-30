@@ -23,7 +23,7 @@ class Track:
 
     def __repr__(self):
         return (
-            f"Track({self._title}, {self._artist}, {self._duration}, {self._db_level})"
+            f"Track('{self._title}', '{self._artist}', {self._duration}, {self._db_level})"
         )
 
     def __str__(self):
