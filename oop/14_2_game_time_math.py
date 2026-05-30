@@ -42,6 +42,7 @@ class GameTime:
         if isinstance(other, (int, float)):
             self._minutes += other
             return self
+        return NotImplemented
 
     def __sub__(self, other) -> GameTime:
         if isinstance(other, (int, float)):
@@ -59,6 +60,7 @@ class GameTime:
         if isinstance(other, (int, float)):
             self._minutes -= other
             return self
+        return NotImplemented
 
     def __mul__(self, other) -> GameTime:
         if isinstance(other, (int, float)):
@@ -74,6 +76,7 @@ class GameTime:
         if isinstance(other, (int, float)):
             self._minutes *= other
             return self
+        return NotImplemented
 
 
 if __name__ == "__main__":
