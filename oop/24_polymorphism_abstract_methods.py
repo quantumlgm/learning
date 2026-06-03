@@ -35,7 +35,7 @@ class PayPalPayment(BasePayment):
         return f"PayPal securely transferred {amount}"
     
 class CheckoutManager():
-    def __init__(self, payment_system: type) -> BasePayment:
+    def __init__(self, payment_system: BasePayment) -> None:
         self.payment_system = payment_system
 
     def execute_checkout(self, amnout: int) -> str:        
