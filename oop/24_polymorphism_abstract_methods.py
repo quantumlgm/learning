@@ -20,3 +20,35 @@
 #    - Implement a checkout execution method that triggers the payment 
 #      processing on the stored payment object uniformly, 
 #      demonstrating polymorphism.
+
+
+class BasePayment:    
+    def process_payment(self, amount: int) -> None:
+        raise NotImplementedError('The method must be overridden in all subclasses')
+    
+class StripePayment(BasePayment):
+    def process_payment(self, amount: int) -> str:
+        return f"Stripe successfully processed the payment of {amount}"
+    
+class PayPalPayment(BasePayment):
+    def process_payment(self, amount: int) -> str:
+        return f"PayPal securely transferred {amount}"
+    
+class CheckoutManager():
+    def __init__(self, payment_system: type) -> BasePayment:
+        self.payment_system = payment_system
+
+    def execute_checkout(self, amnout: int) -> str:        
+        return self.payment_system.process_payment(amnout)
+
+if __name__ == '__main__':
+    base = BasePayment()
+    # print(base.process_payment()) # NotImplementedError: The method must be overridden in all subclasses
+    stripe = StripePayment()
+    print(stripe.process_payment(1000)) # Stripe successfully processed the payment of 1000
+
+    paypal = PayPalPayment()
+    print(paypal.process_payment(2000)) # PayPal securely transferred 2000
+
+    manager = CheckoutManager(paypal)
+    print(manager.execute_checkout(1000)) # PayPal securely transferred 1000
