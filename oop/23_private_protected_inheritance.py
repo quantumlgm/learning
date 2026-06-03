@@ -24,7 +24,7 @@ class BaseVault:
         self._name = name
         self.__key = key
 
-    def _check_key(self, key: str) -> None:
+    def _check_key(self, key: str) -> bool:
         return key == self.__key
 
 
@@ -32,15 +32,15 @@ class SubVault(BaseVault):
     def __init__(self, name: str, key: str) -> None:
         super().__init__(name, key)
 
-    def get_name(self) -> None:
+    def get_name(self) -> str:
         return self._name
 
-    def open_safe(self, key: str) -> None:
-        if super()._check_key(key):
+    def open_safe(self, key: str) -> str:
+        if self._check_key(key):
             return "Acces granted"
         return "Access denied"
 
-    def hack(self):
+    def hack(self) -> str:
         return self.__key
 
 
