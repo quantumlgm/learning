@@ -43,7 +43,7 @@ class RobotSpeedController:
         if item < 0:
             raise NegativeSpeedError(item)
         if item > 100:
-            raise SpeedTooHightError(item)
+            raise SpeedTooHighError(item)
 
     def set_speed(self, speed: int) -> None:
         self.validation(speed)
