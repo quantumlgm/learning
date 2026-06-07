@@ -1,4 +1,20 @@
+"""
+Task 32: Context Managers and the 'with' statement.
 
+This program simulates a secure cloud video rendering session using a custom 
+context manager. It demonstrates the explicit control over resource allocation 
+and state management using the magic methods __enter__() and __exit__().
+
+Key Features:
+- Context Management: Guarantees that the server session is closed and memory 
+  is released, even if a runtime error occurs during the rendering process.
+- State Tracking: Tracks cumulative memory usage across multiple frames and 
+  raises a MemoryError if the allocated server capacity is exceeded.
+- Exception Handling: Safely intercepts exceptions in __exit__ to log the failure 
+  before propagating the error further up the call stack.
+- Data Validation: Implements basic type checking for initialization and runtime 
+  arguments using static methods.
+"""
 
 class SafetyConnection:
     @staticmethod
@@ -57,7 +73,7 @@ if __name__ == '__main__':
 
         session.render_frame(1, 100, 'noise') # Frame: 1, memory usage: 100, memory is used: 100, effect: noise
         session.current_effect() # Effect: noise is used
-        
+
         session.render_frame(2, 200, 'HDR') # Frame: 2, memory usage: 200, memory is used: 300, effect: HDR
         session.current_effect() # Effect: HDR is used
         # Session is closed
