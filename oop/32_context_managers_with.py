@@ -1,19 +1,19 @@
 """
-Task 32: Context Managers and the 'with' statement.
+Task 32: Context Managers and the 'with' statement (Refactored).
 
-This program simulates a secure cloud video rendering session using a custom
-context manager. It demonstrates the explicit control over resource allocation
-and state management using the magic methods __enter__() and __exit__().
+This program demonstrates an advanced implementation of the context manager
+pattern using two decoupled classes to adhere to the Single Responsibility Principle.
 
 Key Features:
-- Context Management: Guarantees that the server session is closed and memory
-  is released, even if a runtime error occurs during the rendering process.
-- State Tracking: Tracks cumulative memory usage across multiple frames and
-  raises a MemoryError if the allocated server capacity is exceeded.
-- Exception Handling: Safely intercepts exceptions in __exit__ to log the failure
-  before propagating the error further up the call stack.
-- Data Validation: Implements basic type checking for initialization and runtime
-  arguments using static methods.
+- Separation of Concerns: 'SafetyConnection' solely manages the lifecycle of the
+  connection (setup and teardown), while 'RenderEngine' handles the actual execution
+  of rendering tasks and state tracking.
+- Context Factory: The __enter__() method acts as a factory, initializing and
+  returning a dedicated 'RenderEngine' instance for use inside the 'with' block.
+- State Persistence: Uses a dictionary to map frames to their respective effects,
+  allowing historical lookups via the current_effect() method.
+- Robust Error Handling: The __exit__() method guarantees resource cleanup and
+  proper exception propagation in case of memory overruns or runtime failures.
 """
 
 
@@ -35,7 +35,7 @@ class RenderEngine:
 
     def render_frame(self, frame: int, memory: int, effect: str = None) -> None:
         check_int(frame)
-        check_int(memory)        
+        check_int(memory)
         check_str(effect)
 
         self.primary_memory += memory
