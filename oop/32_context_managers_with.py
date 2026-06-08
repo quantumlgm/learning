@@ -18,25 +18,24 @@ Key Features:
 
 
 def check_str(data: str):
-    if not isinstance(data, str):
+    if data is not None and not isinstance(data, str):
         raise TypeError("The data type must be a string")
 
 
 def check_int(data: int):
-    if not isinstance(data, int):
+    if data is not None and not isinstance(data, int):
         raise TypeError("The data type must be a int")
 
 
 class RenderEngine:
-    effects = {}
-
     def __init__(self, memory_size: int) -> None:
         self.primary_memory = 0
         self.memory_size = memory_size
+        self.effects = {}
 
     def render_frame(self, frame: int, memory: int, effect: str = None) -> None:
         check_int(frame)
-        check_int(memory)
+        check_int(memory)        
         check_str(effect)
 
         self.primary_memory += memory
@@ -90,7 +89,7 @@ if __name__ == "__main__":
         session.current_effect(1)  # Effect: noise is used
 
         session.render_frame(
-            2, 200, "HDR"
+            2, 200
         )  # Frame: 2, memory usage: 200, memory is used: 300, effect: HDR
         session.current_effect(2)  # Effect: HDR is used
         # Session is closed
