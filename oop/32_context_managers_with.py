@@ -16,23 +16,24 @@ Key Features:
   arguments using static methods.
 """
 
+
 def check_str(data: str):
     if not isinstance(data, str):
         raise TypeError("The data type must be a string")
-    
+
+
 def check_int(data: int):
     if not isinstance(data, int):
         raise TypeError("The data type must be a int")
-    
-class RenderEngine:
-    effects = {
 
-    }
+
+class RenderEngine:
+    effects = {}
 
     def __init__(self, memory_size: int) -> None:
-        self.primary_memory = 0        
+        self.primary_memory = 0
         self.memory_size = memory_size
-    
+
     def render_frame(self, frame: int, memory: int, effect: str = None) -> None:
         check_int(frame)
         check_int(memory)
@@ -51,6 +52,7 @@ class RenderEngine:
             print(f"Effect: {self.effects[frame]} is used")
         except KeyError:
             print("Effect: There are no effects in the current frame")
+
 
 class SafetyConnection:
     def __init__(self, server_name: str, memory_size: int) -> None:
