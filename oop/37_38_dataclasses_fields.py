@@ -30,7 +30,7 @@ class EmployeModule:
     skills: list[str] = field(default_factory=list, compare=False)
     annual_income: float = field(init=False)
 
-    def __post_init__(self, password: str):
+    def __post_init__(self, password: str) -> None:
         self.password_hash = password[::-1]
         self.first_name = self.first_name.capitalize()
         self.last_name = self.last_name.capitalize()
