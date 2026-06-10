@@ -1,3 +1,22 @@
+"""
+Task 37-38: Data Classes, fields customization, and __post_init__.
+
+This program implements an HR Employee Ledger using Python's 'dataclass' module.
+It showcases how to automate boilerplate code while maintaining strict control 
+over data formatting, security, and object comparison.
+
+Key Features:
+- Post-Initialization Processing: Uses __post_init__() to automatically format 
+  text fields (capitalizing names) and calculate derivative attributes (annual_income).
+- Initialization-Only Variables: Employs 'InitVar' to securely accept a raw password 
+  during object creation, hash it, and prevent the plain text from being stored.
+- Field Customization: Utilizes the field() function to exclude sensitive data (tokens) 
+  from the string representation (repr=False) and object equality tests (compare=False).
+- Safe Default Factories: Prevents the mutable default argument bug by leveraging 
+  'default_factory=list' for the employee skills array.
+"""
+
+
 from dataclasses import dataclass, InitVar, field
 from pprint import pprint
 
@@ -9,7 +28,7 @@ class EmployeModule:
     salary: float | int
     token: str = field(repr=False, compare=False)
     password: InitVar[str]
-    skills: str = field(default_factory=list, compare=False)
+    skills: list[str] = field(default_factory=list, compare=False)
     annual_income: float = field(init=False)
 
 
