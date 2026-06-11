@@ -1,3 +1,4 @@
+"""
 # Design a class named `DigitalWallet` that demonstrates encapsulation using protected (_) and
 # private (__) access modifiers, along with explicit getter and setter methods.
 
@@ -17,6 +18,7 @@
 # 3. Business Logic:
 #    - `deposit(self, amount: int/float) -> None`: Safely increments the wallet's balance
 #       by the given `amount` using the internal `set_balance` logic.
+"""
 
 
 from accessify import private

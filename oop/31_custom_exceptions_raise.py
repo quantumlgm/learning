@@ -1,23 +1,25 @@
-# Upgrade the `RobotSpeedController` and its custom exceptions to professional production standards by adding state tracking inside exceptions and dynamic speed management.
+"""
+Upgrade the `RobotSpeedController` and its custom exceptions to professional production standards by adding state tracking inside exceptions and dynamic speed management.
 
-# Requirements:
-# 1. Custom Exceptions with State:
-#    - `NegativeSpeedError(Exception)`: Implement `__init__(self, speed: int)`.
-#      Pass a formatted message to super(): "Invalid speed: {speed}.
-#      Speed cannot be negative".
-#    - `SpeedTooHighError(Exception)`: Implement `__init__(self, speed:
-#      int, max_limit: int = 100)`. Calculate the exceeded delta. Pass to
-#      super(): "Speed {speed} km/h exceeds limit by {delta} km/h! Systems at risk".
+Requirements:
+1. Custom Exceptions with State:
+   - `NegativeSpeedError(Exception)`: Implement `__init__(self, speed: int)`.
+     Pass a formatted message to super(): "Invalid speed: {speed}.
+     Speed cannot be negative".
+   - `SpeedTooHighError(Exception)`: Implement `__init__(self, speed:
+     int, max_limit: int = 100)`. Calculate the exceeded delta. Pass to
+     super(): "Speed {speed} km/h exceeds limit by {delta} km/h! Systems at risk".
 
-# 2. Enhanced `RobotSpeedController`:
-#    - Keep `_current_speed` initialized to 0.
-#    - Refactor `set_speed(speed: int) -> None`: Pass the invalid speed value
-#      into the corresponding custom exception when raising.
-#    - Implement `accelerate(value: int) -> None`: Calculate `new_speed`.
-#      Validate it using the same rules (raise errors if invalid).
-#      If valid, update `_current_speed`.
-#    - Implement `emergency_brake() -> None`: Resets `_current_speed`
-#      to 0 instantly.
+2. Enhanced `RobotSpeedController`:
+   - Keep `_current_speed` initialized to 0.
+   - Refactor `set_speed(speed: int) -> None`: Pass the invalid speed value
+     into the corresponding custom exception when raising.
+   - Implement `accelerate(value: int) -> None`: Calculate `new_speed`.
+     Validate it using the same rules (raise errors if invalid).
+     If valid, update `_current_speed`.
+   - Implement `emergency_brake() -> None`: Resets `_current_speed`
+     to 0 instantly.
+"""
 
 
 class SpeedTooHighError(Exception):

@@ -1,18 +1,20 @@
-# Design a class named `GameTime` to manage and track player session durations in minutes,
-# utilizing comprehensive arithmetic operator overloading (+, -, *, and their in-place equivalents).
+"""
+Design a class named `GameTime` to manage and track player session durations in minutes,
+utilizing comprehensive arithmetic operator overloading (+, -, *, and their in-place equivalents).
 
-# Requirements:
-# 1. Initialization & Representation:
-#    - Accepts `minutes` (int) and stores it internally.
-#    - Implement `__str__` to output a human-readable format like: "X hr Y min".
+Requirements:
+1. Initialization & Representation:
+   - Accepts `minutes` (int) and stores it internally.
+   - Implement `__str__` to output a human-readable format like: "X hr Y min".
 
-# 2. Operator Overloading:
-#    - Implement `__add__` / `__radd__` / `__iadd__`: Support adding numeric values
-#      (minutes) or other `GameTime` instances, ensuring proper in-place object
-#       mutation for `+=`.
-#    - Implement `__sub__` / `__rsub__` / `__isub__`: Support subtracting numeric
-#      values or other instances. Pay special attention to right-side subtraction (`__rsub__`) where order of operands matters.
-#    - Implement `__mul__` / `__rmul__` / `__imul__`: Support multiplying the game session length by a numeric scaling factor.
+2. Operator Overloading:
+   - Implement `__add__` / `__radd__` / `__iadd__`: Support adding numeric values
+     (minutes) or other `GameTime` instances, ensuring proper in-place object
+      mutation for `+=`.
+   - Implement `__sub__` / `__rsub__` / `__isub__`: Support subtracting numeric
+     values or other instances. Pay special attention to right-side subtraction (`__rsub__`) where order of operands matters.
+   - Implement `__mul__` / `__rmul__` / `__imul__`: Support multiplying the game session length by a numeric scaling factor.
+"""
 
 
 from __future__ import annotations

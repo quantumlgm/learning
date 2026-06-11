@@ -1,25 +1,26 @@
-# Design a base class `NotificationSender` and two subclasses 
-# `TelegramSender` and `EmailSender` to demonstrate class inheritance 
-# and method/property overriding.
+"""
+Design a base class `NotificationSender` and two subclasses 
+`TelegramSender` and `EmailSender` to demonstrate class inheritance 
+and method/property overriding.
 
-# Requirements:
-# 1. Base Class `NotificationSender`:
-#    - `__init__` accepts and stores `sender_name` (str).
-#    - Method `send(user, message)` returns a formatted string 
-#      containing sender_name, user, and message.
+Requirements:
+1. Base Class `NotificationSender`:
+   - `__init__` accepts and stores `sender_name` (str).
+   - Method `send(user, message)` returns a formatted string 
+     containing sender_name, user, and message.
 
-# 2. Subclass `TelegramSender`:
-#    - Inherits from `NotificationSender`.
-#    - Overrides/adds property `platform_name` set to "Telegram".
-#    - Overrides `send` method to include an emoji and platform_name 
-#      in its return string.
+2. Subclass `TelegramSender`:
+   - Inherits from `NotificationSender`.
+   - Overrides/adds property `platform_name` set to "Telegram".
+   - Overrides `send` method to include an emoji and platform_name 
+     in its return string.
 
-# 3. Subclass `EmailSender`:
-#    - Inherits from `NotificationSender`.
-#    - Overrides/adds property `platform_name` set to "Email".
-#    - Overrides `send` method to include a different emoji and 
-#      platform_name in its return string.
-
+3. Subclass `EmailSender`:
+   - Inherits from `NotificationSender`.
+   - Overrides/adds property `platform_name` set to "Email".
+   - Overrides `send` method to include a different emoji and 
+     platform_name in its return string.
+"""
 
 class NotificationSender:
     def __init__(self, sender_name: str):

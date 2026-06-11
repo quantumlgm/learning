@@ -1,27 +1,28 @@
-# Design a class named `WeavingLoom` that simulates an industrial weaving machine. This task focuses heavily on understanding how `self`
-# binds an instance to class methods and how methods can be invoked explicitly.
+"""
+Design a class named `WeavingLoom` that simulates an industrial weaving machine. This task focuses heavily on understanding how `self`
+binds an instance to class methods and how methods can be invoked explicitly.
 
-# Requirements:
-# 1. Class Attributes:
-#    - `default_color` (str): Set to "white".
-#    - `max_speed` (int): Set to 100.
+Requirements:
+1. Class Attributes:
+   - `default_color` (str): Set to "white".
+   - `max_speed` (int): Set to 100.
 
-# 2. Instance Initialization (`__init__`):
-#    - Accepts an optional `speed` (int) parameter. If not provided or if it exceeds `max_speed`, fallback to the class `max_speed`.
-#    - Do NOT define a color attribute inside `__init__`. The instance's __dict__ must remain clear of any color keys upon creation.
+2. Instance Initialization (`__init__`):
+   - Accepts an optional `speed` (int) parameter. If not provided or if it exceeds `max_speed`, fallback to the class `max_speed`.
+   - Do NOT define a color attribute inside `__init__`. The instance's __dict__ must remain clear of any color keys upon creation.
 
-# 3. Methods to implement:
-#    - `get_current_color(self) -> str`: Returns the custom color of the instance if it has one. If the instance doesn't
-#       have a specific color, it must look up and return the class `default_color`.
-#    - `fabricate(self) -> None`: Prints a status message stating the current operation, using the loom's actual speed
-#       and the color retrieved by `get_current_color`.
-#    - `set_exclusive_color(self, new_color: str) -> None`: This method is used to set a unique color directly onto the instance's dictionary.
+3. Methods to implement:
+   - `get_current_color(self) -> str`: Returns the custom color of the instance if it has one. If the instance doesn't
+      have a specific color, it must look up and return the class `default_color`.
+   - `fabricate(self) -> None`: Prints a status message stating the current operation, using the loom's actual speed
+      and the color retrieved by `get_current_color`.
+   - `set_exclusive_color(self, new_color: str) -> None`: This method is used to set a unique color directly onto the instance's dictionary.
 
-# 4. Execution Restrictions (The 'Self' Mastery Test):
-#    - In your execution block (`if __name__ == "__main__":`), you must create an instance of `WeavingLoom`.
-#    - You must call the `set_exclusive_color` method EXPLICITLY through the Class, passing the instance manually
-#      as the first argument (simulating what Python does under the hood). Do not use the `instance.method()` syntax for this specific action.
-
+4. Execution Restrictions (The 'Self' Mastery Test):
+   - In your execution block (`if __name__ == "__main__":`), you must create an instance of `WeavingLoom`.
+   - You must call the `set_exclusive_color` method EXPLICITLY through the Class, passing the instance manually
+     as the first argument (simulating what Python does under the hood). Do not use the `instance.method()` syntax for this specific action.
+"""
 
 class WeavingLoom:
     default_color = "white"

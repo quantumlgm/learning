@@ -1,17 +1,19 @@
-# Design a class named `WindowSettings` that implements the Monostate (Borg)
-# pattern, ensuring that all instances share the same state (attributes).
+"""
+Design a class named `WindowSettings` that implements the Monostate (Borg)
+pattern, ensuring that all instances share the same state (attributes).
 
-# Requirements:
-# 1. Shared State:
-#    - Define a private class-level dictionary to store shared attributes.
-#    - Initialize it with default values: `theme` set to "dark" and `font_size` set to 14.
+Requirements:
+1. Shared State:
+   - Define a private class-level dictionary to store shared attributes.
+   - Initialize it with default values: `theme` set to "dark" and `font_size` set to 14.
 
-# 2. Initialization:
-#    - The `__init__` method must accept two parameters: `width` (int) and `height` (int).
-#    - Ensure that every new instance points to the class-level shared dictionary
-#      instead of creating its own local `__dict__`.
-#    - Update the shared dictionary with the provided `width` and `height`
-#      values during instantiation.
+2. Initialization:
+   - The `__init__` method must accept two parameters: `width` (int) and `height` (int).
+   - Ensure that every new instance points to the class-level shared dictionary
+     instead of creating its own local `__dict__`.
+   - Update the shared dictionary with the provided `width` and `height`
+     values during instantiation.
+"""
 
 
 class WindowSettings:

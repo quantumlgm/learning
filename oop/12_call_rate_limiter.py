@@ -1,20 +1,23 @@
-# Design a class-based decorator named `RateLimiter` using the `__call__` 
-# magic method to restrict how frequently a decorated function can be executed.
+"""
+Design a class-based decorator named `RateLimiter` using the `__call__` 
+magic method to restrict how frequently a decorated function can be executed.
 
-# Requirements:
-# 1. Initialization (`__init__`):
-#    - Accepts the target function `func` and stores it.
-#    - Initializes a tracking attribute `last_called` to 0 to keep track of 
-#      the timestamp of the last successful execution (use `time.time()`).
+Requirements:
+1. Initialization (`__init__`):
+   - Accepts the target function `func` and stores it.
+   - Initializes a tracking attribute `last_called` to 0 to keep track of 
+     the timestamp of the last successful execution (use `time.time()`).
 
-# 2. Execution Control (`__call__`):
-#    - Enforces a strict cooldown period of 2.0 seconds between successful 
-#      function calls.
-#    - When the decorated function is invoked:
-#      * If the elapsed time since `last_called` is LESS than 2.0 seconds, block 
-#      the execution, print "Too fast! Request blocked.", and return None.
-#      * If the elapsed time is GREATER than or EQUAL to 2.0 seconds, update `last_called` 
-#      to the current timestamp, execute the original function with `*args` and `**kwargs`, and return its result.
+2. Execution Control (`__call__`):
+   - Enforces a strict cooldown period of 2.0 seconds between successful 
+     function calls.
+   - When the decorated function is invoked:
+     * If the elapsed time since `last_called` is LESS than 2.0 seconds, block 
+     the execution, print "Too fast! Request blocked.", and return None.
+     * If the elapsed time is GREATER than or EQUAL to 2.0 seconds, update `last_called` 
+     to the current timestamp, execute the original function with `*args` and `**kwargs`, and return its result.
+"""
+
 
 import time
 from typing import Callable

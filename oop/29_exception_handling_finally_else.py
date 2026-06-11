@@ -1,20 +1,22 @@
-# Design a `SecureDataTransmitter` class that demonstrates the exact
-# execution order of nested try-except blocks combined with `else`
-# and `finally` statements, specifically showing how `finally` runs
-# even after an explicit `return`.
+"""
+Design a `SecureDataTransmitter` class that demonstrates the exact
+execution order of nested try-except blocks combined with `else`
+and `finally` statements, specifically showing how `finally` runs
+even after an explicit `return`.
 
-# Requirements:
-# 1. Class `SecureDataTransmitter`:
-#    - Initialize a protected state `_status` as "idle".
-#    - Implement `process_and_send(data: dict) -> str`.
-#    - Use an outer try-finally structure to guarantee state cleanup
-#      and a printed log message inside `finally`.
-#    - Inside the outer try, nest a try-except-else block to validate
-#      the presence of the key "payload" in the incoming dictionary.
-#    - Handle `KeyError` specifically. Return "Status: validation_error"
-#      on failure, and "Status: success" inside the `else` block on success.
-#    - Ensure the outer `finally` block resets `_status` to "idle" and
-#      prints "System: Session closed." to the console.
+Requirements:
+1. Class `SecureDataTransmitter`:
+   - Initialize a protected state `_status` as "idle".
+   - Implement `process_and_send(data: dict) -> str`.
+   - Use an outer try-finally structure to guarantee state cleanup
+     and a printed log message inside `finally`.
+   - Inside the outer try, nest a try-except-else block to validate
+     the presence of the key "payload" in the incoming dictionary.
+   - Handle `KeyError` specifically. Return "Status: validation_error"
+     on failure, and "Status: success" inside the `else` block on success.
+   - Ensure the outer `finally` block resets `_status` to "idle" and
+     prints "System: Session closed." to the console.
+"""
 
 
 class SecureDataTransmitter:

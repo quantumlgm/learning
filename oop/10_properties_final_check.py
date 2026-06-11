@@ -1,23 +1,25 @@
-# Design a class named `CreatePerson` to store and validate employee records using properties.
-# This task serves as a milestone check for encapsulation and descriptor properties.
+"""
+Design a class named `CreatePerson` to store and validate employee records using properties.
+This task serves as a milestone check for encapsulation and descriptor properties.
 
-# Requirements:
-# 1. Initialization:
-#    - Accepts `fio` (str) and `age` (int).
-#    - Must initialize attributes by routing values through their
-#      respective property setters.
+Requirements:
+1. Initialization:
+   - Accepts `fio` (str) and `age` (int).
+   - Must initialize attributes by routing values through their
+     respective property setters.
 
-# 2. FIO Property:
-#    - Getter: Returns the protected list of names joined back into a single string,
-#      with each word capitalized (e.g., "John Doe Smith").
-#    - Setter: Accepts a raw string. Validates that the input is a string and
-#      contains exactly 3 words. If invalid, raises a ValueError. If valid,
-#      strips extra spaces, splits it into a list, and stores it in `_fio`.
+2. FIO Property:
+   - Getter: Returns the protected list of names joined back into a single string,
+     with each word capitalized (e.g., "John Doe Smith").
+   - Setter: Accepts a raw string. Validates that the input is a string and
+     contains exactly 3 words. If invalid, raises a ValueError. If valid,
+     strips extra spaces, splits it into a list, and stores it in `_fio`.
 
-# 3. Age Property:
-#    - Getter: Returns the integer age.
-#    - Setter: Accepts an integer. Validates that the age is between 18 and 65 (inclusive).
-#      Raises a ValueError if validation fails. Otherwise, stores it in `_age`.
+3. Age Property:
+   - Getter: Returns the integer age.
+   - Setter: Accepts an integer. Validates that the age is between 18 and 65 (inclusive).
+     Raises a ValueError if validation fails. Otherwise, stores it in `_age`.
+"""
 
 
 class CreatePerson:

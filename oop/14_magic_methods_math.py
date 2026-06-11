@@ -1,17 +1,19 @@
-# Design a class named `ShoppingCart` that manages the total cost of items and
-# supports addition operations (+ and +=) using magic methods.
+"""
+Design a class named `ShoppingCart` that manages the total cost of items and
+supports addition operations (+ and +=) using magic methods.
 
-# Requirements:
-# 1. Initialization:
-#    - Accepts an optional `total_price` (int/float, defaults to 0).
+Requirements:
+1. Initialization:
+   - Accepts an optional `total_price` (int/float, defaults to 0).
 
-# 2. Magic Methods:
-#    - Implement `__add__`: If `other` is a number (int/float) or another
-#      `ShoppingCart` instance, return a NEW `ShoppingCart` object with the combined total price.
-#    - Implement `__radd__`: Enable right-side addition (e.g., `100 + cart`)
-#       by reusing the `__add__` logic.
-#    - Implement `__iadd__`: Modify the CURRENT instance's `total_price` in-place
-#      when using `+=` with a number. Ensure it returns `self`.
+2. Magic Methods:
+   - Implement `__add__`: If `other` is a number (int/float) or another
+     `ShoppingCart` instance, return a NEW `ShoppingCart` object with the combined total price.
+   - Implement `__radd__`: Enable right-side addition (e.g., `100 + cart`)
+      by reusing the `__add__` logic.
+   - Implement `__iadd__`: Modify the CURRENT instance's `total_price` in-place
+     when using `+=` with a number. Ensure it returns `self`.
+"""
 
 
 class ShoppingCart:

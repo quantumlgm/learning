@@ -1,19 +1,21 @@
-# Design a class named `User` that overrides custom equality (`__eq__`)
-# and hashing (`__hash__`) behaviors to ensure that uniqueness is
-# strictly determined by the `username` field.
+"""
+Design a class named `User` that overrides custom equality (`__eq__`)
+and hashing (`__hash__`) behaviors to ensure that uniqueness is
+strictly determined by the `username` field.
 
-# Requirements:
-# 1. Initialization:
-#    - Accepts `username` (str) and `email` (str).
+Requirements:
+1. Initialization:
+   - Accepts `username` (str) and `email` (str).
 
-# 2. Magic Methods:
-#    - Implement `__eq__`: Two `User` instances are equal if and only
-#      if their `username` values are identical. Return NotImplemented for other types.
-#    - Implement `__hash__`: Calculate the hash value based exclusively
-#      on the `username` attribute, allowing `User` objects to be safely stored in sets and
-#      used as dictionary keys.
-#    - Implement `__repr__`: Return a developer-friendly representation
-#      like: User(username='name').
+2. Magic Methods:
+   - Implement `__eq__`: Two `User` instances are equal if and only
+     if their `username` values are identical. Return NotImplemented for other types.
+   - Implement `__hash__`: Calculate the hash value based exclusively
+     on the `username` attribute, allowing `User` objects to be safely stored in sets and
+     used as dictionary keys.
+   - Implement `__repr__`: Return a developer-friendly representation
+     like: User(username='name').
+"""
 
 
 class User:

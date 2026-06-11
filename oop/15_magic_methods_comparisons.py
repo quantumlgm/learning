@@ -1,18 +1,20 @@
-# Design a class named `SmartWatch` that enables full comparison capabilities (==, !=, <, <=, >, >=) 
-# between different watch instances or between a watch instance and a numeric price using magic methods.
+"""
+Design a class named `SmartWatch` that enables full comparison capabilities (==, !=, <, <=, >, >=) 
+between different watch instances or between a watch instance and a numeric price using magic methods.
 
-# Requirements:
-# 1. Initialization:
-#    - Accepts `model` (str) and `price` (int).
+Requirements:
+1. Initialization:
+   - Accepts `model` (str) and `price` (int).
 
-# 2. Comparison Methods:
-#    - Implement `__eq__`: Compare the `price` of the current watch with another 
-#      `SmartWatch` instance or a numeric value (int/float). Return NotImplemented 
-#       for unsupported types.
-#    - Implement `__lt__`: Check if the current watch `price` is strictly less than 
-#      the other watch's price or a numeric value.
-#    - Implement `__le__`: Check if the current watch `price` is less than or 
-#      equal to the other watch's price or a numeric value.
+2. Comparison Methods:
+   - Implement `__eq__`: Compare the `price` of the current watch with another 
+     `SmartWatch` instance or a numeric value (int/float). Return NotImplemented 
+      for unsupported types.
+   - Implement `__lt__`: Check if the current watch `price` is strictly less than 
+     the other watch's price or a numeric value.
+   - Implement `__le__`: Check if the current watch `price` is less than or 
+     equal to the other watch's price or a numeric value.
+"""
 
 
 class SmartWatch:

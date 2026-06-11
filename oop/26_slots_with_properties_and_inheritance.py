@@ -1,21 +1,23 @@
-# Design an optimized class hierarchy for spaceship telemetry
-# using `__slots__` combined with `@property` descriptors to
-# enforce memory layout and data validation during inheritance.
+"""
+Design an optimized class hierarchy for spaceship telemetry
+using `__slots__` combined with `@property` descriptors to
+enforce memory layout and data validation during inheritance.
 
-# Requirements:
-# 1. Base Class `EngineTelemetry`:
-#    - Define `__slots__` to hold strictly `_speed` and `_fuel`.
-#    - Implement an initializer to set these internal slotted attributes.
-#    - Implement `@property` pairs (getter/setter) for `speed` and `fuel`.
-#    - The `fuel` setter must validate inputs: if a negative value is
-#      passed, clip it to 0.
+Requirements:
+1. Base Class `EngineTelemetry`:
+   - Define `__slots__` to hold strictly `_speed` and `_fuel`.
+   - Implement an initializer to set these internal slotted attributes.
+   - Implement `@property` pairs (getter/setter) for `speed` and `fuel`.
+   - The `fuel` setter must validate inputs: if a negative value is
+     passed, clip it to 0.
 
-# 2. Subclass `FullTelemetry`:
-#    - Inherit from `EngineTelemetry`.
-#    - Define `__slots__` explicitly to contain only the new attribute
-#      `_oxygen`. This ensures `__dict__` remains disabled for the subclass.
-#    - Implement an initializer that leverages `super()` and sets `_oxygen`.
-#    - Implement a read-only `@property` (getter only) for `oxygen`.
+2. Subclass `FullTelemetry`:
+   - Inherit from `EngineTelemetry`.
+   - Define `__slots__` explicitly to contain only the new attribute
+     `_oxygen`. This ensures `__dict__` remains disabled for the subclass.
+   - Implement an initializer that leverages `super()` and sets `_oxygen`.
+   - Implement a read-only `@property` (getter only) for `oxygen`.
+"""
 
 
 class EngineTelemetry:
