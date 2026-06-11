@@ -1,5 +1,8 @@
 
 
+class LowBalanceError(Exception):
+    pass
+
 
 def check_str(data: str):
     if data is not None and not isinstance(data, str):
@@ -9,6 +12,10 @@ def check_str(data: str):
 def check_int(data: int):
     if data is not None and not isinstance(data, (int, float)):
         raise TypeError("The data type must be a int")
+
+def check_cls(data):
+    if not isinstance(data, (ItemCard, OnSale, ShoppingCart)):
+        raise TypeError("The data type must be an instance of the class")
 
 
 class SystemLogger:
@@ -65,9 +72,8 @@ class ShoppingCart:
         self.count = 0
 
     def __call__(self, item: ItemCard | OnSale):
-        if not isinstance(item, (ItemCard, OnSale)):
-            raise TypeError("The item must extend the ItemCard or OnSale class")
-        self.cart.append(item)        
+        check_cls(item)
+        self.cart.append(item)    
         
     def __len__(self):
         return len(self.cart)
@@ -79,10 +85,32 @@ class ShoppingCart:
         for item in self.cart:
             yield item
 
+    def total_amount(self):
+        return
 
-class SecurePayment
+class SecurePayment:
+    def __init__(self, cart: ItemCard | OnSale, balance: int):
+        check_cls(cart)
+        check_int(balance)
+        self.cart = cart
+        self.balance = balance
         
-            
+    def __enter__(self):
+        total = 0
+        for item in self.cart:
+            total += item._price
+        if total > self.balance:
+            print("The transaction has been canceled, and the items have been returned to the warehouse")
+            raise LowBalanceError
+        self.balance -= total
+        SystemLogger.
+
+
+
+    def __exit__(self, exc_type, exc, tb):
+        if exc_type:
+            raise 
+
 if __name__ == "__main__":
     dress = ItemCard('Clothing', 'Dress', 400)
     print(dress) # [Clothing] Dress - Price (400)
@@ -108,3 +136,5 @@ if __name__ == "__main__":
     for item in ruslan_cart:
         print(item) # -> [Cap] Dockerc cap - Price (200) -> [Watches] Wristwatch - Price (700)
 
+    with SecurePayment(ruslan_cart, 5022300) as payment:
+        print(payment)
