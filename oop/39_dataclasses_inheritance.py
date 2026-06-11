@@ -27,9 +27,12 @@ class Hero(BaseVault):
         if self.level > 10:
             self.mana = self.mana * 2
 
-if __name__ == "__main__":
-    swordsman = Hero('Geralt of Rivia', 60, 100)
-    print(swordsman) # Hero(name='Geralt of Rivia', hp=60, id=100, level=1, mana=50)
 
-    bounty_hunter = Hero('Leo Bonhart', 100, 50, 50)
-    print(bounty_hunter) # Hero(name='Geralt of Rivia', hp=100, id=50, level=50, mana=100)
+if __name__ == "__main__":
+    swordsman = Hero("Geralt of Rivia", 60, 100)
+    print(swordsman)  # Hero(name='Geralt of Rivia', hp=60, id=100, level=1, mana=50)
+
+    bounty_hunter = Hero("Leo Bonhart", 100, 50, 50)
+    print(
+        bounty_hunter
+    )  # Hero(name='Geralt of Rivia', hp=100, id=50, level=50, mana=100)
