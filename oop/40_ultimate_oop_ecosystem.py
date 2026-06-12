@@ -194,6 +194,6 @@ if __name__ == "__main__":
         )  # -> [Cap] Dockerc cap - Price (200) -> [Watches] Wristwatch - Price (700)
 
     with SecurePayment(ruslan_cart, 9000) as payment:
-        print(payment)
+        print(payment) # SystemLogger(orders=[{'items': [[Cap] Dockerc cap - Price (200), [Watches] Wristwatch - Price (700)], 'price': 800.0}])
 
     courier = Courier("Alex", "Bicycle", "In transit")
