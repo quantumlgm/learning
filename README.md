@@ -12,7 +12,7 @@
       <strong>Python (Core & OOP)</strong> — 
       <a href="https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python">Knowledge Base and notes</a> 
       | 
-      <a href="https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python/Test">Practical Tasks</a>
+      <a href="https://github.com/quantumlgm/learning/tree/main/technologies/Pyhton/oop">Practical Tasks</a>
     </li>
     <li>
       <strong>Next up:</strong> Python libraries, Git, Docker, Redis, FastAPI, PostgreSQL (Coming soon)
