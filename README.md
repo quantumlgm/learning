@@ -9,8 +9,10 @@
   <h2 align="center">🛠️ Technologies I am studying</h2>
   <ul>
     <li>
-      <strong>Python</strong> —
-      <a href="https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python">repository folder</a>
+      <strong>Python (Core & OOP)</strong> — 
+      <a href="https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python">Knowledge Base and notes</a> 
+      | 
+      <a href="https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python/Test">Practical Tasks</a>
     </li>
     <li>
       <strong>Next up:</strong> Python libraries, Git, Docker, Redis, FastAPI, PostgreSQL (Coming soon)
