@@ -81,21 +81,23 @@
 
   <h3 align="center">Repository Blueprint</h3>
   <pre align="center">
-
+    
 learning/
-├── 📂 knowledge-base/  # Cheat sheets, notes, and core language theory
-│   └── 📂 Python/           
-│   └── 📂 .../              
-│ 
-├── 📂 technologies/  # Roadmap, timeline, exercises and examples
-├── 📂 Python/         
-│   ├── 📂 oop/
-│   │   └── 📄 01_classes_and_attributes.py
-│   │   └── 📄 ...
-│   └── 📂 typing/
-│   └── 📂 .../
-├── 📄 .gitignore
-└── 📄 main.py
+├── knowledge-base/
+│   └── python/
+│       ├── oop/
+│       ├── typing/
+│       └── ...
+│
+├── technologies/
+│   └── python/
+│       ├── oop/
+│       │   └── 01_classes_and_attributes.py
+│       ├── typing/
+│       └── ...
+│
+├── main.py
+└── .gitignore
 </pre>
 
 
