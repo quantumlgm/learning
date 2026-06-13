@@ -2,3 +2,5 @@ main.py
 __pycache__/
 .venv
 .vscode/
+.vscode
+./.vscode/
