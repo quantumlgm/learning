@@ -1,3 +1,17 @@
+"""
+Lesson 02: Higher-Order Functions and Explicit Functional Contracts.
+
+This module implements a flexible marketing promotion engine utilizing Python
+3.12+ explicit type aliases (`type number`) and strict function signatures.
+
+It defines a robust domain model for customer registration and enforces a strict
+structural contract via `typing.Callable[[RegisterCustomer, number], number]`
+to pass dynamic pricing strategies (loyalty calculation and rule-based sales) into
+a higher-order payment processing core. The architecture guarantees compile-time
+type safety under Pyright's strict mode while maintaining runtime defensive logic
+against negative financial balances.
+"""
+
 from typing import Callable
 
 type number = int | float
