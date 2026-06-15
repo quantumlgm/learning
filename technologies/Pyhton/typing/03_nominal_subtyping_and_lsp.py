@@ -1,3 +1,18 @@
+"""
+Lesson 03: Nominal Typing, Class Hierarchies, and Liskov Substitution Principle.
+
+This module implements a corporate procurement validation system demonstrating
+strict Nominal Typing and structural contract alignment under Pyright's strict mode.
+
+It defines a polymorphic class hierarchy where specialized document types
+(UrgentOrder, WholesaleOrder) derive from a common base contract (BaseOrder).
+The architecture enforces the Liskov Substitution Principle (LSP) by ensuring
+that overridden business methods (`calculate_total_cost`) maintain identical
+parameter signatures across all subtypes, allowing the central processing core
+(`process_corporate_purchase`) to evaluate financial boundaries uniformly without
+relying on type-narrowing or runtime introspection.
+"""
+
 type number = int | float
 
 
