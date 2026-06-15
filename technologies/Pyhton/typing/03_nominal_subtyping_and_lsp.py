@@ -11,18 +11,20 @@ class BaseOrder:
 
 
 class UrgentOrder(BaseOrder):
-    def __init__(self, procurement_item: str, cost: number) -> None:
-        cost += 1500
-        super().__init__(procurement_item, cost)
+    def calculate_total_cost(self):
+        return self.cost + 1500
 
 
 class WholesaleOrder(BaseOrder):
     def __init__(self, procurement_item: str, cost: number, quantity: int) -> None:
-        total = cost * quantity
-        if quantity > 10:
-            total *= 0.9
-        super().__init__(procurement_item, total)
+        super().__init__(procurement_item, cost)
         self.quantity = quantity
+
+    def calculate_total_cost(self) -> number:
+        total = self.cost * self.quantity
+        if self.quantity > 10:
+            total *= 0.9
+        return total
 
 
 def application_module(order: BaseOrder) -> number:
@@ -30,8 +32,9 @@ def application_module(order: BaseOrder) -> number:
 
 
 def process_corporate_purchase(order: BaseOrder, budget: number) -> number | str:
-    if order.cost < budget:
-        return budget - order.cost
+    total = order.calculate_total_cost()
+    if total < budget:
+        return budget - total
     return "Not enough money"
 
 
