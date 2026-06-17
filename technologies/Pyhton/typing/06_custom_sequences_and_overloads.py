@@ -34,6 +34,10 @@ class RequestHistory(Sequence[RequestLog]):
             sliced_logs = all_logs[key]        
             return RequestHistory(sliced_logs)        
         return all_logs[key]
+    
+    def __repr__(self) -> str:
+        logs_list = list(self._storage.values())        
+        return f"RequestHistory({logs_list})"
 
 if __name__ == "__main__":
     error_log = RequestLog("error", "https://www.a", 10)
@@ -42,3 +46,5 @@ if __name__ == "__main__":
 
     history = RequestHistory([error_log, success_log, load_log])
     print(len(history)) # 3
+    print(history[1]) # RequestLog(content='success', url='https://www.b', data=20)
+    print(history[0:2]) # RequestHistory([RequestLog(content='error', url='https://www.a', data=10), RequestLog(content='success', url='https://www.b', data=20)])
