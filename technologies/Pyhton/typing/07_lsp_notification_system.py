@@ -1,3 +1,20 @@
+"""
+Lesson 07: Liskov Substitution Principle (LSP)
+
+Short Description:
+A notification delivery module demonstrating the SOLID Liskov Substitution Principle 
+by ensuring that subclasses remain fully compatible with base class behavior.
+
+Detailed Description:
+This module adheres to LSP through strict behavioral design:
+- 'EmailNotification' expands the input pre-conditions by accepting 'str | Sequence[str]' 
+  instead of just 'str', keeping the type system safe and flexible.
+- 'SMSNotification' adds an optional 'phone' parameter with a default value, ensuring 
+  it doesn't break the base class signature for existing clients.
+- All subclasses preserve post-conditions and invariants by consistently returning a 
+  'bool' and avoiding unexpected runtime exceptions.
+"""
+
 import random
 from collections.abc import Sequence
 
