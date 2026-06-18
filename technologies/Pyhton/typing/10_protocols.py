@@ -24,17 +24,17 @@ class ContractProtocol(Protocol):
 
 class ContractABC(ABC):
     def close(self) -> None:
-        print("The app is closing from ABC...")
+        ...
 
 
 class CloseFromABC(ABC):
     def close(self) -> None:
-        print("The app is closing from CloseFromABC...")
+        print("The app is closing from ABC...")
 
 
 class CloseFromProtocol:
     def close(self) -> None:
-        print("The app is closing...")
+        print("The app is closing from Protocol...")
 
 
 def close_protocol(interface: ContractProtocol):
@@ -56,3 +56,9 @@ if __name__ == "__main__":
     """
 
     close_abc(CloseFromABC())  # The app is closing from CloseFromABC...
+    close_protocol(CloseFromProtocol()) # The app is closing from Protocol...
+
+    close_protocol(CloseFromABC())  
+    """
+    It works because the protocol simply compares classes based on their structure. 
+    """
