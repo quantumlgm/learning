@@ -1,9 +1,26 @@
 # ⏳ Learning Timeline
 
-A brief summary of my learning journey, which includes the time spent studying each technology, as well as direct links to the code and notes. This file is still being updated to this day
+This document tracks my learning journey, showing how much time I invested in each technology, along with links to code and notes. It is continuously updated as I progress.
 
-| Technology | Time Invested | Practical Tasks (Code) | Notes & Knowledge Base | Status |
-| :--- | :--- | :--- | :--- | :--- |
-| **Python: OOP** | **17 Days** <br>*(Finished 12.06.2026)* | [View Tasks (AI-TZ)](https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python/Test) | [View Notes & Cheatsheets](https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python) | ✅ Completed |
-| **Python: Typing** | *Just started* | — | — | ⏳ In Progress |
+## Python: OOP
+
+Start: 26.05.2026  
+End: 12.06.2026  
+Total duration: 17 days  
+
+Practical tasks (code): https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python/Test  
+Notes & knowledge base: https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python/oop
+Status: Completed ✅  
+
+
+## Python: Typing
+
+Start: 14.06.2026  
+End: 21.06.2026  
+Total duration: 7 days    
+
+Practical tasks (code): https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python/Test  
+Notes & knowledge base: https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python/typing  
+Status: Completed ✅  
+
 
