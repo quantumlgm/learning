@@ -8,8 +8,8 @@ Start: 26.05.2026
 End: 12.06.2026  
 Total duration: 17 days  
 
-Practical tasks (code): https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python/Test  
-Notes & knowledge base: https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python/oop
+Practical tasks (code): [https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python/Test  ](https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python)  
+Notes & knowledge base: [https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python/oop  ](https://github.com/quantumlgm/learning/tree/main/technologies/Pyhton/oop)    
 Status: Completed ✅  
 
 
@@ -19,8 +19,8 @@ Start: 14.06.2026
 End: 21.06.2026  
 Total duration: 7 days    
 
-Practical tasks (code): https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python/Test  
-Notes & knowledge base: https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python/typing  
+Practical tasks (code): [https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python/Test ](https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python)   
+Notes & knowledge base: [https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python/typing  ](https://github.com/quantumlgm/learning/tree/main/technologies/Pyhton/typing)    
 Status: Completed ✅  
 
 
