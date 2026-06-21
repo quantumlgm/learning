@@ -48,7 +48,8 @@ if __name__ == "__main__":
     """
     But if we switch the order of the function calls 
     with unexpected arguments, this is exactly what will be printed
-    """
+
     process_color(
         "anything"
-    )  # Argument: anything does not match any of the accepted types
+    ) <-- Argument: anything does not match any of the accepted types
+    """
