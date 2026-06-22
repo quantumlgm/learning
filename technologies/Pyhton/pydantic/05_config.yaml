@@ -1,0 +1,6 @@
+server_name: "UK_Alpha"
+max_players: 150
+
+protection:
+  enable_firewall: "true"
+  allowed_attempts: "5"
