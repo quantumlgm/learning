@@ -31,3 +31,10 @@ if __name__ == "__main__":
         text = yaml.safe_load(file)
 
     data = Config.model_validate(text)
+
+    print(data)
+    """
+    server_name='UK_Alpha' 
+    max_players=150 
+    protection=Settings(enable_firewall=True, allowed_attempts=5)
+    """
