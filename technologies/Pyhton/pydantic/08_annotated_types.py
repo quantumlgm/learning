@@ -18,17 +18,20 @@ TransactionId = Annotated[str, Field(pattern=r"^TX-\d{5}$")]
 CurrencyAmount = Annotated[float, Field(gt=0)]
 PaymentDescription = Annotated[str, Field(min_length=5, max_length=100)]
 
+
 class Invoice(BaseModel):
     invoice_id: TransactionId
     amount: CurrencyAmount
     description: PaymentDescription
 
+
 if __name__ == "__main__":
     payment_info = {
         "invoice_id": "TX-12345",
         "amount": 3.22,
-        "description": "Moon ticket purchase successful now"
-        
+        "description": "Moon ticket purchase successful now",
     }
     payment_data = Invoice.model_validate(payment_info)
-    print(payment_data) # invoice_id='TX-12345' amount=3.22 description='Moon ticket purchase successful now'
+    print(
+        payment_data
+    )  # invoice_id='TX-12345' amount=3.22 description='Moon ticket purchase successful now'
