@@ -14,14 +14,17 @@ This module demonstrates advanced configuration management via third-party parse
 from pydantic import BaseModel
 import yaml
 
+
 class Settings(BaseModel):
     enable_firewall: bool
     allowed_attempts: int
+
 
 class Config(BaseModel):
     server_name: str
     max_players: int
     protection: Settings
+
 
 if __name__ == "__main__":
     with open("05_config.yaml") as file:
