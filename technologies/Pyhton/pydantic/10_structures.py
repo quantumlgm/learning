@@ -13,26 +13,27 @@ This module demonstrates the synthesis of data structural design patterns in Pyd
 
 from pydantic import BaseModel
 
+
 class Address(BaseModel):
     city: str
     street: str
+
 
 class UserBase(BaseModel):
     username: str
     email: str
 
+
 class UserOut(UserBase):
     id: int
     address: Address
 
+
 if __name__ == "__main__":
     user_info = {
-    "username": "python_quantum",
-    "email": "quantum@python.org",
-    "id": 99,
-    "address": {
-        "city": "Astana",
-        "street": "Mangilik El"
-        }
+        "username": "python_quantum",
+        "email": "quantum@python.org",
+        "id": 99,
+        "address": {"city": "Astana", "street": "Mangilik El"},
     }
     data = UserOut.model_validate(user_info)
