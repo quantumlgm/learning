@@ -13,16 +13,18 @@ This module demonstrates writing concise validation rules without explicit valid
 
 from pydantic import BaseModel, Field
 
+
 class InventoryItem(BaseModel):
     item_id: int = Field(alias="itemId", gt=0)
     tags: list[str] = Field(min_length=1, max_length=5)
     price: float = Field(default=9.99, ge=0.5)
 
+
 if __name__ == "__main__":
     data = {
         "itemId": 1,
-        "tags": ["Pants", "Style", "Comfort"],        
+        "tags": ["Pants", "Style", "Comfort"],
     }
-    
+
     item = InventoryItem.model_validate(data)
     print(item)  # item_id=1 tags=['Pants', 'Style', 'Comfort'] price=9.99
