@@ -13,11 +13,8 @@ This module demonstrates the dynamic runtime modification of the Python logging 
 
 import logging
 
-logging.basicConfig(
-    level=logging.DEBUG,
-    filename="02_coffee_machine.log",
-    filemode="w"
-)
+logging.basicConfig(level=logging.DEBUG, filename="02_coffee_machine.log", filemode="w")
+
 
 class CoffeeMachine:
     def activation(self):
@@ -35,15 +32,15 @@ class CoffeeMachine:
     def machine_bolt(self):
         logging.critical("The coffee machine is broken!")
 
+
 if __name__ == "__main__":
     coffee_machine = CoffeeMachine()
 
     coffee_machine.activation()
     coffee_machine.scan()
     coffee_machine.cups_emptied()
-    coffee_machine.machine_bolt() 
+    coffee_machine.machine_bolt()
 
-    
     """ 
     After running the code, we'll see a new file containing the following entry:
     
