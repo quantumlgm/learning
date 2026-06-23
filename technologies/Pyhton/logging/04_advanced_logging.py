@@ -54,4 +54,10 @@ if __name__ == "__main__":
     coffee_machine.activation()  # INFO -> Coffee machine is starting up
     coffee_machine.scan()  # This isn't being logged because the DEBUG level is ignored by the console handler.
     coffee_machine.cups_emptied()  # WARNING -> We're running out of cups
-    coffee_machine.machine_bolt()  # CRITICAL -> The coffee machine is broken!
+    coffee_machine.machine_bolt()  
+    """
+    in console: CRITICAL -> The coffee machine is broken!
+
+    in file: [2026-06-23 18:18:36,982] [CRITICAL] (machine_bolt) -> The coffee machine is broken!
+    """ 
+
