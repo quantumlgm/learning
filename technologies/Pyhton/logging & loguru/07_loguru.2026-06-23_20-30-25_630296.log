@@ -1,0 +1,111 @@
+2026-06-23 20:30:25.628 | DEBUG    | __main__:scan:13 - Checking the details...
+2026-06-23 20:30:25.630 | WARNING  | __main__:cups_emptied:16 - We're running out of cups
+2026-06-23 20:30:25.630 | CRITICAL | __main__:machine_bolt:22 - The coffee machine is broken!
+2026-06-23 20:30:25.631 | INFO     | __main__:activation:10 - Coffee machine is starting up
+2026-06-23 20:30:25.631 | DEBUG    | __main__:scan:13 - Checking the details...
+2026-06-23 20:30:25.631 | WARNING  | __main__:cups_emptied:16 - We're running out of cups
+2026-06-23 20:30:25.631 | CRITICAL | __main__:machine_bolt:22 - The coffee machine is broken!
+2026-06-23 20:30:25.631 | INFO     | __main__:activation:10 - Coffee machine is starting up
+2026-06-23 20:30:25.631 | DEBUG    | __main__:scan:13 - Checking the details...
+2026-06-23 20:30:25.631 | WARNING  | __main__:cups_emptied:16 - We're running out of cups
+2026-06-23 20:30:25.631 | CRITICAL | __main__:machine_bolt:22 - The coffee machine is broken!
+2026-06-23 20:30:25.631 | INFO     | __main__:activation:10 - Coffee machine is starting up
+2026-06-23 20:30:25.631 | DEBUG    | __main__:scan:13 - Checking the details...
+2026-06-23 20:30:25.631 | WARNING  | __main__:cups_emptied:16 - We're running out of cups
+2026-06-23 20:30:25.631 | CRITICAL | __main__:machine_bolt:22 - The coffee machine is broken!
+2026-06-23 20:30:25.631 | INFO     | __main__:activation:10 - Coffee machine is starting up
+2026-06-23 20:30:25.631 | DEBUG    | __main__:scan:13 - Checking the details...
+2026-06-23 20:30:25.631 | WARNING  | __main__:cups_emptied:16 - We're running out of cups
+2026-06-23 20:30:25.631 | CRITICAL | __main__:machine_bolt:22 - The coffee machine is broken!
+2026-06-23 20:30:25.631 | INFO     | __main__:activation:10 - Coffee machine is starting up
+2026-06-23 20:30:25.631 | DEBUG    | __main__:scan:13 - Checking the details...
+2026-06-23 20:30:25.631 | WARNING  | __main__:cups_emptied:16 - We're running out of cups
+2026-06-23 20:30:25.631 | CRITICAL | __main__:machine_bolt:22 - The coffee machine is broken!
+2026-06-23 20:30:25.631 | INFO     | __main__:activation:10 - Coffee machine is starting up
+2026-06-23 20:30:25.631 | DEBUG    | __main__:scan:13 - Checking the details...
+2026-06-23 20:30:25.631 | WARNING  | __main__:cups_emptied:16 - We're running out of cups
+2026-06-23 20:30:25.631 | CRITICAL | __main__:machine_bolt:22 - The coffee machine is broken!
+2026-06-23 20:30:25.631 | INFO     | __main__:activation:10 - Coffee machine is starting up
+2026-06-23 20:30:25.631 | DEBUG    | __main__:scan:13 - Checking the details...
+2026-06-23 20:30:25.631 | WARNING  | __main__:cups_emptied:16 - We're running out of cups
+2026-06-23 20:30:25.631 | CRITICAL | __main__:machine_bolt:22 - The coffee machine is broken!
+2026-06-23 20:30:25.631 | INFO     | __main__:activation:10 - Coffee machine is starting up
+2026-06-23 20:30:25.631 | DEBUG    | __main__:scan:13 - Checking the details...
+2026-06-23 20:30:25.631 | WARNING  | __main__:cups_emptied:16 - We're running out of cups
+2026-06-23 20:30:25.631 | CRITICAL | __main__:machine_bolt:22 - The coffee machine is broken!
+2026-06-23 20:30:25.631 | INFO     | __main__:activation:10 - Coffee machine is starting up
+2026-06-23 20:30:25.631 | DEBUG    | __main__:scan:13 - Checking the details...
+2026-06-23 20:30:25.631 | WARNING  | __main__:cups_emptied:16 - We're running out of cups
+2026-06-23 20:30:25.632 | CRITICAL | __main__:machine_bolt:22 - The coffee machine is broken!
+2026-06-23 20:30:25.632 | INFO     | __main__:activation:10 - Coffee machine is starting up
+2026-06-23 20:30:25.632 | DEBUG    | __main__:scan:13 - Checking the details...
+2026-06-23 20:30:25.632 | WARNING  | __main__:cups_emptied:16 - We're running out of cups
+2026-06-23 20:30:25.632 | CRITICAL | __main__:machine_bolt:22 - The coffee machine is broken!
+2026-06-23 20:30:25.632 | INFO     | __main__:activation:10 - Coffee machine is starting up
+2026-06-23 20:30:25.632 | DEBUG    | __main__:scan:13 - Checking the details...
+2026-06-23 20:30:25.632 | WARNING  | __main__:cups_emptied:16 - We're running out of cups
+2026-06-23 20:30:25.632 | CRITICAL | __main__:machine_bolt:22 - The coffee machine is broken!
+2026-06-23 20:30:25.632 | INFO     | __main__:activation:10 - Coffee machine is starting up
+2026-06-23 20:30:25.632 | DEBUG    | __main__:scan:13 - Checking the details...
+2026-06-23 20:30:25.632 | WARNING  | __main__:cups_emptied:16 - We're running out of cups
+2026-06-23 20:30:25.632 | CRITICAL | __main__:machine_bolt:22 - The coffee machine is broken!
+2026-06-23 20:30:25.632 | INFO     | __main__:activation:10 - Coffee machine is starting up
+2026-06-23 20:30:25.632 | DEBUG    | __main__:scan:13 - Checking the details...
+2026-06-23 20:30:25.632 | WARNING  | __main__:cups_emptied:16 - We're running out of cups
+2026-06-23 20:30:25.632 | CRITICAL | __main__:machine_bolt:22 - The coffee machine is broken!
+2026-06-23 20:30:25.632 | INFO     | __main__:activation:10 - Coffee machine is starting up
+2026-06-23 20:30:25.632 | DEBUG    | __main__:scan:13 - Checking the details...
+2026-06-23 20:30:25.632 | WARNING  | __main__:cups_emptied:16 - We're running out of cups
+2026-06-23 20:30:25.632 | CRITICAL | __main__:machine_bolt:22 - The coffee machine is broken!
+2026-06-23 20:30:25.632 | INFO     | __main__:activation:10 - Coffee machine is starting up
+2026-06-23 20:30:25.632 | DEBUG    | __main__:scan:13 - Checking the details...
+2026-06-23 20:30:25.632 | WARNING  | __main__:cups_emptied:16 - We're running out of cups
+2026-06-23 20:30:25.632 | CRITICAL | __main__:machine_bolt:22 - The coffee machine is broken!
+2026-06-23 20:30:25.632 | INFO     | __main__:activation:10 - Coffee machine is starting up
+2026-06-23 20:30:25.632 | DEBUG    | __main__:scan:13 - Checking the details...
+2026-06-23 20:30:25.632 | WARNING  | __main__:cups_emptied:16 - We're running out of cups
+2026-06-23 20:30:25.632 | CRITICAL | __main__:machine_bolt:22 - The coffee machine is broken!
+2026-06-23 20:30:25.633 | INFO     | __main__:activation:10 - Coffee machine is starting up
+2026-06-23 20:30:25.633 | DEBUG    | __main__:scan:13 - Checking the details...
+2026-06-23 20:30:25.633 | WARNING  | __main__:cups_emptied:16 - We're running out of cups
+2026-06-23 20:30:25.633 | CRITICAL | __main__:machine_bolt:22 - The coffee machine is broken!
+2026-06-23 20:30:25.633 | INFO     | __main__:activation:10 - Coffee machine is starting up
+2026-06-23 20:30:25.633 | DEBUG    | __main__:scan:13 - Checking the details...
+2026-06-23 20:30:25.633 | WARNING  | __main__:cups_emptied:16 - We're running out of cups
+2026-06-23 20:30:25.633 | CRITICAL | __main__:machine_bolt:22 - The coffee machine is broken!
+2026-06-23 20:30:25.633 | INFO     | __main__:activation:10 - Coffee machine is starting up
+2026-06-23 20:30:25.633 | DEBUG    | __main__:scan:13 - Checking the details...
+2026-06-23 20:30:25.633 | WARNING  | __main__:cups_emptied:16 - We're running out of cups
+2026-06-23 20:30:25.633 | CRITICAL | __main__:machine_bolt:22 - The coffee machine is broken!
+2026-06-23 20:30:25.633 | INFO     | __main__:activation:10 - Coffee machine is starting up
+2026-06-23 20:30:25.633 | DEBUG    | __main__:scan:13 - Checking the details...
+2026-06-23 20:30:25.633 | WARNING  | __main__:cups_emptied:16 - We're running out of cups
+2026-06-23 20:30:25.633 | CRITICAL | __main__:machine_bolt:22 - The coffee machine is broken!
+2026-06-23 20:30:25.633 | INFO     | __main__:activation:10 - Coffee machine is starting up
+2026-06-23 20:30:25.633 | DEBUG    | __main__:scan:13 - Checking the details...
+2026-06-23 20:30:25.633 | WARNING  | __main__:cups_emptied:16 - We're running out of cups
+2026-06-23 20:30:25.633 | CRITICAL | __main__:machine_bolt:22 - The coffee machine is broken!
+2026-06-23 20:30:25.633 | INFO     | __main__:activation:10 - Coffee machine is starting up
+2026-06-23 20:30:25.633 | DEBUG    | __main__:scan:13 - Checking the details...
+2026-06-23 20:30:25.633 | WARNING  | __main__:cups_emptied:16 - We're running out of cups
+2026-06-23 20:30:25.633 | CRITICAL | __main__:machine_bolt:22 - The coffee machine is broken!
+2026-06-23 20:30:25.633 | INFO     | __main__:activation:10 - Coffee machine is starting up
+2026-06-23 20:30:25.633 | DEBUG    | __main__:scan:13 - Checking the details...
+2026-06-23 20:30:25.633 | WARNING  | __main__:cups_emptied:16 - We're running out of cups
+2026-06-23 20:30:25.633 | CRITICAL | __main__:machine_bolt:22 - The coffee machine is broken!
+2026-06-23 20:30:25.633 | INFO     | __main__:activation:10 - Coffee machine is starting up
+2026-06-23 20:30:25.633 | DEBUG    | __main__:scan:13 - Checking the details...
+2026-06-23 20:30:25.633 | WARNING  | __main__:cups_emptied:16 - We're running out of cups
+2026-06-23 20:30:25.634 | CRITICAL | __main__:machine_bolt:22 - The coffee machine is broken!
+2026-06-23 20:30:25.634 | INFO     | __main__:activation:10 - Coffee machine is starting up
+2026-06-23 20:30:25.634 | DEBUG    | __main__:scan:13 - Checking the details...
+2026-06-23 20:30:25.634 | WARNING  | __main__:cups_emptied:16 - We're running out of cups
+2026-06-23 20:30:25.634 | CRITICAL | __main__:machine_bolt:22 - The coffee machine is broken!
+2026-06-23 20:30:25.634 | INFO     | __main__:activation:10 - Coffee machine is starting up
+2026-06-23 20:30:25.634 | DEBUG    | __main__:scan:13 - Checking the details...
+2026-06-23 20:30:25.634 | WARNING  | __main__:cups_emptied:16 - We're running out of cups
+2026-06-23 20:30:25.634 | CRITICAL | __main__:machine_bolt:22 - The coffee machine is broken!
+2026-06-23 20:30:25.634 | INFO     | __main__:activation:10 - Coffee machine is starting up
+2026-06-23 20:30:25.634 | DEBUG    | __main__:scan:13 - Checking the details...
+2026-06-23 20:30:25.634 | WARNING  | __main__:cups_emptied:16 - We're running out of cups
+2026-06-23 20:30:25.634 | CRITICAL | __main__:machine_bolt:22 - The coffee machine is broken!
