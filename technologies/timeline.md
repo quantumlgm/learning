@@ -1,8 +1,9 @@
 # ⏳ Learning Timeline
 
 This document tracks my learning journey, showing how much time I invested in each technology, along with links to code and notes. It is continuously updated as I progress.  
-I use a playlist as a starting point to give me some structure. Then, as I go through it, I dive deep into the details using AI and Google!  
-You can always see the materials I use in the learning process.
+
+💡 I use a playlist as a starting point-for structure and a step-by-step approach-to give the process some structure. Then, as I work through the material, I delve deeper into the details using AI, Google, and the official documentation.  
+
 
 ## Python: OOP
 
@@ -36,7 +37,18 @@ Total duration: 2 days
 Materials: [Pydantic Tutorials](https://youtube.com/playlist?list=PLRJ25SyJ5NMaOebEchSVLzIU2h2XH586S&si=X-zchhKVwHJlaIci)
 
 Practical tasks (code): [https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python/Test ](https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python)   
-Notes & knowledge base: [https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python/typing  ](https://github.com/quantumlgm/learning/tree/main/technologies/Pyhton/typing)    
+Notes & knowledge base: [https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python/typing  ](https://github.com/quantumlgm/learning/tree/main/technologies/Pyhton/pydantic)    
+Status: Completed ✅  
+
+## Python: Logging
+
+Start: 23.06.2026   
+End: 23.06.2026  
+Total duration: 2 hours
+Materials: [Python Logging Tutorial - How to Log Messages in Python](https://youtube.com/playlist?list=PLL34mf651faPNAYmex1qzDhDw9xUxDt4A&si=ocPQTFe9ErvLJPHg) 
+
+Practical tasks (code): [https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python/Test ](https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python)   
+Notes & knowledge base: [https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python/typing  ](https://github.com/quantumlgm/learning/tree/main/technologies/Pyhton/logging)    
 Status: Completed ✅  
 
 
