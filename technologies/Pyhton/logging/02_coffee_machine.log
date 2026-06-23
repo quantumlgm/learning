@@ -1,4 +1,0 @@
-INFO:root:Coffee machine is starting up
-DEBUG:root:Checking the details...
-WARNING:root:We're running out of cups
-CRITICAL:root:The coffee machine is broken!
