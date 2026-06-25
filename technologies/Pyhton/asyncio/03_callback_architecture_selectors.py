@@ -1,9 +1,9 @@
-# DISCLAIMER: The first few lessons of this course are strictly theoretical, focusing
-# on the underlying architecture. To ensure the repository remains complete and structured,
-# this file serves as a reference cheat-sheet. Deep-dive socket development is deferred to a later
-# stage, as the current milestone is mastering asynchronous programming concepts rather than network plumbing.
-
 """
+DISCLAIMER: The first few lessons of this course are strictly theoretical, focusing
+on the underlying architecture. To ensure the repository remains complete and structured,
+this file serves as a reference cheat-sheet. Deep-dive socket development is deferred to a later
+stage, as the current milestone is mastering asynchronous programming concepts rather than network plumbing.
+
 Lesson 3: Callback-Based Asynchrony using High-Level 'selectors' Module.
 
 This program elevates the manual Event Loop concept by introducing a high-level, cross-platform
