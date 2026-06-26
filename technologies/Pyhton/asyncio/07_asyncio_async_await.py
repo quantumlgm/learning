@@ -55,3 +55,10 @@ async def launch():
 
 if __name__ == "__main__":
     print(asyncio.run(launch()))
+    """
+    ['In Kitchen room is 49 ℃', 'In Launch zone room is 44 ℃', 
+    'In Bedroom room is 7 ℃', 
+    "[INFO]: There's nothing wrong with your security system", 
+    '[WARNING]: As soon as possible turn the security system!', 
+    'In Astana today is 15 ℃. Be careful!', 'In Los-Angeles today is -27 ℃. Be careful!']
+    """
