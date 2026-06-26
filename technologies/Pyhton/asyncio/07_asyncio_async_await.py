@@ -19,22 +19,26 @@ Key Features:
 import random
 import asyncio
 
+
 async def climate_sensor(room: str):
     await asyncio.sleep(1)
     temp = random.randint(0, 50)
     return f"In {room} room is {temp} ℃"
-    
+
+
 async def security_sensor(is_on: bool):
     await asyncio.sleep(2)
     if is_on:
         return "[INFO]: There's nothing wrong with your security system"
     return "[WARNING]: As soon as possible turn the security system!"
 
+
 async def weather_sensor(city: str):
     await asyncio.sleep(3)
     temp = random.randint(-50, 50)
     return f"In {city} today is {temp} ℃. Be careful!"
-    
+
+
 async def launch():
     climate_result = await asyncio.gather(
         climate_sensor("Kitchen"),
@@ -48,6 +52,6 @@ async def launch():
 
     return climate_result
 
+
 if __name__ == "__main__":
     print(asyncio.run(launch()))
-    
