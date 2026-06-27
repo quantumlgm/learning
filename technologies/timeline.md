@@ -32,7 +32,7 @@ Status: Completed ✅
 
 Start: 22.06.2026   
 End: 23.06.2026  
-Total duration: 2 days    
+Total duration: 1 day  
 Materials: [Pydantic Tutorials](https://youtube.com/playlist?list=PLRJ25SyJ5NMaOebEchSVLzIU2h2XH586S&si=X-zchhKVwHJlaIci)
 
 Practical tasks (code): [https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python/Test ](https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python)   
@@ -43,7 +43,7 @@ Status: Completed ✅
 
 Start: 23.06.2026   
 End: 23.06.2026  
-Total duration: 2 hours
+Total duration: 2 hours  
 Materials: [Python Logging Tutorial - How to Log Messages in Python](https://youtube.com/playlist?list=PLL34mf651faPNAYmex1qzDhDw9xUxDt4A&si=ocPQTFe9ErvLJPHg) 
 
 Practical tasks (code): [https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python/Test ](https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python)   
@@ -54,7 +54,7 @@ Status: Completed ✅
 
 Start: 24.06.2026   
 End: 26.06.2026  
-Total duration: 2 hours
+Total duration: 2 days  
 Materials: [Асинхронность в Python](https://youtube.com/playlist?list=PLlWXhlUMyooawilqK4lPXRvxtbYiw34S8&si=3mBNLwti64g6qBtg)
 
 Practical tasks (code): [https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python/Test ](https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python)   
