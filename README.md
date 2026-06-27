@@ -4,22 +4,6 @@
   Here I document my learning journey and growth as a software developer. Artificial intelligence helps me create practical tasks that closely resemble real-world challenges, while I independently design solutions, write the code, and document the entire learning process.
 </p>
 
-
-<section>
-  <h2 align="center">🛠️ Technologies I am studying</h2>
-  <ul>
-    <li>
-      <strong>Python (Core & OOP)</strong> — 
-      <a href="https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python">Knowledge Base and notes</a> 
-      | 
-      <a href="https://github.com/quantumlgm/learning/tree/main/technologies/Pyhton/oop">Practical Tasks</a>
-    </li>
-    <li>
-      <strong>Next up:</strong> Python libraries, Git, Docker, Redis, FastAPI, PostgreSQL (Coming soon)
-    </li>
-  </ul>
-</section>
-
 <section>
   <h2 align="center">🎯 Goals and plans</h2>
   <p>
