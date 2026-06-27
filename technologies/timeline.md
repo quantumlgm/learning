@@ -3,8 +3,7 @@
 This document tracks my learning journey, showing how much time I invested in each technology, along with links to code and notes. It is continuously updated as I progress.  
 
 💡 I use a playlist as a starting point-for structure and a step-by-step approach-to give the process some structure. Then, as I work through the material, I delve deeper into the details using AI, Google, and the official documentation.  
-
-
+  
 ## Python: OOP
 
 Start: 26.05.2026  
@@ -51,4 +50,14 @@ Practical tasks (code): [https://github.com/quantumlgm/learning/tree/main/knowle
 Notes & knowledge base: [https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python/typing  ](https://github.com/quantumlgm/learning/tree/main/technologies/Pyhton/logging)    
 Status: Completed ✅  
 
+## Python: Asyncio
+
+Start: 24.06.2026   
+End: 26.06.2026  
+Total duration: 2 hours
+Materials: [Асинхронность в Python](https://youtube.com/playlist?list=PLlWXhlUMyooawilqK4lPXRvxtbYiw34S8&si=3mBNLwti64g6qBtg)
+
+Practical tasks (code): [https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python/Test ](https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python)   
+Notes & knowledge base: [https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python/asyncio  ](https://github.com/quantumlgm/learning/tree/main/technologies/Pyhton/asyncio)    
+Status: Completed ✅  
 
