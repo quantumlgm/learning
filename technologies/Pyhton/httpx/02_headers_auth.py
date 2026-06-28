@@ -8,14 +8,14 @@ mechanisms and managing secret API Keys for secure endpoint authentication.
 Key Concepts:
 - Custom HTTP Headers: Using the 'headers' parameter to pass 'x-cg-demo-api-key'
   as a cryptographic passport directly to the server's validation layer.
-- Client Identification Management: Overriding 'User-Agent' string constants 
+- Client Identification Management: Overriding 'User-Agent' string constants
   to present the automated script as a standard web browser.
-- Multi-layered JSON Extraction: Navigating complex nested data structures 
+- Multi-layered JSON Extraction: Navigating complex nested data structures
   down to deep leaf nodes (e.g., dict -> list -> dict -> dict).
 """
 
-
 from settings import settings
+
 """
 There is my API token for CoinGecko requests
 """
@@ -23,18 +23,16 @@ from rich import print
 import httpx
 import asyncio
 
-headers = {
-    "User-Agent": "Firefox",
-    'x-cg-demo-api-key': settings.TOKEN
-}
+headers = {"User-Agent": "Firefox", "x-cg-demo-api-key": settings.TOKEN}
+
 
 async def main():
     async with httpx.AsyncClient() as client:
         response = await client.get(
             "https://api.coingecko.com/api/v3/search/trending",
-            headers=headers,            
+            headers=headers,
         )
-        data = response.json()        
+        data = response.json()
 
     coins = data["coins"][:3]
 
