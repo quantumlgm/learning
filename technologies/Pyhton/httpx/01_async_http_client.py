@@ -17,7 +17,6 @@ Key Concepts:
 
 import httpx
 import asyncio
-import json
 from rich import print
 
 params = {"ids": "bitcoin,ethereum,solana", "vs_currency": "usd"}
