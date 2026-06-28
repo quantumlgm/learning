@@ -42,13 +42,13 @@ async def main():
                 )
             response.raise_for_status()
         except httpx.HTTPStatusError as e:
-            print(f"Server error. Status code: {e}")
+            print(f"Server error. Status code: {e.response.status_code}")
             return
         except httpx.RequestError as e:
-            print(f"Network error. Status code: {e}")
+            print(f"Network error. Status code: {e.response.status_code}")
             return
         except Exception as e:
-            print(f"Unknown error. Status code: {e}")
+            print(f"Unknown error. Status code: {e.response.status_code}")
             return
     print("[bold green]✓[/bold green] Successfully reached the endpoint")
 
