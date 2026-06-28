@@ -1,27 +1,26 @@
 """
 Lesson 4: HTTP Status Codes validation, Exception Handling, and Cookies via 'httpx'.
 
-This module demonstrates defensive programming techniques when interacting with 
-unstable remote infrastructures. It covers intercepting server-side and client-side 
+This module demonstrates defensive programming techniques when interacting with
+unstable remote infrastructures. It covers intercepting server-side and client-side
 HTTP errors using structured try-except blocks, while maintaining state via Cookies.
 
 Key Concepts:
-- 'response.raise_for_status()': Explicitly forces 'httpx' to raise an 
+- 'response.raise_for_status()': Explicitly forces 'httpx' to raise an
   'httpx.HTTPStatusError' if the received status code falls into 4xx or 5xx ranges.
-- Exception Hierarchy: Catching granular network anomalies ('httpx.RequestError') 
+- Exception Hierarchy: Catching granular network anomalies ('httpx.RequestError')
   separately from response code failures ('httpx.HTTPStatusError').
-- State Persistence: Injecting key-value tracking pairs using the 'cookies' 
+- State Persistence: Injecting key-value tracking pairs using the 'cookies'
   parameter to mimic session authentication on target servers.
 """
 
 from rich import print
 import asyncio
-import httpx 
+import httpx
 import random
 
-cookies = {
-    "user_session_token": "123-SvjwEff-#@!"
-}
+cookies = {"user_session_token": "123-SvjwEff-#@!"}
+
 
 async def main():
     choice = random.choice([True, False])
@@ -35,13 +34,11 @@ async def main():
         try:
             if not choice:
                 response = await client.get(
-                    "https://httpbin.org/status/500",
-                    cookies=cookies
-                )                
+                    "https://httpbin.org/status/500", cookies=cookies
+                )
             else:
                 response = await client.get(
-                    "https://httpbin.org/status/200",
-                    cookies=cookies
+                    "https://httpbin.org/status/200", cookies=cookies
                 )
             response.raise_for_status()
         except httpx.HTTPStatusError as e:
@@ -53,7 +50,8 @@ async def main():
         except Exception as e:
             print(f"Unknown error. Status code: {e}")
             return
-    print("[bold green]✓[/bold green] Successfully reached the endpoint")   
+    print("[bold green]✓[/bold green] Successfully reached the endpoint")
+
 
 if __name__ == "__main__":
     asyncio.run(main())
