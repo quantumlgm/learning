@@ -15,7 +15,6 @@ Key Concepts:
 """
 
 from settings import settings
-
 """
 There is my API token for CoinGecko requests
 """
