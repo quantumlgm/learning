@@ -1,3 +1,19 @@
+"""
+Lesson 3: HTTP POST Requests and Request Body transmission via 'httpx'.
+
+This module demonstrates how to transmit structured state datasets to a remote 
+server inside the HTTP Request Body using POST methods. It highlights the 
+architectural boundary between URL-encoded form formatting and native JSON payloads.
+
+Key Concepts:
+- 'json=' Parameter: Instructs 'httpx' to automatically serialize Python dicts 
+  into raw JSON strings and inject the 'Content-Type: application/json' header.
+- Echo-Server Validation: Utilizing 'httpbin.org/post' to analyze incoming stream 
+  mirroring and verify exact data type preservation across network hops.
+- Target Leaf Extraction: Programmatically traversing nested payload keys 
+  (e.g., response -> json_root -> gateway_id) without third-party reliance.
+"""
+
 from rich import print
 import asyncio
 import httpx
