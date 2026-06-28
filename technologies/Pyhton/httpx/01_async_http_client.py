@@ -1,17 +1,17 @@
 """
 Lesson 1: HTTP GET Requests and Query Parameters handling via 'httpx'.
 
-This module demonstrates how to interact with external REST APIs using 
-asynchronous HTTP GET requests. It focuses on using structured query 
-parameters ('params') instead of manual URL string manipulation, ensuring 
+This module demonstrates how to interact with external REST APIs using
+asynchronous HTTP GET requests. It focuses on using structured query
+parameters ('params') instead of manual URL string manipulation, ensuring
 proper URL-encoding for safe network transmissions.
 
 Key Concepts:
 - 'httpx.AsyncClient()': Used as an asynchronous context manager to maintain
   a persistent connection pool (Keep-Alive), optimizing socket reuse.
-- Query Parameters Mapping: Dictionary-based 'params' arguments automatically 
+- Query Parameters Mapping: Dictionary-based 'params' arguments automatically
   format and append key-value filters directly to the request URI string.
-- Built-in JSON Parsing: Utilizing 'response.json()' to instantly transform 
+- Built-in JSON Parsing: Utilizing 'response.json()' to instantly transform
   the raw HTTP response body into native Python lists and dictionaries.
 """
 
