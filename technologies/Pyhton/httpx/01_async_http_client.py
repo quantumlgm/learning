@@ -28,6 +28,7 @@ async def main():
             "https://api.coingecko.com/api/v3/coins/markets", params=params
         )
         data = response.json()
+        
     result = []
 
     for coin in data:
