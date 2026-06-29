@@ -11,9 +11,11 @@ import uvicorn
 
 app = FastAPI()
 
+
 @app.get("/", summary="General", tags=["General roots"])
 def root():
     return "Hello world!"
+
 
 if __name__ == "__main__":
     uvicorn.run("01_minimal_app:app", reload=True)
