@@ -9,58 +9,57 @@ Below is a visual graph showing how these technologies interconnect. I build my 
 ```mermaid
 graph LR
 
-    A["Python OOP"]
-    --> B["Typing & Code Quality"]
-    --> C["Git"]
-    --> D["Pydantic v2 & Settings"]
-    --> E["Pytest"]
-    --> F["Loguru"]
-    --> G["HTTPX"]
-    --> H["Asyncio"]
-    --> I["FastAPI"]
-    --> J["PostgreSQL"]
-    --> K["SQLAlchemy 2.0"]
-    --> L["Alembic"]
-    --> M["Docker & Compose"]
-    --> N["Redis"]
-    --> O["Celery"]
-    --> P["RabbitMQ"]
-    --> Q["CI/CD (GitHub Actions)"]
-    --> R["Apache Kafka"]
-    --> S["Kubernetes (K8s)"]
-    --> T["Go"]
+    A["Python: OOP"]
+    --> B["Python: Typing"]
+    --> C["Pydantic v2"]
+    --> D["Loguru"]
+    --> E["Asyncio"]
+    --> F["HTTPX"]
+    --> G["FastAPI"]
+    --> H["PostgreSQL"]
+    --> I["SQLAlchemy 2.0"]
+    --> J["Alembic"]
+    --> K["Docker & Docker Compose"]
+    --> L["Redis"]
+    --> M["RabbitMQ & Celery"]
+    --> N["CI/CD (GitHub Actions)"]
+    --> O["Apache Kafka"]
 ```
 
 ## 📋 The Pipeline (Checklist)
 
-[x] Python: OOP (Completed)
+Python: OOP 
 
-[ ] Python: Typing ⏳ Current Focus
+Python: Typing  
 
-[ ] Pydantic v2 & python-dotenv (Pydantic Settings)
+Pydantic v2  
 
-[ ] Loguru & HTTPX
+Loguru 
 
-[ ] Asyncio
+Asyncio
 
-[ ] FastAPI
+HTTPX
 
-[ ] PostgreSQL (SQL) & SQLAlchemy 2.0
+FastAPI
 
-[ ] Alembic
+PostgreSQL 
 
-[ ] Pytest
+SQLAlchemy 2.0
 
-[ ] Docker & Docker Compose
+Alembic
 
-[ ] Redis
+Pytest
 
-[ ] RabbitMQ & Celery
+Docker & Docker Compose
 
-[ ] CI/CD (GitHub Actions)
+Redis
 
-[ ] Apache Kafka
+RabbitMQ & Celery
 
-[ ] Go (Golang)
+CI/CD (GitHub Actions)
 
-[ ] Kubernetes (K8s)
+Apache Kafka
+
+Go 
+
+Kubernetes 
