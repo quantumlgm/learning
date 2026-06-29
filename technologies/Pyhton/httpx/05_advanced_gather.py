@@ -1,3 +1,19 @@
+"""
+Lesson 5: High-Performance Concurrent Requests via 'httpx.AsyncClient' and 'asyncio.gather'.
+
+This module demonstrates advanced connection pool tuning and asynchronous task 
+concurrency management. It covers implementing traffic shaping via custom limit 
+throttling, setting socket-level timeouts, and executing isolated parallel fetch workers.
+
+Key Concepts:
+- 'httpx.Limits': Configuring 'max_connections' to control operating system 
+  socket utilization and stay within remote API rate-limiting thresholds.
+- Client Dependency Injection: Passing a single persistent 'AsyncClient' instance 
+  into decoupled worker coroutines to optimize TCP connection reuse (Keep-Alive).
+- Task Concurrency Aggregation: Utilizing 'asyncio.gather(*tasks)' to orchestrate 
+  multiplexed HTTP requests, shifting from sequential execution to parallel network I/O.
+"""
+
 from rich import print
 import httpx
 import asyncio
