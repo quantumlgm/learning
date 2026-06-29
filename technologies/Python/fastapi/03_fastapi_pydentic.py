@@ -1,3 +1,12 @@
+"""
+Lesson 03: Data Validation using Pydantic Models and ConfigDict
+
+This script demonstrates data schema definition and validation techniques in 
+FastAPI using Pydantic. It showcases class inheritance to extend data structures, 
+field constraint enforcement using the Field function, and explicit validation 
+behavior modifications by leveraging ConfigDict to strictly forbid extra fields.
+"""
+
 from pydantic import BaseModel, Field, ConfigDict
 from fastapi import FastAPI
 import uvicorn
