@@ -15,10 +15,10 @@ This document tracks my learning journey, showing how much time I invested in ea
 - https://youtube.com/playlist?list=PLA0M1Bcd0w8zPwP7t-FgwONhZOHt9rz9E&si=4V4drVkAHt87fUxC
 
 **Practical tasks (code):**  
-https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python/Test
+https://github.com/quantumlgm/learning/tree/main/technologies/Python/oop
 
 **Notes & knowledge base:**  
-https://github.com/quantumlgm/learning/tree/main/technologies/Python/oop
+https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python
 
 **Status:** Completed ✅
 
@@ -33,10 +33,10 @@ https://github.com/quantumlgm/learning/tree/main/technologies/Python/oop
 - https://youtube.com/playlist?list=PLbIBj8vQhvm04EuddtleOAoEmfU9vwQlN&si=f_WoxXao36nzqFCK
 
 **Practical tasks (code):**  
-https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python/Test
+https://github.com/quantumlgm/learning/tree/main/technologies/Python/typing
 
 **Notes & knowledge base:**  
-https://github.com/quantumlgm/learning/tree/main/technologies/Python/typing
+https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python
 
 **Status:** Completed ✅
 
@@ -51,10 +51,10 @@ https://github.com/quantumlgm/learning/tree/main/technologies/Python/typing
 - https://youtube.com/playlist?list=PLRJ25SyJ5NMaOebEchSVLzIU2h2XH586S&si=X-zchhKVwHJlaIci
 
 **Practical tasks (code):**  
-https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python/Test
+https://github.com/quantumlgm/learning/tree/main/technologies/Python/pydantic
 
 **Notes & knowledge base:**  
-https://github.com/quantumlgm/learning/tree/main/technologies/Python/pydantic
+https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python
 
 **Status:** Completed ✅
 
@@ -69,10 +69,10 @@ https://github.com/quantumlgm/learning/tree/main/technologies/Python/pydantic
 - https://youtube.com/playlist?list=PLL34mf651faPNAYmex1qzDhDw9xUxDt4A&si=ocPQTFe9ErvLJPHg
 
 **Practical tasks (code):**  
-https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python/Test
+https://github.com/quantumlgm/learning/tree/main/technologies/Python/logging
 
 **Notes & knowledge base:**  
-https://github.com/quantumlgm/learning/tree/main/technologies/Python/logging
+https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python
 
 **Status:** Completed ✅
 
@@ -87,10 +87,10 @@ https://github.com/quantumlgm/learning/tree/main/technologies/Python/logging
 - https://youtube.com/playlist?list=PLlWXhlUMyooawilqK4lPXRvxtbYiw34S8&si=3mBNLwti64g6qBtg
 
 **Practical tasks (code):**  
-https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python/Test
+https://github.com/quantumlgm/learning/tree/main/technologies/Python/asyncio
 
 **Notes & knowledge base:**  
-https://github.com/quantumlgm/learning/tree/main/technologies/Python/asyncio
+https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python
 
 **Status:** Completed ✅
 
@@ -106,10 +106,10 @@ https://github.com/quantumlgm/learning/tree/main/technologies/Python/asyncio
 - AI
 
 **Practical tasks (code):**  
-https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python/Test
+https://github.com/quantumlgm/learning/tree/main/technologies/Python/httpx
 
 **Notes & knowledge base:**  
-https://github.com/quantumlgm/learning/tree/main/technologies/Python/httpx
+https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python
 
 **Status:** Completed ✅
 
