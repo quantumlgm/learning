@@ -6,6 +6,16 @@ This script demonstrates the core concepts of handling different HTTP methods
 books, features parameterized path routing for retrieving specific records with
 automatic type validation, utilizes Pydantic models for request body parsing,
 and showcases structured error handling via HTTPException.
+
+Key Concepts:
+- Parameterized Path Routing: Defining static and dynamic URL segments (e.g., 
+  '/books/{id}') where type hints enforce automatic type conversion from strings to integers.
+- Data Serialization & Parsing: Employing Pydantic's 'BaseModel' to automatically 
+  validate incoming JSON request payloads against expected data types for new records.
+- Explicit Exception Handling: Raising 'HTTPException' with appropriate semantic 
+  status codes (like 404 Not Found) to abort processing and return clean error objects.
+- In-Memory State Mutation: Appending validated dictionaries directly to a runtime 
+  global list, acting as a mock database infrastructure for testing.
 """
 
 from fastapi import FastAPI, HTTPException

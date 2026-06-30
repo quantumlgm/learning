@@ -5,6 +5,16 @@ This script demonstrates data schema definition and validation techniques in
 FastAPI using Pydantic. It showcases class inheritance to extend data structures,
 field constraint enforcement using the Field function, and explicit validation
 behavior modifications by leveraging ConfigDict to strictly forbid extra fields.
+
+Key Concepts:
+- Strict Schema Enforcement: Implementing 'ConfigDict(extra="forbid")' to reject 
+  any incoming payload containing undocumented parameters, preventing payload contamination.
+- Object-Oriented Schema Extension: Utilizing standard Python class inheritance 
+  ('UserAge(UserData)') to reuse existing fields while introducing specialized fields.
+- Fine-Grained Field Constraints: Employing Pydantic's 'Field' function with 
+  numeric boundary constraints ('ge' for greater or equal, 'le' for less or equal).
+- Automatic Request Body Parsing: Declaring Pydantic models directly as endpoint 
+  function arguments to handle validation and serialization before function execution.
 """
 
 from pydantic import BaseModel, Field, ConfigDict
