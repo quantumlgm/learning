@@ -6,11 +6,11 @@ It introduces defining strict validation schemas using Pydantic's 'BaseModel' an
 simulates state preservation using a volatile global in-memory registry data store.
 
 Key Concepts:
-- Pydantic BaseModel Parsing: Enforcing structured JSON type-safety matching defined 
+- Pydantic BaseModel Parsing: Enforcing structured JSON type-safety matching defined
   attributes (strings and dynamic string list arrays) passed into endpoint arguments.
-- Schema Attribute Access: Intercepting data fields directly from the validated schema 
+- Schema Attribute Access: Intercepting data fields directly from the validated schema
   instance object using standard object-oriented dot notation.
-- Mock State Tracking: Utilizing a global array list context boundary to simulate 
+- Mock State Tracking: Utilizing a global array list context boundary to simulate
   incremental primary key auto-generation and row-creation mutations.
 """
 
@@ -21,13 +21,16 @@ import uvicorn
 
 app = FastAPI()
 
+
 class EmployeeSchema(BaseModel):
     first_name: str
     last_name: str
     departament: str
     skills: list[str] = []
 
+
 employees = []
+
 
 @app.post("/create/employee")
 def create_employe(data: EmployeeSchema):
@@ -36,9 +39,11 @@ def create_employe(data: EmployeeSchema):
     employees.append(new_data)
     return new_data
 
+
 @app.get("/empolyees")
 def get_employees():
     return employees
+
 
 if __name__ == "__main__":
     uvicorn.run("04_request_body:app", reload=True)
