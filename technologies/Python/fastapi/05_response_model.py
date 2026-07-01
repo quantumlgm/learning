@@ -18,6 +18,8 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import uvicorn
 
+from fake_db import employees_db
+
 app = FastAPI()
 
 
@@ -36,21 +38,17 @@ class EmployeeSchemaOut(BaseModel):
     departament: str
     skills: list[str] = []
 
-
-employees = []
-
-
 @app.post("/create/employee")
 def create_employe(data: EmployeeSchemaIn):
     new_data = data.model_dump()
-    new_data["id"] = len(employees) + 1
-    employees.append(new_data)
+    new_data["id"] = len(employees_db) + 1
+    employees_db.append(new_data)
     return new_data
 
 
 @app.get("/empolyees", response_model=list[EmployeeSchemaOut])
 def get_employees():
-    return employees
+    return employees_db
 
 
 if __name__ == "__main__":
