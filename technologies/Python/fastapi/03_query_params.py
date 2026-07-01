@@ -16,23 +16,19 @@ Key Concepts:
 
 from fastapi import FastAPI
 import uvicorn
-import random
+
+from fake_db import employees_db
 
 app = FastAPI()
 
 
-@app.get("/empolyees")
-def get_employees(departament: str | None = None, limit: int = 3):
-    return [
-        {
-            "employee_id": random.randint(0, 9999),
-            "role": random.choice(["Backend", "DevOps", "Frontend"]),
-            "departament": departament
-            if departament
-            else random.choice(["IT", "HR", "Finance", "Marketing"]),
-        }
-        for _ in range(limit)
-    ]
+@app.get("/empolyees", description="Departments: IT, HR, Finance, Marketing")
+def get_employees(department: str | None = None, limit: int = 3):
+    result = []
+    for employee in employees_db:
+        if employee["department"] == department:
+            result.append(employee)
+    return result[:limit]
 
 
 if __name__ == "__main__":

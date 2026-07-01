@@ -16,18 +16,18 @@ Key Concepts:
 
 from fastapi import FastAPI
 import uvicorn
-import random
+
+from fake_db import employees_db
 
 app = FastAPI()
 
 
 @app.get("/employees/{employee_id}")
 def get_employees(employee_id: int):
-    return {
-        "employee_id": employee_id,
-        "role": random.choice(["Backend", "DevOps", "Frontend"]),
-        "department": random.choice(["IT", "HR", "Finance", "Marketing"]),
-    }
+    for employee in employees_db:
+        if employee["employee_id"] == employee_id:
+            return employee  
+        return {"status": 404, "detail": "User not found"}
 
 
 if __name__ == "__main__":
