@@ -28,15 +28,16 @@ class EmployeeSchemaIn(BaseModel):
     internal_token: str
     first_name: str
     last_name: str
-    departament: str
+    department: str
     skills: list[str] = []
 
 
 class EmployeeSchemaOut(BaseModel):
     first_name: str
     last_name: str
-    departament: str
+    department: str
     skills: list[str] = []
+    
 
 @app.post("/create/employee")
 def create_employe(data: EmployeeSchemaIn):
