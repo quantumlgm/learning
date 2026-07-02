@@ -1,16 +1,16 @@
 """
 Lesson 09: Global Application Lifespan and Request-Response Interception Middleware
 
-This script sets up application-wide lifecycle hooks alongside global HTTP request 
-interceptors. It uses structured asynchronous context pooling to manage startup and 
+This script sets up application-wide lifecycle hooks alongside global HTTP request
+interceptors. It uses structured asynchronous context pooling to manage startup and
 shutdown sequences while tracking runtime transaction velocities using middleware layers.
 
 Key Concepts:
-- Modern Application Lifespan: Employing 'asynccontextmanager' with 'yield' semantics 
+- Modern Application Lifespan: Employing 'asynccontextmanager' with 'yield' semantics
   to establish centralized execution boundaries before the server begins accepting traffic.
-- Global Request Interception: Implementing 'http' middleware pipes using 'call_next' 
+- Global Request Interception: Implementing 'http' middleware pipes using 'call_next'
   proxies to seamlessly wrap route handlers with transactional benchmarking tools.
-- Response Pipeline Traversal: Guaranteeing strict downstream frame continuity by explicitly 
+- Response Pipeline Traversal: Guaranteeing strict downstream frame continuity by explicitly
   capturing, processing, and returning the initialized 'Response' payload instance.
 """
 
@@ -22,13 +22,16 @@ from contextlib import asynccontextmanager
 from loguru import logger
 import uvicorn
 
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     logger.info("Server is open! Start your work.")
-    yield 
+    yield
     logger.info("Server is closed! You should have a rest.")
 
+
 app = FastAPI(lifespan=lifespan)
+
 
 @app.middleware("http")
 async def time_count(request: Request, call_next):
@@ -38,11 +41,15 @@ async def time_count(request: Request, call_next):
     print(f"The request has worked for {current_count}")
     return response
 
-@app.post('/wait')
+
+@app.post("/wait")
 async def wait(t: int | float):
     await asyncio.sleep(t)
-    return {"status": 200, "desicion": "You can see the results of request in your server console"}
-    
+    return {
+        "status": 200,
+        "desicion": "You can see the results of request in your server console",
+    }
+
 
 if __name__ == "__main__":
     uvicorn.run("09_lifespan_middleware:app", reload=True)
