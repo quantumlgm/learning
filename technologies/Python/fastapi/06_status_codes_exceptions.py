@@ -1,16 +1,16 @@
 """
 Lesson 06: Custom Status Codes and Conditional Exception Handling
 
-This script demonstrates explicit control over HTTP response statuses and 
-error propagation pipelines. It implements structured validation using specialized 
+This script demonstrates explicit control over HTTP response statuses and
+error propagation pipelines. It implements structured validation using specialized
 In/Out schemas while sourcing data from an isolated external mock dataset module.
 
 Key Concepts:
-- HTTP Status Constraints: Customizing default route signaling by forcing standard 
+- HTTP Status Constraints: Customizing default route signaling by forcing standard
   semantic responses (e.g., 201 Created) inside the route path operational mapping.
-- Procedural Exception Interrupts: Short-circuiting the request execution tree using 
+- Procedural Exception Interrupts: Short-circuiting the request execution tree using
   'HTTPException' constructs to safely emit semantic status failures (404 Not Found).
-- External Module Data Sourcing: Abstracting mock repository dependencies out of the 
+- External Module Data Sourcing: Abstracting mock repository dependencies out of the
   primary application context while managing clean serialization over internal array dicts.
 """
 

@@ -14,6 +14,7 @@ Key Concepts:
   suspend at the yield junction for the handler, and predictably resume post-response.
 """
 
+from rich import print
 from fastapi import Depends, FastAPI
 import uvicorn
 from fake_db import employees_db

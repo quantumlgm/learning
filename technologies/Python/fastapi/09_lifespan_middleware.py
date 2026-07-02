@@ -16,18 +16,17 @@ Key Concepts:
 
 import asyncio
 import time
-
+from rich import print
 from fastapi import FastAPI, Request
 from contextlib import asynccontextmanager
-from loguru import logger
 import uvicorn
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    logger.info("Server is open! Start your work.")
+    print("Server is open! Start your work.")
     yield
-    logger.info("Server is closed! You should have a rest.")
+    print("Server is closed! You should have a rest.")
 
 
 app = FastAPI(lifespan=lifespan)

@@ -149,7 +149,7 @@ employees_db = [
         "internal_token": "emp_0015",
         "skills": ["Vue", "TypeScript"],
     },
-        {
+    {
         "employee_id": 16,
         "first_name": "Evelyn",
         "last_name": "Lewis",

@@ -6,16 +6,16 @@ It offloads high-latency, out-of-band operations (such as payroll report generat
 away from the primary HTTP worker thread immediately after flushing the response frame.
 
 Key Concepts:
-- Asynchronous Task Scheduling: Registering deferrable callables onto the ASGI response 
+- Asynchronous Task Scheduling: Registering deferrable callables onto the ASGI response
   lifecycle without spawning heavy external distributed message brokers like Celery.
-- Non-Blocking UX Continuity: Instantly delivering a 200 OK structural response to the client 
+- Non-Blocking UX Continuity: Instantly delivering a 200 OK structural response to the client
   while the runtime processing boundary shifts into the background event execution pool.
-- Reference Isolation: Preserving execution context integrity by ensuring state arguments 
+- Reference Isolation: Preserving execution context integrity by ensuring state arguments
   passed into delayed background scopes are safely decoupled from active mutation loops.
 """
 
-import asyncio
 from rich import print
+import asyncio
 import uvicorn
 from fake_db import employees_db
 from fastapi import BackgroundTasks, FastAPI, HTTPException

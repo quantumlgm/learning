@@ -26,7 +26,7 @@ app = FastAPI()
 def get_employees(employee_id: int):
     for employee in employees_db:
         if employee["employee_id"] == employee_id:
-            return employee  
+            return employee
         return {"status": 404, "detail": "User not found"}
 
 
