@@ -12,7 +12,8 @@ This document tracks my learning journey, showing how much time I invested in ea
 **Net Time:** ~76.5h
 
 **Materials:**  
-- https://youtube.com/playlist?list=PLA0M1Bcd0w8zPwP7t-FgwONhZOHt9rz9E&si=4V4drVkAHt87fUxC
+- (Объектно-ориентированное программирование (ООП) на Python 3)[https://youtube.com/playlist?list=PLA0M1Bcd0w8zPwP7t-FgwONhZOHt9rz9E&si=4V4drVkAHt87fUxC]
+- AI
 
 **Practical tasks (code):**  
 https://github.com/quantumlgm/learning/tree/main/technologies/Python/oop
@@ -30,7 +31,8 @@ https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python
 **Net Time:** ~31.5h
 
 **Materials:**  
-- https://youtube.com/playlist?list=PLbIBj8vQhvm04EuddtleOAoEmfU9vwQlN&si=f_WoxXao36nzqFCK
+- (Curso de Type Hints no Python do Básico Ao Avançado (Type Annotations)[https://youtube.com/playlist?list=PLbIBj8vQhvm04EuddtleOAoEmfU9vwQlN&si=f_WoxXao36nzqFCK]
+- AI
 
 **Practical tasks (code):**  
 https://github.com/quantumlgm/learning/tree/main/technologies/Python/typing
@@ -48,7 +50,8 @@ https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python
 **Net Time:** ~4.5h
 
 **Materials:**  
-- https://youtube.com/playlist?list=PLRJ25SyJ5NMaOebEchSVLzIU2h2XH586S&si=X-zchhKVwHJlaIci
+- (Pydantic Tutorials)[https://youtube.com/playlist?list=PLRJ25SyJ5NMaOebEchSVLzIU2h2XH586S&si=X-zchhKVwHJlaIci]
+- AI
 
 **Practical tasks (code):**  
 https://github.com/quantumlgm/learning/tree/main/technologies/Python/pydantic
@@ -66,7 +69,8 @@ https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python
 **Net Time:** ~2h
 
 **Materials:**  
-- https://youtube.com/playlist?list=PLL34mf651faPNAYmex1qzDhDw9xUxDt4A&si=ocPQTFe9ErvLJPHg
+- (Python Logging Tutorial - How to Log Messages in Python)[https://youtube.com/playlist?list=PLL34mf651faPNAYmex1qzDhDw9xUxDt4A&si=ocPQTFe9ErvLJPHg]
+- AI
 
 **Practical tasks (code):**  
 https://github.com/quantumlgm/learning/tree/main/technologies/Python/logging
@@ -84,7 +88,8 @@ https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python
 **Net Time:** ~9h
 
 **Materials:**  
-- https://youtube.com/playlist?list=PLlWXhlUMyooawilqK4lPXRvxtbYiw34S8&si=3mBNLwti64g6qBtg
+- (Асинхронность в Python - Олег Молчанов)[https://youtube.com/playlist?list=PLlWXhlUMyooawilqK4lPXRvxtbYiw34S8&si=qh8MoudQqA2NqaXN]
+- AI
 
 **Practical tasks (code):**  
 https://github.com/quantumlgm/learning/tree/main/technologies/Python/asyncio
@@ -96,8 +101,8 @@ https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python
 
 ## Python: HTTPX
 
-**Start:** 24.06.2026  
-**End:** 26.06.2026  
+**Start:** 26.06.2026  
+**End:** 28.06.2026  
 **Total duration:** 2 days  
 **Net Time:** ~9h
 
@@ -107,6 +112,25 @@ https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python
 
 **Practical tasks (code):**  
 https://github.com/quantumlgm/learning/tree/main/technologies/Python/httpx
+
+**Notes & knowledge base:**  
+https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python
+
+**Status:** Completed ✅  
+
+## Python: FastAPI
+
+**Start:** 29.2026  
+**End:** 02.07.2026  
+**Total duration:** 3 days  
+**Net Time:** ~13,5h
+
+**Materials:**  
+- [FastAPI Full Course 2026 | Beginner to Advanced Python API Development](https://youtube.com/playlist?list=PLsjpRo2EZP1IYYPoAC9vk2hw_0djPAQ1-&si=toEtdLRjIlTUFaYV)
+- AI
+
+**Practical tasks (code):**  
+https://github.com/quantumlgm/learning/tree/main/technologies/Python/fastapi
 
 **Notes & knowledge base:**  
 https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python
