@@ -1,3 +1,19 @@
+"""
+Lesson 09: Global Application Lifespan and Request-Response Interception Middleware
+
+This script sets up application-wide lifecycle hooks alongside global HTTP request 
+interceptors. It uses structured asynchronous context pooling to manage startup and 
+shutdown sequences while tracking runtime transaction velocities using middleware layers.
+
+Key Concepts:
+- Modern Application Lifespan: Employing 'asynccontextmanager' with 'yield' semantics 
+  to establish centralized execution boundaries before the server begins accepting traffic.
+- Global Request Interception: Implementing 'http' middleware pipes using 'call_next' 
+  proxies to seamlessly wrap route handlers with transactional benchmarking tools.
+- Response Pipeline Traversal: Guaranteeing strict downstream frame continuity by explicitly 
+  capturing, processing, and returning the initialized 'Response' payload instance.
+"""
+
 import asyncio
 import time
 
