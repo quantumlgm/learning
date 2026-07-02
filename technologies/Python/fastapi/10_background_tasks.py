@@ -1,3 +1,19 @@
+"""
+Lesson 10: Non-Blocking Post-Response Execution using BackgroundTasks
+
+This script demonstrates FastAPI's native event-driven 'BackgroundTasks' workflow.
+It offloads high-latency, out-of-band operations (such as payroll report generation)
+away from the primary HTTP worker thread immediately after flushing the response frame.
+
+Key Concepts:
+- Asynchronous Task Scheduling: Registering deferrable callables onto the ASGI response 
+  lifecycle without spawning heavy external distributed message brokers like Celery.
+- Non-Blocking UX Continuity: Instantly delivering a 200 OK structural response to the client 
+  while the runtime processing boundary shifts into the background event execution pool.
+- Reference Isolation: Preserving execution context integrity by ensuring state arguments 
+  passed into delayed background scopes are safely decoupled from active mutation loops.
+"""
+
 import asyncio
 from rich import print
 import uvicorn
