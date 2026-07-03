@@ -1,7 +1,9 @@
 main.py
+main.sql
 __pycache__/
 .venv
 .vscode/
 .vscode
 .python-version
 .env
+uv.lock
