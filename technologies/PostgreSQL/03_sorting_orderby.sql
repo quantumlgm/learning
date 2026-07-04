@@ -6,6 +6,17 @@ It highlights the architecture of nested, multi-column prioritization and discus
 critical backend concept of deterministic pagination—preventing row-shuffling bugs across 
 network requests by establishing a fallback alphanumeric sort key.
 
+
+Key Concepts:
+- Direct and Inverted Sorting ('asc' / 'desc'): Controlling dataset flow direction, sorting 
+  lexicographically backwards for text arrays and numerically backwards for integers.
+- Multi-Column Evaluation Hierarchy: Layering conditions sequentially where the secondary sort 
+  ('crew_capacity') triggers only if the primary sort values ('class_type') are identical.
+- Alphanumeric Tie-Breaking (Determinism): Appending a unique text property ('ship_name') to the 
+  end of the 'order by' chain to guarantee invariant output structures across UI re-renders.
+- Syntactical Execution Chain: Enforcing strict SQL lifecycle syntax where filtering ('where') 
+  mutates the initial pool, sorting reorganizes it, and slicing ('limit') truncates the final stream.
+  
 Working Table: 'space_ships'
 +----+-----------------+-------------+-------------+---------------+----------------+-----------------+---------------+
 | id | ship_name       | class_type  | warp_rating | crew_capacity | status         | commission_date | registry_code |
@@ -19,16 +30,6 @@ Working Table: 'space_ships'
 | 7  | Aurora Borealis | Explorer    | 8.2         | 50            | Active         | 2023-07-04      | NCC-90210-B   |
 | 8  | Solaria         | Cruiser     | 7.5         | 95            | Active         | 2020-12-25      | NCC-5543-A    |
 +----+-----------------+-------------+-------------+---------------+----------------+-----------------+---------------+
-
-Key Concepts:
-- Direct and Inverted Sorting ('asc' / 'desc'): Controlling dataset flow direction, sorting 
-  lexicographically backwards for text arrays and numerically backwards for integers.
-- Multi-Column Evaluation Hierarchy: Layering conditions sequentially where the secondary sort 
-  ('crew_capacity') triggers only if the primary sort values ('class_type') are identical.
-- Alphanumeric Tie-Breaking (Determinism): Appending a unique text property ('ship_name') to the 
-  end of the 'order by' chain to guarantee invariant output structures across UI re-renders.
-- Syntactical Execution Chain: Enforcing strict SQL lifecycle syntax where filtering ('where') 
-  mutates the initial pool, sorting reorganizes it, and slicing ('limit') truncates the final stream.
 */
 
 select ship_name, class_type, crew_capacity, warp_rating
