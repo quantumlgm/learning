@@ -14,6 +14,24 @@ Key Concepts:
   serving as the foundational backend mechanic for dataset pagination and buffering.
 */
 
+CREATE TABLE space_ships (
+    id SERIAL PRIMARY KEY,
+    ship_name VARCHAR(100),
+    class_type VARCHAR(50),
+    warp_rating NUMERIC(3,1),
+    crew_capacity INT,
+    status VARCHAR(20)
+);
+
+INSERT INTO space_ships (ship_name, class_type, warp_rating, crew_capacity, status) VALUES
+('Hyperion', 'Cruiser', 8.5, 120, 'Active'),
+('Vanguard', 'Dreadnought', 6.2, 450, 'Active'),
+('Shadow', 'Stealth', 9.1, 12, 'Maintenance'),
+('Starlight', 'Explorer', 7.8, 45, 'Active'),
+('Behemoth', 'Dreadnought', 5.0, 600, 'Decommissioned'),
+('Zephyr', 'Stealth', 9.4, 15, 'Active'),
+('Aurora', 'Explorer', 8.2, 50, 'Active');
+
 SELECT ship_name AS vessel_name, class_type, crew_capacity AS max_crew
 FROM space_ships
 LIMIT 4;
