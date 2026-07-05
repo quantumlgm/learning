@@ -6,7 +6,6 @@ It showcases the lifecycle of an database object from safe initialization, const
 enforcement (Primary Keys via Auto-Sequencing), to subsequent structural modification 
 without dropping existing dataset records.
 
-
 Key Concepts:
 - Idempotent Initialization ('drop table if exists'): Preventing environment setup failures 
   by purging conflicting legacy relations before creating new ones.
