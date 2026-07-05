@@ -1,19 +1,12 @@
 /*
 Lesson 1: Data Retrieval Fundamentals, Column Aliasing, and Output Constraints.
 
-This module demonstrates the core mechanics of the SQL SELECT statement using PostgreSQL.
-It highlights the architectural practice of selective column projection over wildcard 
-retrieval, mitigating network overhead and enforcing data encapsulation layers.
+Mission Scenario:
+You are building an analytical dashboard for a space RPG game. The UI team asks for a 
+list of the first 4 ships added to the system. To save network bandwidth, you must select 
+only specific columns and rename them to match the new frontend design requirements.
 
-Key Concepts:
-- Explicit Column Projection: Isolating specific attributes ('ship_name', 'class_type', 
-  'crew_capacity') to optimize query performance and memory allocation.
-- Column Aliasing via 'AS': Decoupling internal database schema nomenclature from 
-  application-layer requirements by restructuring result-set headers ('vessel_name', 'max_crew').
-- Result-Set Cardinality Limiting: Utilizing the 'LIMIT' clause to truncate row outputs, 
-  serving as the foundational backend mechanic for dataset pagination and buffering.
-
-  Working Table: 'space_ships' 
+Working Table: 'space_ships'
 +----+-----------+-------------+-------------+---------------+----------------+
 | id | ship_name | class_type  | warp_rating | crew_capacity | status         |
 +----+-----------+-------------+-------------+---------------+----------------+
@@ -21,10 +14,15 @@ Key Concepts:
 | 2  | Vanguard  | Dreadnought | 6.2         | 450           | Active         |
 | 3  | Shadow    | Stealth     | 9.1         | 12            | Maintenance    |
 | 4  | Starlight | Explorer    | 7.8         | 45            | Active         |
-| 5  | Behemoth  | Dreadnought | 5.0         | 600           | Decommissioned |
-| 6  | Zephyr    | Stealth     | 9.4         | 15            | Active         |
-| 7  | Aurora    | Explorer    | 8.2         | 50            | Active         |
 +----+-----------+-------------+-------------+---------------+----------------+
+
+Key Concepts:
+- Selective Projection: Listing specific columns instead of using 'SELECT *'. This makes 
+  queries faster and saves server memory.
+- Column Aliasing ('as'): Renaming columns on the fly (e.g., 'ship_name' to 'vessel_name') 
+  to match frontend API expectations.
+- Output Limiting ('limit'): Restricting the number of rows returned by the database. 
+  This is the main tool for creating page-by-page data views (pagination).
 */
 
 SELECT ship_name AS vessel_name, class_type, crew_capacity AS max_crew

@@ -1,21 +1,12 @@
 /*
 Lesson 4: Database Schema Design, DDL Mutations, and Table Evolution.
 
-This module demonstrates Data Definition Language (DDL) fundamentals using PostgreSQL.
-It showcases the lifecycle of an database object from safe initialization, constraints 
-enforcement (Primary Keys via Auto-Sequencing), to subsequent structural modification 
-without dropping existing dataset records.
+Mission Scenario:
+The Galactic Federation is building orbital outposts. We need to create a table to track 
+these stations. However, the military command changes its requirements during the project. 
+We must modify the table structure on the fly: add a reactor power column, remove the supply 
+capacity column, and rename the military status column—all without breaking the database.
 
-Key Concepts:
-- Idempotent Initialization ('drop table if exists'): Preventing environment setup failures 
-  by purging conflicting legacy relations before creating new ones.
-- Implicit Sequence Generation ('serial'): Abstracting primary key incrementation logic 
-  away from the application layer to enforce entity integrity constraints natively.
-- Schema Migration ('alter table'): Executing real-time table modifications including structural 
-  extension ('add column'), destructive dropping ('drop column'), and property tracking adjustment ('rename to').
-- Nullable Trailing Data Allocation: Demonstrating how existing rows seamlessly adapt to new schema 
-  states by defaulting newly added fields to structural 'null' states.
-  
 Initial Architectural Blueprint:
 +----+--------------+-------------+-----------------+-------------+
 | id | station_name | sector_code | supply_capacity | is_military |
@@ -29,6 +20,14 @@ Mutated & Final Schema State (Working Table: 'space_stations'):
 | 2  | Citadel        | Widow-7     | true   | NULL          |
 | 3  | Omega Outpost  | Sector-G    | true   | 9500          |
 +----+----------------+-------------+--------+---------------+
+
+Key Concepts:
+- 'drop table if exists': Cleans up old tables before creating a new one to prevent errors.
+- 'serial primary key': Automatically generates unique ID numbers for new rows.
+- 'alter table': Modifies an existing table structure using 'add column', 'drop column', 
+  and 'rename to'.
+- NULL defaults: When you add a new column, existing rows automatically get a NULL 
+  (empty) value in that field.
 */
 
 drop table if exists space_stations;
