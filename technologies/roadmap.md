@@ -19,47 +19,53 @@ graph LR
     --> H["PostgreSQL"]
     --> I["SQLAlchemy 2.0"]
     --> J["Alembic"]
-    --> K["Docker & Docker Compose"]
-    --> L["Redis"]
-    --> M["RabbitMQ & Celery"]
-    --> N["CI/CD (GitHub Actions)"]
-    --> O["Apache Kafka"]
+    --> K["Pytest + pytest-asyncio"]
+    --> L["Git (Advanced)"]
+    --> M["OS"]
+    --> N["Pathlib"]
+    --> O["APScheduler"]
+    --> P["Docker & Docker Compose"]
+    --> Q["Redis"]
+    --> R["RabbitMQ / Celery"]
+    --> S["Prompt Engineering"]
+    --> T["MongoDB"]
+    --> U["ChromaDB / pgvector"]
+    --> V["LangChain"]
+    --> W["PydanticAI"]
+    --> X["LangGraph"]
+    --> Y["CI/CD (GitHub Actions)"]
+    --> Z["Apache Kafka"]
+    --> AA["Go (Golang)"]
+    --> AB["Kubernetes (K8s)"]
 ```
 
 ## 📋 The Pipeline (Checklist)
 
-Python: OOP 
-
-Python: Typing  
-
-Pydantic v2  
-
-Loguru 
-
-Asyncio
-
-HTTPX
-
-FastAPI
-
-PostgreSQL 
-
-SQLAlchemy 2.0
-
-Alembic
-
-Pytest
-
-Docker & Docker Compose
-
-Redis
-
-RabbitMQ & Celery
-
-CI/CD (GitHub Actions)
-
-Apache Kafka
-
-Go 
-
-Kubernetes 
+* Python: OOP
+* Python: Typing
+* Pydantic v2
+* Loguru
+* Asyncio
+* HTTPX
+* FastAPI
+* PostgreSQL
+* SQLAlchemy 2.0 
+* Alembic
+* Pytest + pytest-asyncio
+* Git (Advanced)
+* OS
+* Pathlib
+* APScheduler
+* Docker & Docker Compose
+* Redis
+* RabbitMQ \ Celery
+* Prompt Engineering
+* MongoDB 
+* ChromaDB / pgvector 
+* LangChain
+* PydanticAI
+* LangGraph 
+* CI/CD (GitHub Actions)
+* Apache Kafka
+* Go (Golang)
+* Kubernetes (K8s)
