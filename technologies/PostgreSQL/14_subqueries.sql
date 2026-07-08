@@ -12,6 +12,7 @@ Expected Query Output Reference:
 | station_name  | energy_output |
 +---------------+---------------+
 | Omega Outpost |          9500 |
+| Babylon 5     |          6200 |
 +---------------+---------------+
 
 Key Concepts:
