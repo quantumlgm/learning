@@ -135,5 +135,26 @@ https://github.com/quantumlgm/learning/tree/main/technologies/Python/fastapi
 **Notes & knowledge base:**  
 https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python
 
+**Status:** Completed ✅  
+
+
+## PostgreSQL: SQL (Basics) 
+
+**Start:** 04.07.2026    
+**End:** 10.07.2026  
+**Total duration:** 6 days  
+**Net Time:** ~22,5h
+
+**Materials:**  
+- [Основы SQL - Андрей Созыкин](https://youtube.com/playlist?list=PLtPJ9lKvJ4oh5SdmGVusIVDPcELrJ2bsT&si=bOUuSbHdfQX5zVK6)
+- [SQL Academy](https://sql-academy.org/ru/profile/6a4bde3829503d00285e7c4f)
+- AI
+
+**Practical tasks (code):**  
+https://github.com/quantumlgm/learning/tree/main/technologies/PostgreSQL
+
+**Notes & knowledge base:**  
+https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python
+
 **Status:** Completed ✅
 
