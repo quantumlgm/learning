@@ -1,3 +1,20 @@
+"""
+Lesson 2: Database Schema Definition and Data Insertion via Core.
+
+This program demonstrates the imperative declaration of database tables using the Core layer 
+of SQLAlchemy, showcasing metadata orchestration and bulk data population techniques.
+
+Key Features:
+- Schema Registration via MetaData: Utilizes the 'MetaData' container as a centralized registry 
+  to track and manage the structural definition of the table objects before physical execution.
+- Imperative Table Definition: Constructs the 'Table' instance using explicit 'Column' declarations, 
+  specifying structural types like 'Integer' and 'String' along with constraints ('primary_key').
+- Safe Parameterized Insertion: Leverages the 'insert()' query builder to construct safe DML statements, 
+  mitigating SQL injection risks through automatic query parameterization under the hood.
+- Bulk DML Operations: Demonstrates high-performance multi-row data population ('Bulk Insert') by passing 
+  a collection of data dictionaries directly into the connection execution framework.
+"""
+
 from sqlalchemy import (
     Table,
     Column,
