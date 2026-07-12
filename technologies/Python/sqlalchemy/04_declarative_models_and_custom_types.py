@@ -23,11 +23,13 @@ import enum
 import datetime
 
 
+# Create sync engine
 engine = create_engine(
     url=settings.DB_URL_psycopg, pool_size=5, echo=True, max_overflow=10
 )
 
 
+#  Create ORM database
 class Base(DeclarativeBase):
     pass
 
@@ -65,6 +67,7 @@ create new types. Due to this we can use these types
 in different tables
 """
 
+# Data types
 intpk = Annotated[int, mapped_column(primary_key=True)]
 created_at = Annotated[datetime.datetime, mapped_column(server_default=func.now())]
 updated_at = Annotated[
@@ -84,7 +87,8 @@ class TypeBase(DeclarativeBase):
     }
 
 
-class ResumesOrmClear(TypeBase):
+# New clean database with type approach
+class ResumesOrmClean(TypeBase):
     __tablename__ = "resumes"
     id: Mapped[intpk]
     worker_id: Mapped[int] = mapped_column(
