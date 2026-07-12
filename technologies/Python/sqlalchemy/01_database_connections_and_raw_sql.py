@@ -20,12 +20,14 @@ from sqlalchemy.ext.asyncio import create_async_engine
 from sqlalchemy import create_engine, text
 from config import settings
 
+# Engines
 engine = create_engine(
     url=settings.DB_URL_psycopg,
     # echo=True,
     pool_size=5,
     max_overflow=10,
 )
+
 
 aengine = create_async_engine(
     url=settings.DB_URL_asyncpg,
@@ -34,11 +36,23 @@ aengine = create_async_engine(
     max_overflow=10,
 )
 
+
+"""
+'Connect' approach starts the transaction on its own,
+but in case of an error, it doesn't perform a 'rollback' and
+if everything goes properly, we need to write 'commit' manually.
+"""
 with engine.connect() as conn:
     res = conn.execute(text("select * from ships"))
     print(res.all())
     conn.commit()
 
+
+"""
+'Begin' approach starts transaction on its own
+and in case of an error, 'begin' closes transaction 
+and performs 'rollback'
+"""
 with engine.begin() as conn:
     conn.execute(
         text(
@@ -50,7 +64,10 @@ with engine.begin() as conn:
         )
     )
 
+
 """
+For example: Async approach
+
 WARNING:
 This approach has a security vulnerability. This 
 query is affected by SQL injection. This example 
@@ -58,8 +75,6 @@ is only intended to demonstrate how an async INSERT
 query works. To avoid this problem, it is recommended 
 to use parameterized queries.
 """
-
-
 async def insert_ships(courier_id: int, model: str, speed: int):
     async with aengine.begin() as conn:
         await conn.execute(
