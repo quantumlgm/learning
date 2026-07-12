@@ -55,7 +55,7 @@ class ResumesOrm(Base):
     workload: Mapped[Workload]
     created_at: Mapped[datetime.datetime] = mapped_column(server_default=func.now())
     updated_at: Mapped[datetime.datetime] = mapped_column(
-        server_default=text("TIMEZONE('utc', now())"), onupdate=datetime.datetime.now()
+        server_default=text("TIMEZONE('utc', now())"), onupdate=datetime.datetime.now
     )
 
 
@@ -70,15 +70,18 @@ created_at = Annotated[datetime.datetime, mapped_column(server_default=func.now(
 updated_at = Annotated[
     datetime.datetime,
     mapped_column(
-        server_default=text("TIMEZONE('utc', now())"), onupdate=datetime.datetime.now()
+        server_default=text("TIMEZONE('utc', now())"), onupdate=func.now()
     ),
 ]
+
 
 string_restriction = Annotated[str, 255]
 
 
 class TypeBase(DeclarativeBase):
-    type_annotation_map = {string_restriction: String(255)}
+    type_annotation_map = {
+        string_restriction: String(255)
+    }
 
 
 class ResumesOrmClear(TypeBase):

@@ -28,14 +28,16 @@ from sqlalchemy import (
 from config import settings
 
 
+# Create engine
 engine = create_engine(
     url=settings.DB_URL_psycopg, pool_size=5, echo=True, max_overflow=10
 )
 
-
+# Create metadata
 metadata_obj = MetaData()
 
 
+# Create core table
 workers_table = Table(
     "workers",
     metadata_obj,
@@ -44,7 +46,7 @@ workers_table = Table(
     Column("age", Integer),
 )
 
-
+# This function create tables that we add to 'metadata_obj'
 def create_tables():
     # 'drop_all' delete all that we add to metadata object
     metadata_obj.drop_all(engine)
@@ -54,6 +56,7 @@ def create_tables():
 create_tables()
 
 
+# Example of core data insert 
 def insert_data_raw():
     with engine.begin() as conn:
         stmt = """
@@ -66,6 +69,7 @@ def insert_data_raw():
 insert_data_raw()
 
 
+# Example of orm data insert 
 def insert_data_new():
     with engine.begin() as conn:
         stmt = insert(workers_table).values(
