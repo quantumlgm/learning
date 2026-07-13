@@ -1,10 +1,9 @@
 
+import random
 from typing import Annotated
-
 from sqlalchemy.orm import Mapped, mapped_column, DeclarativeBase, sessionmaker
-from sqlalchemy import Column, ForeignKey, Integer, MetaData, String, Table, create_engine, func, text, select
+from sqlalchemy import Column, Integer, MetaData, String, Table, create_engine, text, select, update
 from config import settings
-import datetime
 
 
 engine = create_engine(
@@ -19,8 +18,8 @@ metadata_obj = MetaData()
 
 
 # Data types
-
 str_255 = Annotated[str, String(255)]
+
 
 # Tables
 class Base(DeclarativeBase):
@@ -44,11 +43,53 @@ workers_table = Table(
     Column("age", Integer),
 )
 
-def create_tables():
-    metadata_obj.create_all(workers_table)
+
+# Create tables with core and orm approaches
+def create_tables_core():
+    metadata_obj.drop_all(engine)
+    metadata_obj.create_all(engine)
 
 
-def select_workers():
-    with sessionf() as session:
-        with session.begin():
-            stmt_select = select()
+create_tables_core()
+
+
+def create_tables_orm():
+    Base.metadata.drop_all(engine)
+    Base.metadata.create_all(engine)
+
+
+create_tables_orm()
+
+
+# Queries for core table
+def select_workers_core():
+    with engine.begin() as conn:
+            query = select(workers_table)
+            result = conn.execute(query)
+            print(f'result={result.all()}')
+
+
+def update_worker_core():
+    with engine.begin() as conn:
+            stmt = text("update workers_core set age=:new_age where id=:id")        
+            stmt = stmt.bindparams(new_age=random.randint(0, 100), id=1)
+            conn.execute(stmt)            
+
+
+def update_worker_core_py_approach():
+    with engine.begin() as conn:
+        stmt = (
+            update(WorkersOrm).values(age=random.randint(0, 100))
+            .filter_by(id=1)
+        )
+        conn.execute(stmt)        
+            
+
+# Queries for orm table
+def select_worker_orm():
+    with sessionf.begin() as session:        
+        query = select(WorkersOrm)
+        result = session.execute(query)
+        print(f'result={result.all()}')
+
+select_worker_orm()
