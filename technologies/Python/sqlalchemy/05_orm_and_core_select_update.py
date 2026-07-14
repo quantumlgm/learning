@@ -222,3 +222,32 @@ FROM workers_orm
 result=[(<__main__.WorkersOrm object at 0x000001E41A23A120>,), (<__main__.WorkersOrm object at 0x000001E41A23A0F0>,), (<__main__.WorkersOrm object at 0x000001E41A239AF0>,), (<__main__.WorkersOrm object at 0x000001E418BBC470>,)]
 """
 
+def update_workers_orm_expire():
+    with sessionf() as session:
+        worker = session.get(WorkersOrm, 1)
+
+        print(worker.age)
+
+        worker.age = 100
+        session.flush()
+
+        session.expire(worker)
+        """
+        This action tells SQLAlchemy that the object's data is expired.
+        When you access its attributes, SQLAlchemy will fetch fresh data
+        from the database using a new SELECT query.
+        """
+
+        print(f"worker.age={worker.age}")
+
+    
+
+update_workers_orm_expire()
+"""
+2026-07-14 15:35:15,965 INFO sqlalchemy.engine.Engine SELECT workers_orm.id AS workers_orm_id, workers_orm.username AS workers_orm_username, workers_orm.age AS workers_orm_age 
+FROM workers_orm 
+WHERE workers_orm.id = %(pk_1)s::INTEGER
+2026-07-14 15:35:15,966 INFO sqlalchemy.engine.Engine [generated in 0.00036s] {'pk_1': 1}
+worker.age=100
+2026-07-14 15:35:15,966 INFO sqlalchemy.engine.Engine ROLLBACK
+"""
