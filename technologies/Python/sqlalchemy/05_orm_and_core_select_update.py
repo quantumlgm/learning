@@ -193,8 +193,8 @@ result=[(<__main__.WorkersOrm object at 0x0000025030D498B0>,), (<__main__.Worker
 # Flush, expire and, refresh
 def insert_workers_orm_flush():
     with sessionf() as session:
-        insert_stmt = WorkersOrm(username='Flash Flush', age=28)        
-        session.add(insert_stmt)
+        stmt_select = WorkersOrm(username='Flash Flush', age=28)        
+        session.add(stmt_select)
         session.flush()
         """
         This action sends all changes to the database
@@ -224,21 +224,21 @@ result=[(<__main__.WorkersOrm object at 0x000001E41A23A120>,), (<__main__.Worker
 
 def update_workers_orm_expire():
     with sessionf() as session:
-        worker = session.get(WorkersOrm, 1)
+        stmt_update = session.get(WorkersOrm, 1)
 
-        print(worker.age)
+        print(stmt_update.age)
 
-        worker.age = 100
+        stmt_update.age = 100
         session.flush()
 
-        session.expire(worker)
+        session.expire(stmt_update)
         """
         This action tells SQLAlchemy that the object's data is expired.
         When you access its attributes, SQLAlchemy will fetch fresh data
         from the database using a new SELECT query.
         """
 
-        print(f"worker.age={worker.age}")
+        print(f"worker.age={stmt_update.age}")
 
     
 
@@ -250,4 +250,28 @@ WHERE workers_orm.id = %(pk_1)s::INTEGER
 2026-07-14 15:35:15,966 INFO sqlalchemy.engine.Engine [generated in 0.00036s] {'pk_1': 1}
 worker.age=100
 2026-07-14 15:35:15,966 INFO sqlalchemy.engine.Engine ROLLBACK
+"""
+
+def select_workers_orm_refresh():
+    with sessionf.begin() as session:
+        stmt_select = select(WorkersOrm).where(WorkersOrm.id == 1)
+        worker = session.execute(stmt_select).scalar_one()
+        print(f"worker.age={worker.age}")
+        worker.age = 1000
+        session.refresh(worker)
+        """
+        And this action tells sqlalchemy to update 
+        data in memory from server
+        """
+        print(f"worker.age={worker.age}")
+
+select_workers_orm_refresh()
+"""
+worker.age=17
+2026-07-14 15:50:26,485 INFO sqlalchemy.engine.Engine SELECT workers_orm.id, workers_orm.username, workers_orm.age 
+FROM workers_orm 
+WHERE workers_orm.id = %(pk_1)s::INTEGER
+2026-07-14 15:50:26,485 INFO sqlalchemy.engine.Engine [generated in 0.00011s] {'pk_1': 1}
+worker.age=17
+2026-07-14 15:50:26,485 INFO sqlalchemy.engine.Engine COMMIT
 """
