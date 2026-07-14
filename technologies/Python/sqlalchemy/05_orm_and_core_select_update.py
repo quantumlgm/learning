@@ -115,6 +115,7 @@ def update_worker_core_py_approach():
         stmt = update(WorkersOrm).values(age=random.randint(0, 100)).filter_by(id=1)
         conn.execute(stmt)
 
+
 insert_workers_core()
 """
 insert into workers_core(username, age)
@@ -140,6 +141,7 @@ FROM workers_core
 result=[(2, 'Linus Torvalds', 40), (3, 'Ruslan', 16), (1, 'Quantumlgm', 45)]
 """
 
+
 # Queries for orm table
 def select_worker_orm():
     with sessionf.begin() as session:
@@ -151,18 +153,18 @@ def select_worker_orm():
 def insert_workers_orm():
     with sessionf.begin() as session:
         stmt = [
-                WorkersOrm(username='Quantumlgm', age=17),
-                WorkersOrm(username='Linus Torvalds', age=40),
-                WorkersOrm(username='Ruslan', age=16),
-            ]
+            WorkersOrm(username="Quantumlgm", age=17),
+            WorkersOrm(username="Linus Torvalds", age=40),
+            WorkersOrm(username="Ruslan", age=16),
+        ]
         session.add_all(stmt)
         # Or use session.add if you insert one element
-        
+
 
 def update_worker_orm():
     with sessionf.begin() as session:
         stmt = session.get(WorkersOrm, 1)
-        stmt.username = 'QUANTUMLGM'
+        stmt.username = "QUANTUMLGM"
 
 
 insert_workers_orm()
@@ -190,10 +192,11 @@ result=[(<__main__.WorkersOrm object at 0x0000025030D498B0>,), (<__main__.Worker
 2026-07-14 14:30:21,412 INFO sqlalchemy.engine.Engine COMMIT
 """
 
+
 # Flush, expire and, refresh
 def insert_workers_orm_flush():
     with sessionf() as session:
-        stmt_select = WorkersOrm(username='Flash Flush', age=28)        
+        stmt_select = WorkersOrm(username="Flash Flush", age=28)
         session.add(stmt_select)
         session.flush()
         """
@@ -207,13 +210,14 @@ def insert_workers_orm_flush():
         print(f"result={result.all()}")
 
         session.commit()
-        
-print('-----insert_workers_orm_flush()-----')
+
+
+print("-----insert_workers_orm_flush()-----")
 """
 2026-07-14 14:57:14,222 INFO sqlalchemy.engine.Engine INSERT INTO workers_orm (username, age) VALUES (%(username)s::VARCHAR, %(age)s::INTEGER) RETURNING workers_orm.id
 2026-07-14 14:57:14,222 INFO sqlalchemy.engine.Engine [generated in 0.00010s] {'username': 'Flash Flush', 'age':28}
 """
-insert_workers_orm_flush()        
+insert_workers_orm_flush()
 """
 Before session.flush()
 2026-07-14 15:13:11,014 INFO sqlalchemy.engine.Engine SELECT workers_orm.id, workers_orm.username, workers_orm.age 
@@ -221,6 +225,7 @@ FROM workers_orm
 2026-07-14 15:13:11,014 INFO sqlalchemy.engine.Engine [cached since 0.006511s ago] {}
 result=[(<__main__.WorkersOrm object at 0x000001E41A23A120>,), (<__main__.WorkersOrm object at 0x000001E41A23A0F0>,), (<__main__.WorkersOrm object at 0x000001E41A239AF0>,), (<__main__.WorkersOrm object at 0x000001E418BBC470>,)]
 """
+
 
 def update_workers_orm_expire():
     with sessionf() as session:
@@ -240,7 +245,6 @@ def update_workers_orm_expire():
 
         print(f"worker.age={stmt_update.age}")
 
-    
 
 update_workers_orm_expire()
 """
@@ -251,6 +255,7 @@ WHERE workers_orm.id = %(pk_1)s::INTEGER
 worker.age=100
 2026-07-14 15:35:15,966 INFO sqlalchemy.engine.Engine ROLLBACK
 """
+
 
 def select_workers_orm_refresh():
     with sessionf.begin() as session:
@@ -264,6 +269,7 @@ def select_workers_orm_refresh():
         data in memory from server
         """
         print(f"worker.age={worker.age}")
+
 
 select_workers_orm_refresh()
 """
