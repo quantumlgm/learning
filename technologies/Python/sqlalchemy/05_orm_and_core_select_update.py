@@ -1,3 +1,22 @@
+"""
+Lesson 6: SELECT and UPDATE Operations via Core and ORM, and Session State Management.
+
+This program demonstrates data retrieval and modification strategies in SQLAlchemy 2.0,
+comparing the stateless Core approach with the stateful ORM workflow.
+
+Key Features:
+- SQL Injection Prevention: Showcases parameterized queries using 'select()' and 'update()' 
+  constructs to securely handle user input at the database driver level.
+- Core Selection & Update: Executes raw textual SQL and expression-driven statements 
+  directly via 'engine.begin()' and connection blocks.
+- Hybrid ORM-Enabled Writes: Explores bulk update queries using ORM class maps executed 
+  directly through low-level connections ('update_worker_core_py_approach').
+- Object-Oriented CRUD: Utilizes 'session.get()' and pythonic property mutation to trigger 
+  automatic dirty-tracking 'UPDATE' generation on commit.
+- Transaction Unit of Work: Deeply analyzes the lifecycle and synchronization of the 
+  Identity Map through explicit 'session.flush()', 'session.expire()', and 'session.refresh()' methods.
+"""
+
 import random
 from typing import Annotated
 from sqlalchemy.orm import Mapped, mapped_column, DeclarativeBase, sessionmaker
@@ -110,7 +129,7 @@ def update_worker_core():
         conn.execute(stmt)
 
 
-def update_worker_core_py_approach():
+def update_worker_hibrid_approach():
     with engine.begin() as conn:
         stmt = update(WorkersOrm).values(age=random.randint(0, 100)).filter_by(id=1)
         conn.execute(stmt)
