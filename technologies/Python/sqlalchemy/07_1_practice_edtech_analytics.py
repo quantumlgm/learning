@@ -1,3 +1,22 @@
+"""
+Lesson 7: Advanced Select Operations in SQLAlchemy - CTE, Subqueries, and Aliases.
+
+This program covers enterprise-level querying tools in SQLAlchemy 2.0, focusing on 
+constructing clean, readable, and highly optimized complex SQL statements.
+
+Key Features:
+- Table Aliasing ('aliased'): Demonstrates how to create virtual table copies to resolve
+  naming conflicts during self-joins or nested queries.
+- Subquery Representation ('.subquery()'): Builds isolated nested select queries 
+  enclosed in parenthesis, useful for initial data slicing and filtering.
+- Window Functions ('over()'): Explores advanced analytical capabilities (like 'PARTITION BY')
+  directly within SQLAlchemy expression constructs without collapsing result rows.
+- Common Table Expressions ('.cte()'): Generates elegant 'WITH ... AS' SQL clauses to
+  declare temporary result sets at the top-level of the compiled SQL query.
+- Core-style Column Extraction ('.c.'): Illustrates how to access fields of subqueries
+  and CTEs using the low-level '.c' attribute wrapper.
+"""
+
 import datetime
 from decimal import Decimal
 import enum
