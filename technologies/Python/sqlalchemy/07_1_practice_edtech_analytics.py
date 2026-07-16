@@ -1,13 +1,13 @@
 """
 Lesson 7: Advanced Select Operations in SQLAlchemy - CTE, Subqueries, and Aliases.
 
-This program covers enterprise-level querying tools in SQLAlchemy 2.0, focusing on 
+This program covers enterprise-level querying tools in SQLAlchemy 2.0, focusing on
 constructing clean, readable, and highly optimized complex SQL statements.
 
 Key Features:
 - Table Aliasing ('aliased'): Demonstrates how to create virtual table copies to resolve
   naming conflicts during self-joins or nested queries.
-- Subquery Representation ('.subquery()'): Builds isolated nested select queries 
+- Subquery Representation ('.subquery()'): Builds isolated nested select queries
   enclosed in parenthesis, useful for initial data slicing and filtering.
 - Window Functions ('over()'): Explores advanced analytical capabilities (like 'PARTITION BY')
   directly within SQLAlchemy expression constructs without collapsing result rows.
@@ -21,8 +21,26 @@ import datetime
 from decimal import Decimal
 import enum
 from typing import Annotated
-from sqlalchemy import CheckConstraint, ForeignKey, Numeric, String, create_engine, func, select, case, label, cte
-from sqlalchemy.orm import DeclarativeBase, Mapped, aliased, mapped_column, relationship, sessionmaker
+from sqlalchemy import (
+    CheckConstraint,
+    ForeignKey,
+    Numeric,
+    String,
+    create_engine,
+    func,
+    select,
+    case,
+    label,
+    cte,
+)
+from sqlalchemy.orm import (
+    DeclarativeBase,
+    Mapped,
+    aliased,
+    mapped_column,
+    relationship,
+    sessionmaker,
+)
 from config import settings
 
 
@@ -46,30 +64,32 @@ class Status(enum.Enum):
     not_started = "not_started"
     in_progerss = "in_progerss"
     completed = "completed"
-    failed = 'failed'
+    failed = "failed"
 
 
 class Students(Base):
-    __tablename__ = 'students'
+    __tablename__ = "students"
     id: Mapped[intpk]
     name: Mapped[str_255]
     register: Mapped[timestamp]
-    
+
 
 class Courses(Base):
-    __tablename__ = 'courses'
-    id: Mapped[intpk] 
+    __tablename__ = "courses"
+    id: Mapped[intpk]
     name: Mapped[str_255]
     cost: Mapped[cost]
 
-    
+
 class Grades(Base):
-    __tablename__ = 'grades'
+    __tablename__ = "grades"
     id: Mapped[intpk]
-    student_id: Mapped[int] = mapped_column(ForeignKey('students.id'))
-    cours_id: Mapped[int] = mapped_column(ForeignKey('courses.id'))
+    student_id: Mapped[int] = mapped_column(ForeignKey("students.id"))
+    cours_id: Mapped[int] = mapped_column(ForeignKey("courses.id"))
     status: Mapped[Status] = mapped_column(default=Status.not_started)
-    assessment: Mapped[int] = mapped_column(CheckConstraint("assessment >= 0 and assessment <= 100"), nullable=True)
+    assessment: Mapped[int] = mapped_column(
+        CheckConstraint("assessment >= 0 and assessment <= 100"), nullable=True
+    )
 
     student: Mapped["Students"] = relationship()
     cours: Mapped["Courses"] = relationship()
@@ -81,19 +101,19 @@ def create_db():
 
 
 def populate_database():
-    with session_f.begin() as session:        
+    with session_f.begin() as session:
         stmt = [
-            Students(name='Quntum'),
-            Students(name='Ruslan'),
-            Students(name='Linus'),
-            Students(name='Michael'),
-            Students(name='Donald'),
-
-            Courses(name='Machine Learning', cost=100),
-            Courses(name='Backend Developing', cost=200.5),
-            Courses(name='How to grow cucumbers', cost=50),
-
-            Grades(student_id=1, cours_id=2, status=Status.in_progerss, assessment=None),
+            Students(name="Quntum"),
+            Students(name="Ruslan"),
+            Students(name="Linus"),
+            Students(name="Michael"),
+            Students(name="Donald"),
+            Courses(name="Machine Learning", cost=100),
+            Courses(name="Backend Developing", cost=200.5),
+            Courses(name="How to grow cucumbers", cost=50),
+            Grades(
+                student_id=1, cours_id=2, status=Status.in_progerss, assessment=None
+            ),
             Grades(student_id=2, cours_id=3, status=Status.completed, assessment=99),
             Grades(student_id=3, cours_id=1, status=Status.failed, assessment=0),
             Grades(student_id=4, cours_id=3, status=Status.completed, assessment=70),
@@ -113,18 +133,17 @@ def select_report():
         g = aliased(Grades)
 
         cteq = (
-            select(
-                g.cours_id,
-                func.max(g.assessment).label("max_assessment")
-            ).group_by(g.cours_id)
-        ).cte('max_point')
+            select(g.cours_id, func.max(g.assessment).label("max_assessment")).group_by(
+                g.cours_id
+            )
+        ).cte("max_point")
 
         stmt = (
             select(
                 c.name.label("course_name"),
                 func.round(func.avg(g.assessment), 2).label("average_score"),
                 func.count(s.id).label("completed_students_count"),
-                s.name.label("best_student_name")
+                s.name.label("best_student_name"),
             )
             .select_from(c)
             .join(g, (c.id == g.cours_id) & (g.status == Status.completed))
@@ -134,9 +153,7 @@ def select_report():
         )
 
         print("-" * 10)
-        print(
-            "RESULTAT:", session.execute(stmt).all()
-        )
+        print("RESULTAT:", session.execute(stmt).all())
         print("-" * 10)
 
 
