@@ -7,7 +7,7 @@ from sqlalchemy.orm import DeclarativeBase, Mapped, aliased, mapped_column, rela
 from config import settings
 
 
-engine = create_engine(settings.DB_URL_psycopg)
+engine = create_engine(settings.DB_URL_psycopg, echo=True)
 
 
 session_f = sessionmaker(engine, expire_on_commit=False)
@@ -78,7 +78,7 @@ def populate_database():
             Grades(student_id=2, cours_id=3, status=Status.completed, assessment=99),
             Grades(student_id=3, cours_id=1, status=Status.failed, assessment=0),
             Grades(student_id=4, cours_id=3, status=Status.completed, assessment=70),
-            Grades(student_id=5, cours_id=2, status=Status.not_started, assessment=None),
+            Grades(student_id=5, cours_id=2, status=Status.not_started, assessment=40),
         ]
         session.add_all(stmt)
 
@@ -94,14 +94,20 @@ def select_report():
         g = aliased(Grades)
         stmt = (
             select(
-                c.name, func.avg(g.assessment)
+                c.name,
+                func.avg(g.assessment)
             )
+            .select_from(c)
             .join(g, c.id == g.cours_id)
-            .filter(g.status == Status.completed)
-
+            .join(s, g)
+            .group_by(c.name)
         )
 
-        print(session.execute(stmt))
+        print("-" * 10)
+        print(
+            "RESULTAT:", session.execute(stmt).all()
+        )
+        print("-" * 10)
 
 
 select_report()
