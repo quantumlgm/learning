@@ -2,7 +2,7 @@ import datetime
 from decimal import Decimal
 import enum
 from typing import Annotated
-from sqlalchemy import CheckConstraint, Enum, ForeignKey, Numeric, String, create_engine, func, select
+from sqlalchemy import CheckConstraint, ForeignKey, Numeric, String, create_engine, func, select, case, label, cte
 from sqlalchemy.orm import DeclarativeBase, Mapped, aliased, mapped_column, relationship, sessionmaker
 from config import settings
 
@@ -92,15 +92,26 @@ def select_report():
         s = aliased(Students)
         c = aliased(Courses)
         g = aliased(Grades)
+
+        cteq = (
+            select(
+                g.cours_id,
+                func.max(g.assessment).label("max_assessment")
+            ).group_by(g.cours_id)
+        ).cte('max_point')
+
         stmt = (
             select(
-                c.name,
-                func.avg(g.assessment)
+                c.name.label("course_name"),
+                func.round(func.avg(g.assessment), 2).label("average_score"),
+                func.count(s.id).label("completed_students_count"),
+                s.name.label("best_student_name")
             )
             .select_from(c)
-            .join(g, c.id == g.cours_id)
-            .join(s, g)
-            .group_by(c.name)
+            .join(g, (c.id == g.cours_id) & (g.status == Status.completed))
+            .join(cteq, (c.id == cteq.c.cours_id))
+            .join(s, (s.id == g.student_id) & (g.assessment == cteq.c.max_assessment))
+            .group_by(c.name, s.name)
         )
 
         print("-" * 10)
