@@ -60,7 +60,6 @@ graph LR
 * Redis
 * RabbitMQ \ Celery
 * Prompt Engineering
-* MongoDB 
 * ChromaDB / pgvector 
 * LangChain
 * PydanticAI
