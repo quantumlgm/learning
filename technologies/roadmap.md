@@ -51,11 +51,9 @@ graph LR
 * PostgreSQL
 * SQLAlchemy 2.0 
 * Alembic
+* PostgreSQL (Advanced)
 * Pytest + pytest-asyncio
 * Git (Advanced)
-* OS
-* Pathlib
-* APScheduler
 * Docker & Docker Compose
 * Redis
 * RabbitMQ \ Celery
