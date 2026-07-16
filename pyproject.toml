@@ -11,6 +11,7 @@ dependencies = [
     "httpx[cli]>=0.28.1",
     "psycopg[binary]>=3.3.4",
     "sqlalchemy>=2.0.51",
+    "sqlparse>=0.5.5",
 ]
 
 [tool.pyright]

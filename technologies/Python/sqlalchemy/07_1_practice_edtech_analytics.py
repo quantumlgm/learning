@@ -87,3 +87,21 @@ create_db()
 populate_database()
 
 
+def select_report():
+    with session_f.begin() as session:
+        s = aliased(Students)
+        c = aliased(Courses)
+        g = aliased(Grades)
+        stmt = (
+            select(
+                c.name, func.avg(g.assessment)
+            )
+            .join(g, c.id == g.cours_id)
+            .filter(g.status == Status.completed)
+
+        )
+
+        print(session.execute(stmt))
+
+
+select_report()
