@@ -44,19 +44,19 @@ class CoffeeMachine:
         self.logger = logger
 
     def activation(self):
-        logger.info("Coffee machine is starting up")
+        self.logger.info("Coffee machine is starting up")
 
     def scan(self):
-        logger.debug("Checking the details...")
+        self.logger.debug("Checking the details...")
 
     def cups_emptied(self):
-        logger.warning("We're running out of cups")
+        self.logger.warning("We're running out of cups")
 
     def machine_error(self):
-        logger.error("Payment error on Bank side")
+        self.logger.error("Payment error on Bank side")
 
     def machine_bolt(self):
-        logger.critical("The coffee machine is broken!")
+        self.logger.critical("The coffee machine is broken!")
 
 
 if __name__ == "__main__":
