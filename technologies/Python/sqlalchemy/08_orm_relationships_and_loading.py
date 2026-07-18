@@ -121,5 +121,5 @@ def selectinload_relation_select():
         print(res[3].resumes)
 
         
-print('[green]joined_relation_select[/green]')
+print('[green]selectinload_relation_select[/green]')
 selectinload_relation_select()
