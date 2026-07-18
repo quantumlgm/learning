@@ -16,7 +16,6 @@ Key Concepts Implemented:
    string lookups and a structural 'CheckConstraint' to prevent negative compensation values.
 """
 
-import select
 from rich import print
 from sqlalchemy import (
     CheckConstraint,
