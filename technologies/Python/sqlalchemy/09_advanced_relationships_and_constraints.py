@@ -1,3 +1,22 @@
+"""
+Lesson 9: Advanced ORM Relationships, Custom Joins, and DB Constraints in SQLAlchemy 2.0.
+
+This code explores industrial patterns for configuring bi-directional relationships,
+applying granular filtering at the model level, and enforcing database integrity.
+
+Key Concepts Implemented:
+1. Bidirectional Relations ('back_populates'): Establishes explicit, type-safe 
+   two-way data synchronization between WorkersOrm and ResumesOrm in Python memory.
+2. Custom Filtering ('primaryjoin'): Features 'resumes_adult' which filters associated 
+   records directly in SQL (compensation > 50000) and orders them via descending IDs.
+3. Eager Join Hijacking ('contains_eager'): Optimizes performance by using a manual 
+   SQL JOIN combined with contains_eager() to populate relationship attributes without 
+   triggering extra hidden queries.
+4. Database Constraints & Performance: Adds a B-Tree index ('title_idx') for rapid 
+   string lookups and a structural 'CheckConstraint' to prevent negative compensation values.
+"""
+
+
 import select
 from rich import print
 from sqlalchemy import CheckConstraint, ForeignKey, Index, String, create_engine, desc, select
