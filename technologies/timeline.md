@@ -158,3 +158,23 @@ https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python
 
 **Status:** Completed ✅
 
+## Python: SQLAlchemy | Alembic
+
+**Start:** 10.07.2026    
+**End:** 19.07.2026  
+**Total duration:** 9 days  
+**Net Time:** 33.75h
+
+**Materials:**  
+- [Курс по SQLAlchemy | Артём Шумейко](https://youtube.com/playlist?list=PLeLN0qH0-mCXARD_K-USF2wHctxzEVp40&si=kBq3r2lhoxcsNdTx)
+- [SQLAlchemy Docs](https://docs.sqlalchemy.org/en/20/tutorial/index.html)
+- AI
+
+**Practical tasks (code):**  
+https://github.com/quantumlgm/learning/tree/main/technologies/Python/sqlalchemy
+
+**Notes & knowledge base:**  
+https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python
+
+**Status:** Completed ✅
+
