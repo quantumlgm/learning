@@ -20,13 +20,13 @@ type num = int | float
 def check_transfer(currency: num, exchange_rate: num):
     if currency <= 0 or exchange_rate <= 0:
         raise ValueError(f"The amount of money must not be zero or negative")
-    
+
 
 def currency_exchange(
-    from_valute: str, 
-    in_valute: str, 
-    currency: num, 
-    exchange_rate: num, 
+    from_valute: str,
+    in_valute: str,
+    currency: num,
+    exchange_rate: num,
 ):
     time.sleep(1)
     check_transfer(currency, exchange_rate)
@@ -55,22 +55,23 @@ def fast_conversion(
         "result": (currency * exchange_rate) + extra_charge,
     }
 
+
 print(
     currency_exchange(
-        in_valute='USD', 
-        from_valute='RUB',
+        in_valute="USD",
+        from_valute="RUB",
         currency=23489.342143,
-        exchange_rate=4123541.23451534562124321423453
+        exchange_rate=4123541.23451534562124321423453,
     )
 )
 
 
 print(
     fast_conversion(
-        in_valute='USD', 
-        from_valute='RUB',
+        in_valute="USD",
+        from_valute="RUB",
         currency=200,
         exchange_rate=78.01,
-        extra_charge=100
-    ) 
+        extra_charge=100,
+    )
 )
