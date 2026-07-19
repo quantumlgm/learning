@@ -68,7 +68,7 @@ class ResumesOrm(Base):
     title: Mapped[str] = mapped_column(String(255), nullable=False)
     worker_id: Mapped[int] = mapped_column(ForeignKey("workers_orm.id"))
 
-    worker: Mapped[list["WorkersOrm"]] = relationship(back_populates="resumes")
+    worker: Mapped["WorkersOrm"] = relationship(back_populates="resumes")
 
 
 class SkillsOrm(Base):
@@ -77,7 +77,7 @@ class SkillsOrm(Base):
     name: Mapped[str] = mapped_column(String(255))
     version: Mapped[str] = mapped_column(String(255))
 
-    workers: Mapped["WorkersOrm"] = relationship(
+    workers: Mapped[list["WorkersOrm"]] = relationship(
         back_populates="skills", secondary="worker_skills"
     )
 
@@ -96,7 +96,7 @@ worker_skills = Table(
 
 def create_tables():
     Base.metadata.drop_all(engine)
-    metadata_obj.drop_all(engine)
+    Base.metadata.create_all(engine)
 
 
 create_tables()
