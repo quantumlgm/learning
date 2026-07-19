@@ -17,7 +17,6 @@ Key Concepts Implemented:
 
 from fastapi import FastAPI
 from pydantic import BaseModel, ConfigDict
-from rich import print
 from sqlalchemy import ForeignKey, String, create_engine, select
 from sqlalchemy.orm import (
     DeclarativeBase,
