@@ -1,29 +1,35 @@
 """
 Lesson 11: Many-to-Many Relationships in SQLAlchemy 2.0.
 
-This script demonstrates how to configure and execute Many-to-Many (m2m) associations 
+This script demonstrates how to configure and execute Many-to-Many (m2m) associations
 in SQLAlchemy 2.0 using an association table layer and the secondary parameter.
 
 Key Concepts Implemented:
-1. Associative Table: Declares a dedicated link table ("worker_skills") with a 
+1. Associative Table: Declares a dedicated link table ("worker_skills") with a
    composite primary key to store isolated foreign key pairs linking two models.
-2. Bidirectional m2m Mappings: Uses the secondary argument pointing to the link table 
+2. Bidirectional m2m Mappings: Uses the secondary argument pointing to the link table
    alongside back_populates to synchronize collections across models natively.
-3. Automatic Link Injections: appends elements directly into standard Python collections, 
+3. Automatic Link Injections: appends elements directly into standard Python collections,
    allowing SQLAlchemy to track insertions and handle join-table queries under the hood.
-4. Multi-Relation Eager Loading: Executes a consolidated select statement chaining independent 
+4. Multi-Relation Eager Loading: Executes a consolidated select statement chaining independent
    selectinload options to pull both 1-to-many and many-to-many profiles without N+1 hits.
 """
 
 from fastapi import FastAPI
-from pydantic import BaseModel, ConfigDict 
-from sqlalchemy import Column, ForeignKey, MetaData, String, Table, create_engine, select
+from sqlalchemy import (
+    Column,
+    ForeignKey,
+    String,
+    Table,
+    create_engine,
+    select,
+)
 from sqlalchemy.orm import (
     DeclarativeBase,
     Mapped,
     mapped_column,
     relationship,
-    selectinload, 
+    selectinload,
     sessionmaker,
 )
 from config import settings
@@ -51,9 +57,8 @@ class WorkersOrm(Base):
     age: Mapped[int]
 
     resumes: Mapped[list["ResumesOrm"]] = relationship(back_populates="worker")
-    skills: Mapped[list['SkillsOrm']] = relationship(
-        back_populates='workers',
-        secondary="worker_skills"
+    skills: Mapped[list["SkillsOrm"]] = relationship(
+        back_populates="workers", secondary="worker_skills"
     )
 
 
@@ -73,16 +78,19 @@ class SkillsOrm(Base):
     version: Mapped[str] = mapped_column(String(255))
 
     workers: Mapped["WorkersOrm"] = relationship(
-        back_populates="skills",
-        secondary="worker_skills"
+        back_populates="skills", secondary="worker_skills"
     )
 
 
 worker_skills = Table(
     "worker_skills",
     Base.metadata,
-    Column("worker_id", ForeignKey("workers_orm.id", ondelete='cascade'), primary_key=True),
-    Column("skill_id", ForeignKey("skills_orm.id", ondelete='cascade'), primary_key=True),   
+    Column(
+        "worker_id", ForeignKey("workers_orm.id", ondelete="cascade"), primary_key=True
+    ),
+    Column(
+        "skill_id", ForeignKey("skills_orm.id", ondelete="cascade"), primary_key=True
+    ),
 )
 
 
@@ -91,22 +99,20 @@ def create_tables():
     metadata_obj.drop_all(engine)
 
 
-
-
 create_tables()
-    
+
 
 def add_worker_skills():
     with sessionf.begin() as session:
         skill_python = SkillsOrm(name="Python", version="Python: 3.12.10")
         skill_redis = SkillsOrm(name="Redis", version="Redis: 8")
 
-        worker = WorkersOrm(username='Mike Dustin', age=21)
+        worker = WorkersOrm(username="Mike Dustin", age=21)
 
         worker.skills.append(skill_python)
         worker.skills.append(skill_redis)
 
-        session.add(worker)        
+        session.add(worker)
 
 
 add_worker_skills()
@@ -116,11 +122,8 @@ def get_worker():
     with sessionf.begin() as session:
         stmt = (
             select(WorkersOrm)
-            .options(
-                selectinload(WorkersOrm.resumes),
-                selectinload(WorkersOrm.skills)
-            )
-            .where(WorkersOrm.id == 1)            
+            .options(selectinload(WorkersOrm.resumes), selectinload(WorkersOrm.skills))
+            .where(WorkersOrm.id == 1)
         )
         worker = session.execute(stmt).scalar_one_or_none()
 
