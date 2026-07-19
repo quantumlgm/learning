@@ -1,3 +1,20 @@
+"""
+Lesson 11: Many-to-Many Relationships in SQLAlchemy 2.0.
+
+This script demonstrates how to configure and execute Many-to-Many (m2m) associations 
+in SQLAlchemy 2.0 using an association table layer and the secondary parameter.
+
+Key Concepts Implemented:
+1. Associative Table: Declares a dedicated link table ("worker_skills") with a 
+   composite primary key to store isolated foreign key pairs linking two models.
+2. Bidirectional m2m Mappings: Uses the secondary argument pointing to the link table 
+   alongside back_populates to synchronize collections across models natively.
+3. Automatic Link Injections: appends elements directly into standard Python collections, 
+   allowing SQLAlchemy to track insertions and handle join-table queries under the hood.
+4. Multi-Relation Eager Loading: Executes a consolidated select statement chaining independent 
+   selectinload options to pull both 1-to-many and many-to-many profiles without N+1 hits.
+"""
+
 from fastapi import FastAPI
 from pydantic import BaseModel, ConfigDict 
 from sqlalchemy import Column, ForeignKey, MetaData, String, Table, create_engine, select
