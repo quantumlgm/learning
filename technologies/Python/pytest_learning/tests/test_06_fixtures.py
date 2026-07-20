@@ -1,3 +1,15 @@
+""""
+Lesson 06.1: Basic Pytest Fixtures and Dependency Injection.
+
+This test suite verifies bank account balance calculations and VIP cashback processing.
+It demonstrates explicit fixture usage to provide isolated, clean test environments.
+
+Key Technical Features:
+- Atomic Fixtures: Reusable `@pytest.fixture` definitions returning distinct user profiles and transaction sets.
+- Dependency Injection: Implicit context delivery to test functions via parameter signature naming.
+- Clean Test Separation: Isolates regular vs. VIP customer logic without code duplication.
+"""
+
 import pytest
 from l_06_fixtures import calculate_total_balance, apply_vip_cashback, Transaction, UserProfile
 
