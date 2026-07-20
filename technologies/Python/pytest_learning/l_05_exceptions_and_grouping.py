@@ -49,9 +49,3 @@ def calculate_credit_limit(
         "interest_rate": interest_rate,
         "reason": "Approved"
     }
-
-print(
-    calculate_credit_limit(
-        20, 1300.0, 400, False
-    )
-)

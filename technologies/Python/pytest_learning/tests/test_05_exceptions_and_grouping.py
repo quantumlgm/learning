@@ -11,8 +11,8 @@ Key Technical Features:
 """
 
 import pytest
-
 from l_05_exceptions_and_grouping import calculate_credit_limit
+
 
 class TestCalculateCreditLimit:
     @pytest.mark.parametrize(
@@ -36,8 +36,7 @@ class TestCalculateCreditLimit:
                 "interest_rate": 0.0, 
                 "reason": "High risk client"
             }),
-        ]
-        
+        ]        
     )
     def test_calculate_success(
         self,
@@ -62,8 +61,7 @@ class TestCalculateCreditLimit:
             (20, -1000, 600, False),
             (20, 1200, 200, False),
             (20, 1300.0, 0, False),                                   
-        ]
-        
+        ]        
     )
     def test_calculate_error(
         self,
@@ -74,4 +72,3 @@ class TestCalculateCreditLimit:
     ):
         with pytest.raises(ValueError):
             calculate_credit_limit(age, monthly_income, credit_score, has_active_defaults)
-
