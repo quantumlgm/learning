@@ -1,16 +1,8 @@
 """
-Lesson 1: Pytest Discovery, Basic Assertions, and Test Execution Flow.
+Lesson 1: Pytest Core Mechanics and Dictionary Verification.
 
-This test suite introduces the fundamentals of testing Python applications using Pytest,
-focusing on test discovery rules, assertion evaluation, and mathematical correctness.
-
-Key Technical Features:
-- Test Discovery Mechanics: Demonstrates how Pytest automatically detects test files
-  and test functions using specific naming conventions (`test_*`).
-- State and Dictionary Verification: Validates functional correctness by verifying keys,
-  data types, and structure alignment in returned dictionaries.
-- Float Precision Handling: Examines how standard assertions interact with Python's floating-point
-  arithmetic precision limitations (IEEE 754) during complex multiplication.
+This module covers basic test discovery rules, dictionary state checks,
+and floating-point precision behavior in Python assertions.
 """
 
 from l_01_basics import currency_exchange, fast_conversion
