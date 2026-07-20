@@ -1,3 +1,16 @@
+"""
+Lesson 04: Test Parametrization with Pytest.
+
+This test suite demonstrates how to use `@pytest.mark.parametrize` to execute
+a single test function against multiple datasets without code duplication.
+
+Key Technical Features:
+- Data-Driven Testing: Decouples test logic from test data by feeding parameter sets.
+- Test Isolation: Ensures every parameter combination runs as a separate, independent test.
+- Complex Data Structures: Uses dictionaries and tuples to validate multi-field outputs.
+"""
+
+
 import pytest
 from l_04_parametrize import calculate_subscription_price
 
