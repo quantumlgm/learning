@@ -1,3 +1,15 @@
+"""
+Lesson 05: Exception Handling and Test Grouping.
+
+This test suite covers validation boundaries and financial logic for credit scoring.
+It verifies both successful credit decisions and expected exception triggers.
+
+Key Technical Features:
+- Test Class Organization: Encapsulates related test scenarios inside a single `TestCalculateCreditLimit` class.
+- Exception Testing: Uses `pytest.raises(ValueError)` to validate that invalid inputs properly halt execution.
+- Isolated Boundary Testing: Ensures negative test cases target one validation failure at a time.
+"""
+
 import pytest
 
 from l_05_exceptions_and_grouping import calculate_credit_limit
