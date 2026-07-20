@@ -1,6 +1,6 @@
 import pytest
-
 from l_04_parametrize import calculate_subscription_price
+
 
 @pytest.mark.parametrize(
     "tier, months, promo_code, with_mentor, check",

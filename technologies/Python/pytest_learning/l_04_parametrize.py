@@ -8,16 +8,9 @@ for extra features like personal mentorship or extended access.
 
 
 def calculate_subscription_price(
-    tier: str,
-    months: int,
-    promo_code: str | None = None,
-    with_mentor: bool = False
+    tier: str, months: int, promo_code: str | None = None, with_mentor: bool = False
 ) -> dict[str, str | int | float]:
-    prices = {
-        "basic": 1000.0,
-        "standard": 2500.0,
-        "premium": 5000.0
-    }
+    prices = {"basic": 1000.0, "standard": 2500.0, "premium": 5000.0}
 
     if tier not in prices:
         raise ValueError(f"Unknown subscription tier: {tier}")
@@ -47,5 +40,5 @@ def calculate_subscription_price(
         "base_price": base_price,
         "discount_applied": discount,
         "mentor_fee": mentor_fee,
-        "total_price": total_price
+        "total_price": total_price,
     }
