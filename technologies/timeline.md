@@ -163,7 +163,7 @@ https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python
 **Start:** 10.07.2026    
 **End:** 19.07.2026  
 **Total duration:** 9 days  
-**Net Time:** 33.75h
+**Net Time:** ~33.75h
 
 **Materials:**  
 - [Курс по SQLAlchemy | Артём Шумейко](https://youtube.com/playlist?list=PLeLN0qH0-mCXARD_K-USF2wHctxzEVp40&si=kBq3r2lhoxcsNdTx)
@@ -172,6 +172,26 @@ https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python
 
 **Practical tasks (code):**  
 https://github.com/quantumlgm/learning/tree/main/technologies/Python/sqlalchemy
+
+**Notes & knowledge base:**  
+https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python
+
+**Status:** Completed ✅
+
+  
+## Python: Pytest
+
+**Start:** 19.07.2026    
+**End:** 21.07.2026  
+**Total duration:** 3 days  
+**Net Time:** ~15.5h
+
+**Materials:**  
+- [Курс по SQLAlchemy | Артём Шумейко](https://youtu.be/jsrxqoVasyw?si=QOqRXtxbqbtAkwDa)
+- AI
+
+**Practical tasks (code):**  
+https://github.com/quantumlgm/learning/tree/main/technologies/Python/pytest-learning
 
 **Notes & knowledge base:**  
 https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python
