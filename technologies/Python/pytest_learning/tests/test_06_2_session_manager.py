@@ -50,4 +50,34 @@ class TestSessionWork:
         assert connected_session.cache_size == 1
 
 
+class TestSessionErrors:
+    def test_connect_error(self, connected_session: SessionManager):
+        with pytest.raises(SessionError):
+            connected_session.connect()
+
+    def test_disconnect_error(self, create_session: SessionManager):        
+        with pytest.raises(SessionError):
+            create_session.disconnect()        
+
+    def test_set_data_error(self, create_session: SessionManager):   
+        with pytest.raises(SessionError):
+            create_session.set_data(key='app', value="Github")
+                
+    def test_get_data_session_error(self, create_session: SessionManager):   
+        with pytest.raises(SessionError):
+            create_session.get_data("app")
+
+    @pytest.mark.parametrize(
+        "check", 
+        [
+            ("RANDOMKEY@*&#^&@*&#^&@*^*"), 
+            ("RANDOMKEY2143435324564"), 
+            ("RANDOMKEY;djewnbdefhqe"), 
+        ]
+    )
+    def test_get_data_key_error(self, check: str, connected_session: SessionManager):   
+        with pytest.raises(KeyError):
+            assert connected_session.get_data(check)
+
+
 
