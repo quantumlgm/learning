@@ -12,7 +12,7 @@ This document tracks my learning journey, showing how much time I invested in ea
 **Net Time:** ~76.5h
 
 **Materials:**  
-- (Объектно-ориентированное программирование (ООП) на Python 3)[https://youtube.com/playlist?list=PLA0M1Bcd0w8zPwP7t-FgwONhZOHt9rz9E&si=4V4drVkAHt87fUxC]
+- [Объектно-ориентированное программирование (ООП) на Python 3](https://youtube.com/playlist?list=PLA0M1Bcd0w8zPwP7t-FgwONhZOHt9rz9E&si=4V4drVkAHt87fUxC)
 - AI
 
 **Practical tasks (code):**  
@@ -31,7 +31,7 @@ https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python
 **Net Time:** ~31.5h
 
 **Materials:**  
-- (Curso de Type Hints no Python do Básico Ao Avançado (Type Annotations)[https://youtube.com/playlist?list=PLbIBj8vQhvm04EuddtleOAoEmfU9vwQlN&si=f_WoxXao36nzqFCK]
+- [Curso de Type Hints no Python do Básico Ao Avançado (Type Annotations)](https://youtube.com/playlist?list=PLbIBj8vQhvm04EuddtleOAoEmfU9vwQlN&si=f_WoxXao36nzqFCK)
 - AI
 
 **Practical tasks (code):**  
@@ -50,7 +50,7 @@ https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python
 **Net Time:** ~4.5h
 
 **Materials:**  
-- (Pydantic Tutorials)[https://youtube.com/playlist?list=PLRJ25SyJ5NMaOebEchSVLzIU2h2XH586S&si=X-zchhKVwHJlaIci]
+- [Pydantic Tutorials](https://youtube.com/playlist?list=PLRJ25SyJ5NMaOebEchSVLzIU2h2XH586S&si=X-zchhKVwHJlaIci)
 - AI
 
 **Practical tasks (code):**  
@@ -69,7 +69,7 @@ https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python
 **Net Time:** ~2h
 
 **Materials:**  
-- (Python Logging Tutorial - How to Log Messages in Python)[https://youtube.com/playlist?list=PLL34mf651faPNAYmex1qzDhDw9xUxDt4A&si=ocPQTFe9ErvLJPHg]
+- [Python Logging Tutorial - How to Log Messages in Python](https://youtube.com/playlist?list=PLL34mf651faPNAYmex1qzDhDw9xUxDt4A&si=ocPQTFe9ErvLJPHg)
 - AI
 
 **Practical tasks (code):**  
@@ -88,7 +88,7 @@ https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python
 **Net Time:** ~9h
 
 **Materials:**  
-- (Асинхронность в Python - Олег Молчанов)[https://youtube.com/playlist?list=PLlWXhlUMyooawilqK4lPXRvxtbYiw34S8&si=qh8MoudQqA2NqaXN]
+- [Асинхронность в Python - Олег Молчанов](https://youtube.com/playlist?list=PLlWXhlUMyooawilqK4lPXRvxtbYiw34S8&si=qh8MoudQqA2NqaXN)
 - AI
 
 **Practical tasks (code):**  
@@ -187,7 +187,7 @@ https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python
 **Net Time:** ~15.5h
 
 **Materials:**  
-- [Курс по SQLAlchemy | Артём Шумейко](https://youtu.be/jsrxqoVasyw?si=QOqRXtxbqbtAkwDa)
+- [Pytest Курс | Артём Шумейко](https://youtu.be/jsrxqoVasyw?si=QOqRXtxbqbtAkwDa)
 - AI
 
 **Practical tasks (code):**  
