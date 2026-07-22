@@ -196,5 +196,15 @@ https://github.com/quantumlgm/learning/tree/main/technologies/Python/pytest-lear
 **Notes & knowledge base:**  
 https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python
 
-**Status:** Completed ✅
+**Status:** Completed ✅   
 
+## Git (Advanced)
+
+**Start:** 22.07.2026    
+**End:**  
+**Total duration:**     
+**Net Time:**  
+
+**Materials:**  
+- 
+- AI
