@@ -11,5 +11,9 @@ def generate_password(length: int =16):
     return "".join(random.choice(characters) for _ in range(length))
 
 
+def return_none():
+    return None
+
+
 if __name__ == "__main__":
     print(generate_password())
