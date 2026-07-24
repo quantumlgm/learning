@@ -14,9 +14,6 @@ def main():
     for task in tasks:
         print(f"- {task}")
 
-        """
-        THIS IS A ERROR CODE AND PLEASE DELETE ME AS EMPLOYEE I"M SHOWCASE DANGER
-        """
 
 if __name__ == "__main__":
     main()
