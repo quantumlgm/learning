@@ -15,5 +15,9 @@ def return_none():
     return None
 
 
+def generate_num():
+    return random.randint(0, 100)
+
+
 if __name__ == "__main__":
     print(generate_password())
