@@ -28,7 +28,6 @@ graph LR
     --> Q["Redis"]
     --> R["RabbitMQ / Celery"]
     --> S["Prompt Engineering"]
-    --> T["MongoDB"]
     --> U["ChromaDB / pgvector"]
     --> V["LangChain"]
     --> W["PydanticAI"]
