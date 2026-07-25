@@ -55,9 +55,9 @@ graph LR
 * Pytest + pytest-asyncio
 * Git (Advanced)
 * Docker & Docker Compose
+* Prompt Engineering 
 * Redis
 * RabbitMQ \ Celery
-* Prompt Engineering
 * ChromaDB / pgvector 
 * LangChain
 * PydanticAI
