@@ -38,7 +38,7 @@ graph LR
     --> AB["Kubernetes (K8s)"]
 ```
 
-## 📋 The Pipeline (Checklist)
+## 📋 Roadmap 
 
 * Python: OOP
 * Python: Typing
