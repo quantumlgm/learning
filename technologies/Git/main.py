@@ -8,7 +8,7 @@ def main():
     user_name = "Developer"
     greet_user(user_name)
     
-    tasks = ["Learn Git status", "Make a commit", "Create a branch"]
+    tasks = ["Wash the floor", "Make the chair", "Maintain the car"]
     
     print("My current tasks:")
     for task in tasks:
