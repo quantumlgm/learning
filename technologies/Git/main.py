@@ -14,5 +14,6 @@ def main():
     for task in tasks:
         print(f"- {task}")
 
+
 if __name__ == "__main__":
     main()
