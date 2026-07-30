@@ -21,14 +21,10 @@ graph LR
     --> J["Alembic"]
     --> K["Pytest + pytest-asyncio"]
     --> L["Git (Advanced)"]
-    --> M["OS"]
-    --> N["Pathlib"]
-    --> O["APScheduler"]
     --> P["Docker & Docker Compose"]
     --> Q["Redis"]
     --> R["RabbitMQ / Celery"]
     --> S["Prompt Engineering"]
-    --> T["MongoDB"]
     --> U["ChromaDB / pgvector"]
     --> V["LangChain"]
     --> W["PydanticAI"]
@@ -39,7 +35,7 @@ graph LR
     --> AB["Kubernetes (K8s)"]
 ```
 
-## 📋 The Pipeline (Checklist)
+## 📋 Roadmap 
 
 * Python: OOP
 * Python: Typing
@@ -55,9 +51,9 @@ graph LR
 * Pytest + pytest-asyncio
 * Git (Advanced)
 * Docker & Docker Compose
+* Prompt Engineering 
 * Redis
 * RabbitMQ \ Celery
-* Prompt Engineering
 * ChromaDB / pgvector 
 * LangChain
 * PydanticAI
