@@ -1,9 +1,9 @@
-def returned(mul: int):
-    return f"turn = {(10 + 2) * mul}"
+def re_base(base: object):
+    return base 
 
 
-print(
-    returned(2)
-)
-
+re_base(object)
+re_base(10)
+re_base('String')
+re_base(bool)
 
