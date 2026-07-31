@@ -200,11 +200,11 @@ https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python
 
 ## Git (Advanced)
 
-**Start:** 22.07.2026 
-**Rest**: from 25 to 29 😄 I was visiting a relative
-**End:**  
-**Total duration:**     
-**Net Time:**  
+**Start:** 22.07.2026   
+**Rest**: from 25 to 29 😄 I was visiting a relative  
+**End:** 31.07.2026
+**Total duration:** 6     
+**Net Time:** ~22.5 h   
 
 **Materials:**  
 - [Git: курс](https://youtube.com/playlist?list=PLDyvV36pndZFHXjXuwA_NywNrVQO0aQqb&si=7Hh5iCEvAMj8Elw2)
