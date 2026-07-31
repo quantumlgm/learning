@@ -4,14 +4,3 @@ def main(n: int):
         res = res + i  
     return f"Result: {res}"
 
-print(
-    main(2)
-)
-
-print(
-    main(3)
-)
-
-print(
-    main(4)
-)
