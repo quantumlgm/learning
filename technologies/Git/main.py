@@ -1,6 +1,9 @@
-def main(n: int):
-    res = 0
-    for i in range(n + 1):
-        res = res + i  
-    return f"Result: {res}"
+def returned(mul: int):
+    return f"turn = {(10 + 2) * mul}"
+
+
+print(
+    returned(2)
+)
+
 
