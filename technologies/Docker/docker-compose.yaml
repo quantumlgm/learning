@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  app-php:
+    image: php:8.0-apache
+    container_name: app-php
+    ports:
+      - '8080:80'
+    volumes:
+      - ./:/var/www/html/ 
+    restart: unless-stopped
+    networks:
+      - appnet
+
+  py-app:
+    image: python:3.12.10-slim
+    container_name: py-app
+    volumes:
+      - ./:/app 
+    working_dir: /app
+    command: python main.py 
+    environment:
+      - PYTHONUNBUFFERED=1 
+    stdin_open: true 
+    tty: true       
+    restart: unless-stopped
+
+  ng-app:
+    image: nginx:1.30-alpine-perl
+    container_name: nq-app
+    restart: unless-stopped
+    ports:
+      - '80:80'
+
+networks:
+  appnet:
+    name: appnet
+    driver: bridge
