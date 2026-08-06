@@ -12,6 +12,7 @@ dependencies = [
     "httpx[cli]>=0.28.1",
     "psycopg[binary]>=3.3.4",
     "pytest>=9.1.1",
+    "redis>=8.1.0",
     "sqlalchemy>=2.0.51",
     "sqlparse>=0.5.5",
 ]
