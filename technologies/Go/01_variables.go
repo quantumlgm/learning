@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 
-func main() {
+func Variabels() {
 	// 1.
 	var nameOne string
 	nameOne = "Ruslan"
