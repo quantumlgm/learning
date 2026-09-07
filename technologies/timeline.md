@@ -208,4 +208,30 @@ https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python
 
 **Materials:**  
 - [Git: курс](https://youtube.com/playlist?list=PLDyvV36pndZFHXjXuwA_NywNrVQO0aQqb&si=7Hh5iCEvAMj8Elw2)
-- AI
+- AI 
+
+
+
+## LayerMed (My project, backend side)
+**Start:** 06.08.2026      
+**End:** 10.09.2026 (However, bug fixes and refactoring can continue at any time; the end date is not fixed) 
+**Total duration:** 36          
+**Net Time:** ~160h h       
+
+**Materials:**
+- [layermed-backend](https://github.com/LayerMed/layermed-backend)     
+
+  
+## S3 (Basics)  
+
+**Start:** 05.09.2026        
+**End:** ... (I just started working on it)        
+**Total duration:** ...         
+**Net Time:** ...        
+
+**Materials:**    
+- AI   
+
+  
+
+
