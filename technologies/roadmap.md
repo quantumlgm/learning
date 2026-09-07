@@ -53,12 +53,10 @@ graph LR
 * Docker & Docker Compose
 * Prompt Engineering 
 * Redis
-* RabbitMQ \ Celery
-* ChromaDB / pgvector 
-* LangChain
-* PydanticAI
-* LangGraph 
+* RabbitMQ 
 * CI/CD (GitHub Actions)
+
+## Freeze
 * Apache Kafka
 * Go (Golang)
 * Kubernetes (K8s)
