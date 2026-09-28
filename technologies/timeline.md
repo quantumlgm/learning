@@ -224,13 +224,26 @@ https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python
   
 ## S3 (Basics)  
 
-**Start:** 05.09.2026        
-**End:** ... (I just started working on it)        
+**Start:** 05.09.2026          
+**End:** ...       
 **Total duration:** ...         
 **Net Time:** ...        
 
 **Materials:**    
-- AI   
+- AI
+
+     
+## RabbitMQ 
+
+**Start:** 28.09.2026        
+**End:** ... (I just started working on it)        
+**Total duration:** ...         
+**Net Time:** ...         
+
+**Materials:**       
+- AI      
+- [RabbitMQ: Полный гайд для разработчика (2026)](https://youtu.be/7rxOg8mV1PE)    
+- [RabbitMQ и Python - Сурен Хоренян](https://youtube.com/playlist?list=PLYnH8mpFQ4amsOuXBq4Gpc-Tzt-pwGjnI&si=BZoSePzD78fIlOHu)     
 
   
 
