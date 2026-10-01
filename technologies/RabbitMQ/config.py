@@ -3,25 +3,19 @@ from loguru import logger
 import pika
 
 
-RMQ_HOST = "127.0.0.1"
-RMQ_PORT = 5672
+EXCHANGE = "order_exchange"
 
-MQ_EXCHANGE = ""
-FANOUT_EXCHANGE = "new_post_events"
-DIRECT_EXCHANGE = "logs_direct"
-TOPIC_EXCHANGE = "shop_topic"
 
-MQ_ROUTING_KEY = "news"
-
-connection_params = pika.ConnectionParameters(
-    host=RMQ_HOST,
-    port=RMQ_PORT,
-    # credentials=pika.PlainCredentials()
+parameters = pika.ConnectionParameters(
+    host="127.0.0.1", 
+    port=5672,
 )
 
 
-def get_connection() -> pika.BlockingConnection:
-    return pika.BlockingConnection(parameters=connection_params)
+def get_connection():
+    return pika.BlockingConnection(
+        parameters=parameters
+    )
 
 
 logger.remove()

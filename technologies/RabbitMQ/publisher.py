@@ -1,30 +1,33 @@
 import json
-from technologies.RabbitMQ.config import TOPIC_EXCHANGE, get_connection, logger
+
+from technologies.RabbitMQ.config import EXCHANGE, get_connection
 
 
-def publish_event(channel, routing_key: str, data: dict):
-    body = json.dumps(data).encode("utf-8")
-    channel.basic_publish(
-        exchange=TOPIC_EXCHANGE,
+def create_order(
+    ch, 
+    routing_key: str, 
+    order_id: int, 
+    cost: int
+):
+    payload = {"order_id": order_id, "cost": cost}
+    body = json.dumps(payload).encode("utf-8")
+    ch.basic_publish(
+        exchange=EXCHANGE,
         routing_key=routing_key,
-        body=body
+        body=body,        
     )
-    logger.info(f"Опубликовано [{routing_key}]: {data}")
 
 
 def main():
     with get_connection() as connection:
         with connection.channel() as channel:
             channel.exchange_declare(
-                exchange=TOPIC_EXCHANGE,
-                exchange_type="topic"
+                exchange="order_exchange",
+                exchange_type="topic"                
             )
 
-            publish_event(channel, "orders.created", {"order_id": 101, "total": 4500})
-            publish_event(channel, "payments.success", {"order_id": 101, "gateway": "yookassa"})
-            publish_event(channel, "payments.failed", {"order_id": 102, "error": "insufficient_funds"})
-            publish_event(channel, "analytics.users.click", {"button": "buy_now"})
+            create_order(channel, "order.msk.pizza.created", 1, 1000)
+            create_order(channel, "order.msk.sushi.delivered", 2, 900)
+            create_order(channel, "order.spb.burger.created", 3, 700)
+            create_order(channel, "order.spb.pizza.cancelled", 4, 1000)
 
-
-if __name__ == "__main__":
-    main()
