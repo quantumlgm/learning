@@ -1,40 +1,30 @@
 import json
+from technologies.RabbitMQ.config import TOPIC_EXCHANGE, get_connection, logger
 
-from aio_pika import exchange
-from technologies.RabbitMQ.config import (
-    FANOUT_EXCHANGE,
-    MQ_EXCHANGE,
-    MQ_ROUTING_KEY,
-    get_connection,
-    logger,
-)
+
+def publish_event(channel, routing_key: str, data: dict):
+    body = json.dumps(data).encode("utf-8")
+    channel.basic_publish(
+        exchange=TOPIC_EXCHANGE,
+        routing_key=routing_key,
+        body=body
+    )
+    logger.info(f"Опубликовано [{routing_key}]: {data}")
 
 
 def main():
     with get_connection() as connection:
         with connection.channel() as channel:
             channel.exchange_declare(
-                exchange=FANOUT_EXCHANGE,
-                exchange_type="fanout"
+                exchange=TOPIC_EXCHANGE,
+                exchange_type="topic"
             )
 
-            payload = {
-                "post_id": 42,
-                "title": "Уроки по RabbitMQ",
-                "author": "Сурен"
-            }
-            body = json.dumps(payload).encode("utf-8")
-
-            channel.basic_publish(
-                exchange=FANOUT_EXCHANGE,
-                routing_key="",
-                body=body
-            )
-            logger.info(f"Отправлено сообщение: {payload}")
+            publish_event(channel, "orders.created", {"order_id": 101, "total": 4500})
+            publish_event(channel, "payments.success", {"order_id": 101, "gateway": "yookassa"})
+            publish_event(channel, "payments.failed", {"order_id": 102, "error": "insufficient_funds"})
+            publish_event(channel, "analytics.users.click", {"button": "buy_now"})
 
 
 if __name__ == "__main__":
-    try:
-        main()
-    except KeyboardInterrupt:
-        logger.warning("Паблишер остановлен.")
+    main()

@@ -9,8 +9,9 @@ RMQ_PORT = 5672
 MQ_EXCHANGE = ""
 FANOUT_EXCHANGE = "new_post_events"
 DIRECT_EXCHANGE = "logs_direct"
-MQ_ROUTING_KEY = "news"
+TOPIC_EXCHANGE = "shop_topic"
 
+MQ_ROUTING_KEY = "news"
 
 connection_params = pika.ConnectionParameters(
     host=RMQ_HOST,
