@@ -233,17 +233,17 @@ https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python
 - AI
 
      
-## RabbitMQ 
+## RabbitMQ & aio-pika
 
-**Start:** 28.09.2026        
-**End:** ... (I just started working on it)        
-**Total duration:** ...         
-**Net Time:** ...         
+**Start:** 28.09.2026           
+**End:** 06.10.2026            
+**Total duration:** 9         
+**Net Time:** ~25 h         
 
-**Materials:**       
-- AI      
-- [RabbitMQ: Полный гайд для разработчика (2026)](https://youtu.be/7rxOg8mV1PE)    
-- [RabbitMQ и Python - Сурен Хоренян](https://youtube.com/playlist?list=PLYnH8mpFQ4amsOuXBq4Gpc-Tzt-pwGjnI&si=BZoSePzD78fIlOHu)     
+**Materials:**        
+- AI       
+- [RabbitMQ: Полный гайд для разработчика (2026)](https://youtu.be/7rxOg8mV1PE)     
+- [RabbitMQ и Python - Сурен Хоренян](https://youtube.com/playlist?list=PLYnH8mpFQ4amsOuXBq4Gpc-Tzt-pwGjnI&si=BZoSePzD78fIlOHu)      
 
   
 
