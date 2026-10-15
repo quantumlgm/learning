@@ -1,9 +1,17 @@
+from typing import AsyncGenerator
+
 from taskiq import Context, TaskiqDepends
 
+from service import FakeDatabaseConnection
 
-def get_formatter(service: Context = TaskiqDepends()):
-    service_name = service.message.labels.get("service_name")
-    def formatter_func(msg: str) -> str:
-        return f"[{service_name.upper()}]: {msg}"
 
-    return formatter_func
+async def get_db_session() -> AsyncGenerator:
+    conn = FakeDatabaseConnection()
+    try:
+        yield conn
+        await conn.commit()
+    except Exception as e:
+        await conn.rollback()
+        raise e
+    finally:
+        await conn.close()

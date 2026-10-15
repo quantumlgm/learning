@@ -1,6 +1,6 @@
 class FakeDatabaseConnection:
     is_connected: bool = True
-    
+
     @staticmethod
     async def commit():
         print("[DB] Изменения применены")
