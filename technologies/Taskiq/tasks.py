@@ -3,12 +3,16 @@ from taskiq_aio_pika import AioPikaBroker
 from taskiq_redis import RedisAsyncResultBackend
 
 from dependencies import get_db_session
-from service import FakeDatabaseConnection
+from service import FakeDatabaseConnection, LoggingMidlware
 
 
 redis = RedisAsyncResultBackend(redis_url="redis://localhost:6379", result_ex_time=300)
 
-broker = AioPikaBroker("amqp://guest:guest@localhost:5672/").with_result_backend(redis)
+broker = (
+    AioPikaBroker("amqp://guest:guest@localhost:5672/")
+    .with_result_backend(redis)
+    .with_middlewares(LoggingMidlware)
+)
 
 
 @broker.task
