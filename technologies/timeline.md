@@ -208,8 +208,9 @@ https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python
 
 **Materials:**  
 - [Git: курс](https://youtube.com/playlist?list=PLDyvV36pndZFHXjXuwA_NywNrVQO0aQqb&si=7Hh5iCEvAMj8Elw2)
-- AI 
+- AI
 
+**Status:** Completed ✅
 
 
 ## LayerMed (My project, backend side)
@@ -241,9 +242,11 @@ https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python
 **Net Time:** ~25 h         
 
 **Materials:**        
-- AI       
-- [RabbitMQ: Полный гайд для разработчика (2026)](https://youtu.be/7rxOg8mV1PE)     
-- [RabbitMQ и Python - Сурен Хоренян](https://youtube.com/playlist?list=PLYnH8mpFQ4amsOuXBq4Gpc-Tzt-pwGjnI&si=BZoSePzD78fIlOHu)  
+- AI          
+- [RabbitMQ: Полный гайд для разработчика (2026)](https://youtu.be/7rxOg8mV1PE)      
+- [RabbitMQ и Python - Сурен Хоренян](https://youtube.com/playlist?list=PLYnH8mpFQ4amsOuXBq4Gpc-Tzt-pwGjnI&si=BZoSePzD78fIlOHu)       
+  
+**Status:** Completed ✅
 
     
 ## Taskiq        
@@ -254,8 +257,9 @@ https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python
 **Net Time:** ~12.5 h          
 
 **Materials:**        
-- AI        
-
+- AI          
+  
+**Status:** Completed ✅
   
 
 
