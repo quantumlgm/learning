@@ -243,7 +243,18 @@ https://github.com/quantumlgm/learning/tree/main/knowledge-base/Python
 **Materials:**        
 - AI       
 - [RabbitMQ: Полный гайд для разработчика (2026)](https://youtu.be/7rxOg8mV1PE)     
-- [RabbitMQ и Python - Сурен Хоренян](https://youtube.com/playlist?list=PLYnH8mpFQ4amsOuXBq4Gpc-Tzt-pwGjnI&si=BZoSePzD78fIlOHu)      
+- [RabbitMQ и Python - Сурен Хоренян](https://youtube.com/playlist?list=PLYnH8mpFQ4amsOuXBq4Gpc-Tzt-pwGjnI&si=BZoSePzD78fIlOHu)  
+
+    
+## Taskiq        
+  
+**Start:** 07.10.2026            
+**End:** 15.10.2026              
+**Total duration:** 8           
+**Net Time:** ~12.5 h          
+
+**Materials:**        
+- AI        
 
   
 
