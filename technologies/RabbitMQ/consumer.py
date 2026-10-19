@@ -1,81 +1,40 @@
+import asyncio
 import json
+import aio_pika
 from loguru import logger
-from pika.adapters.blocking_connection import BlockingChannel
-from pika.spec import Basic, BasicProperties
-from technologies.RabbitMQ.config import get_connection
 
-MAIN_EXCHANGE = "app_main_exchange"
-MAIN_QUEUE = "tasks_main_queue"
-
-# Очередь задержки (буфер)
-RETRY_EXCHANGE = "app_retry_exchange"
-RETRY_QUEUE = "tasks_retry_5s_queue"
+RMQ_URL = "amqp://guest:guest@127.0.0.1:5672/"
+EXCHANGE_NAME = "my_exchange"
+QUEUE_NAME = "tasks_queue"
 
 
-def process_task(
-    ch: BlockingChannel,
-    method: Basic.Deliver,
-    properties: BasicProperties,
-    body: bytes
-):
-    data = json.loads(body.decode("utf-8"))
-    attempts = data.get("attempts", 0) + 1
-    data["attempts"] = attempts
+async def main():
+    connection = await aio_pika.connect_robust(RMQ_URL)
+    async with connection:
+        channel = await connection.channel()
+        await channel.set_qos(prefetch_count=1)
 
-    logger.warning(f"Попытка #{attempts} обработать задачу '{data['task_name']}'...")
-
-    # Имитируем, что сервис заработает только с 3-й попытки
-    if attempts < 3:
-        logger.error(f"Сервис недоступен! Отправляем задачу в буфер ожидания на 5 секунд...")
-        
-        # Пересылаем сообщение в очередь задержки
-        ch.basic_publish(
-            exchange=RETRY_EXCHANGE,
-            routing_key="",
-            body=json.dumps(data).encode("utf-8")
+        exchange = await channel.declare_exchange(
+            name=EXCHANGE_NAME,
+            type=aio_pika.ExchangeType.DIRECT,
+            durable=True
         )
-        # Подтверждаем исходное сообщение, чтобы удалить его из основной очереди
-        ch.basic_ack(delivery_tag=method.delivery_tag)
-    else:
-        logger.success(f"Задача '{data['task_name']}' УСПЕШНО выполнена с {attempts}-й попытки!")
-        ch.basic_ack(delivery_tag=method.delivery_tag)
 
+        queue = await channel.declare_queue(
+            name=QUEUE_NAME,
+            durable=True
+        )
+        await queue.bind(exchange, routing_key="tasks")
 
-def main():
-    with get_connection() as connection:
-        with connection.channel() as channel:
-            # 1. Основная инфраструктура
-            channel.exchange_declare(exchange=MAIN_EXCHANGE, exchange_type="fanout", durable=True)
-            channel.queue_declare(queue=MAIN_QUEUE, durable=True)
-            channel.queue_bind(exchange=MAIN_EXCHANGE, queue=MAIN_QUEUE)
-
-            # 2. Инфраструктура очереди задержки (Retry)
-            channel.exchange_declare(exchange=RETRY_EXCHANGE, exchange_type="fanout", durable=True)
-            
-            # Настройка очереди ожидания:
-            # - Живет 5000 мс (5 сек)
-            # - По истечении TTL пересылает сообщение обратно в MAIN_EXCHANGE!
-            retry_queue_args = {
-                "x-message-ttl": 5000,
-                "x-dead-letter-exchange": MAIN_EXCHANGE,
-            }
-            channel.queue_declare(
-                queue=RETRY_QUEUE,
-                durable=True,
-                arguments=retry_queue_args
-            )
-            channel.queue_bind(exchange=RETRY_EXCHANGE, queue=RETRY_QUEUE)
-
-            # 3. Слушаем только основную очередь
-            channel.basic_qos(prefetch_count=1)
-            channel.basic_consume(
-                queue=MAIN_QUEUE,
-                on_message_callback=process_task,
-                auto_ack=False
-            )
-            logger.info("Воркер запущен. Ожидаем задачи...")
-            channel.start_consuming()
-
+        async with queue.iterator() as queue_iter:
+            async for message in queue_iter:
+                async with message.process():
+                    payload = json.loads(message.body.decode("utf-8"))
+                    logger.info(f"Received task: {payload['task_id']}, Connection: {payload['connection']}")
+                    await asyncio.sleep(2)  
 
 if __name__ == "__main__":
-    main()
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        logger.info("Consumer stopped.")                    

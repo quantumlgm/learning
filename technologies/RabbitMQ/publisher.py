@@ -1,20 +1,36 @@
+
+
+import asyncio
 import json
-from technologies.RabbitMQ.config import get_connection, logger
 
-MAIN_EXCHANGE = "app_main_exchange"
+import aio_pika
 
 
-def main():
-    with get_connection() as connection:
-        with connection.channel() as channel:
-            payload = {"task_name": "Синхронизация с банком", "attempts": 0}
-            channel.basic_publish(
-                exchange=MAIN_EXCHANGE,
-                routing_key="",
-                body=json.dumps(payload).encode("utf-8")
+RMQ_URL = "amqp://guest:guest@localhost:5672/"
+EXCHANGE_NAME = "my_exchange"
+
+
+async def main():
+    connection = await aio_pika.connect_robust(RMQ_URL)
+    async with connection:
+        channel = await connection.channel()
+
+        exchange = await channel.declare_exchange(
+            name=EXCHANGE_NAME,
+            type=aio_pika.ExchangeType.DIRECT, 
+            durable=True
+        )
+
+        for i in range(1, 4):
+            payload = {
+                "task_id": i, 
+                "connection": f"Async data {i}"
+            }
+            message = aio_pika.Message(
+                body=json.dumps(payload).encode("utf-8"),
+                delivery_mode=aio_pika.DeliveryMode.PERSISTENT
             )
-            logger.info("Задача отправлена в очередь")
+            await exchange.publish(message, routing_key="tasks")
 
-
-if __name__ == "__main__":
-    main()
+if __name__ == "__main__":    
+    asyncio.run(main())
