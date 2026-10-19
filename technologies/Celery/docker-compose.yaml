@@ -2,9 +2,22 @@
 services:
   rabbitmq:
     image: rabbitmq:4.2-management
+    restart: always
     ports:
       - "5672:5672"
       - "15672:15672"
     environment:
       RABBITMQ_DEFAULT_USER: celery
       RABBITMQ_DEFAULT_PASS: celerypass
+
+  redis:
+    image: redis:7-alpine
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+
+
+volumes:  
+  redis-data:
