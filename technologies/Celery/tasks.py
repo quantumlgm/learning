@@ -19,6 +19,7 @@ def show_info(self, x: int) -> dict:
         "value": x,
     }
 
+
 @celery_app.task
 def slow_task(task_id: int):
     print(f"Старт задачи номер {task_id}")
