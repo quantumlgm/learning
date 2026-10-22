@@ -1,3 +1,5 @@
+import time
+
 from app import celery_app
 
 
@@ -16,3 +18,10 @@ def show_info(self, x: int) -> dict:
         "retries": self.request.retries,
         "value": x,
     }
+
+@celery_app.task
+def slow_task(task_id: int):
+    print(f"Старт задачи номер {task_id}")
+    time.sleep(3)
+    print(f"Конец задачи номер {task_id}")
+    return task_id
