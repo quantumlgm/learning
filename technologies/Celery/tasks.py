@@ -1,3 +1,4 @@
+import random
 import time
 
 from app import celery_app
@@ -14,8 +15,7 @@ def add(x: int, y: int) -> int:
 @celery_app.task(bind=True)
 def show_info(self, x: int) -> dict:
     return {
-        "task_id": self.request.id,
-        "retries": self.request.retries,
+        "task_id": self.request.id,        
         "value": x,
     }
 
@@ -23,6 +23,11 @@ def show_info(self, x: int) -> dict:
 @celery_app.task
 def slow_task(task_id: int):
     print(f"Старт задачи номер {task_id}")
-    time.sleep(3)
+    wasted = random.randint(0, 4)
+    time.sleep(wasted)
     print(f"Конец задачи номер {task_id}")
-    return task_id
+    return {
+        "completed": wasted, 
+        "task_id": task_id, 
+        "win": f"You didn’t waste your time! Your task is {task_id}"
+    }

@@ -10,8 +10,7 @@ class Settings(BaseSettings):
     task_track_started: bool = True
     task_routes: dict[str, dict[str, str]] = {
         "tasks.show_info": {"queue": "work_info"}, 
-        "tasks.add": {"queue": "work_info"}, 
-
+        "tasks.add": {"queue": "work_add"}, 
         "tasks.slow_task": {"queue": "experemental"}
     }
 
