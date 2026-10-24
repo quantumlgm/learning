@@ -13,6 +13,14 @@ class Settings(BaseSettings):
         "tasks.add": {"queue": "work_add"}, 
         "tasks.slow_task": {"queue": "experemental"}
     }
+    beat_schedule: dict[str, dict] = {
+        "check_info_beat": {
+            "task": "tasks.show_info", 
+            "schedule": 5.0, 
+            "args": (10,),
+            "options": {"queue": "work_info"}
+        }
+    }
 
 
 settings = Settings()
