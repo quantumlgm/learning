@@ -12,6 +12,18 @@ def add(x: int, y: int) -> int:
     return result
 
 
+@celery_app.task(
+    autoretry_for=(ZeroDivisionError,), 
+    retry_kwargs={"max_retries": 3}, 
+    retry_jitter=True
+)
+def divide(x: int, y: int) -> int:
+    print(f"Деление {x} и {y}")
+    result = x / y
+    print(f"{x} / {y} = {result}")
+    return int(result)
+
+
 @celery_app.task(bind=True)
 def show_info(self, x: int) -> dict:
     return {

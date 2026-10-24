@@ -11,6 +11,7 @@ class Settings(BaseSettings):
     task_routes: dict[str, dict[str, str]] = {
         "tasks.show_info": {"queue": "work_info"}, 
         "tasks.add": {"queue": "work_add"}, 
+        "tasks.divide": {"queue": "work_add"}, 
         "tasks.slow_task": {"queue": "experemental"}
     }
     beat_schedule: dict[str, dict] = {
